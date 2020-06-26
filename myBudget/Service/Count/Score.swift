@@ -19,13 +19,13 @@ final class Score {
     //MARK: - Private properties
     
     private var name: String
-    private var concurrency: Concurrency
+    private var concurrency: Currency
     private var allCount: Double
     
     
     //MARK: - Initializators
     
-    init(name: String, concurrency: Concurrency, allCount: Double){
+    init(name: String, concurrency: Currency, allCount: Double){
         self.name = name.isEmpty ? Constants.budget : name
         self.concurrency = concurrency
         self.allCount = allCount

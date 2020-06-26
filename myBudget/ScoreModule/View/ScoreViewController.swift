@@ -23,7 +23,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     
     //MARK: - Private properties
     
-    private var scoreCollection = UICollectionView()
+    @IBOutlet private weak var scoreCollectionVIew: UICollectionView!
     
     
     //MARK: - Lifecycle
@@ -36,11 +36,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     
     //MARK: - Private methods
     
-    private func configureScoreCollection() {
-        let layout = UICollectionViewFlowLayout()
-        scoreCollection = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
-        view.addSubview(scoreCollection)
-    }
+    private func configureScoreCollection() {}
     
 }
 
@@ -48,6 +44,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
 //MARK: - Extensions
 
 extension ScoreViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         0
     }
@@ -55,7 +52,6 @@ extension ScoreViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         UICollectionViewCell()
     }
-    
     
 }
 

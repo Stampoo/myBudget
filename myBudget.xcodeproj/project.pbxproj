@@ -14,8 +14,8 @@
 		34F2866224A52EC700D7C509 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866124A52EC700D7C509 /* Support.swift */; };
 		34F2866424A52FD500D7C509 /* LInkCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866324A52FD500D7C509 /* LInkCalculator.swift */; };
 		34F2866624A5331700D7C509 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866524A5331700D7C509 /* RequestBuilder.swift */; };
-		34F2866924A5D74100D7C509 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866824A5D74100D7C509 /* Count.swift */; };
-		34F2866B24A5DA2F00D7C509 /* Concurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866A24A5DA2F00D7C509 /* Concurrency.swift */; };
+		34F2866924A5D74100D7C509 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866824A5D74100D7C509 /* Score.swift */; };
+		34F2866B24A5DA2F00D7C509 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866A24A5DA2F00D7C509 /* Currency.swift */; };
 		34F2866D24A5E5FD00D7C509 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866C24A5E5FD00D7C509 /* History.swift */; };
 		34F2866F24A5E62E00D7C509 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866E24A5E62E00D7C509 /* Category.swift */; };
 		34F2867324A5E87700D7C509 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2867224A5E87700D7C509 /* ScoreViewController.swift */; };
@@ -24,6 +24,9 @@
 		34F2867F24A5F59A00D7C509 /* ScorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2867E24A5F59A00D7C509 /* ScorePresenter.swift */; };
 		34F2868124A5F62100D7C509 /* ScoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868024A5F62100D7C509 /* ScoreRouter.swift */; };
 		34F2868324A5F74900D7C509 /* ScoreConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868224A5F74900D7C509 /* ScoreConfigurator.swift */; };
+		34F2868524A5FA3B00D7C509 /* ScoreCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868424A5FA3B00D7C509 /* ScoreCollectionCell.swift */; };
+		34F2868924A6022D00D7C509 /* UIVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868824A6022D00D7C509 /* UIVIew.swift */; };
+		34F2868B24A602F800D7C509 /* TempStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868A24A602F800D7C509 /* TempStorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +39,8 @@
 		34F2866124A52EC700D7C509 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		34F2866324A52FD500D7C509 /* LInkCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LInkCalculator.swift; sourceTree = "<group>"; };
 		34F2866524A5331700D7C509 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
-		34F2866824A5D74100D7C509 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
-		34F2866A24A5DA2F00D7C509 /* Concurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concurrency.swift; sourceTree = "<group>"; };
+		34F2866824A5D74100D7C509 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		34F2866A24A5DA2F00D7C509 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		34F2866C24A5E5FD00D7C509 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		34F2866E24A5E62E00D7C509 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		34F2867224A5E87700D7C509 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +49,9 @@
 		34F2867E24A5F59A00D7C509 /* ScorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePresenter.swift; sourceTree = "<group>"; };
 		34F2868024A5F62100D7C509 /* ScoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRouter.swift; sourceTree = "<group>"; };
 		34F2868224A5F74900D7C509 /* ScoreConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreConfigurator.swift; sourceTree = "<group>"; };
+		34F2868424A5FA3B00D7C509 /* ScoreCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCollectionCell.swift; sourceTree = "<group>"; };
+		34F2868824A6022D00D7C509 /* UIVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIew.swift; sourceTree = "<group>"; };
+		34F2868A24A602F800D7C509 /* TempStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempStorageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +84,10 @@
 		34F2864924A527A100D7C509 /* myBudget */ = {
 			isa = PBXGroup;
 			children = (
+				34F2868624A6021100D7C509 /* Library */,
 				34F2867724A5EA8000D7C509 /* Basic */,
 				34F2867024A5E84500D7C509 /* ScoreModule */,
+				34F2868C24A60FAA00D7C509 /* Model */,
 				34F2866024A52DFD00D7C509 /* Service */,
 				34F2865F24A528DD00D7C509 /* Resource */,
 				34F2865E24A5283000D7C509 /* Application */,
@@ -113,6 +121,7 @@
 				34F2866124A52EC700D7C509 /* Support.swift */,
 				34F2866324A52FD500D7C509 /* LInkCalculator.swift */,
 				34F2866524A5331700D7C509 /* RequestBuilder.swift */,
+				34F2868A24A602F800D7C509 /* TempStorageService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -120,10 +129,7 @@
 		34F2866724A5D72700D7C509 /* Count */ = {
 			isa = PBXGroup;
 			children = (
-				34F2866824A5D74100D7C509 /* Count.swift */,
-				34F2866C24A5E5FD00D7C509 /* History.swift */,
-				34F2866E24A5E62E00D7C509 /* Category.swift */,
-				34F2866A24A5DA2F00D7C509 /* Concurrency.swift */,
+				34F2866824A5D74100D7C509 /* Score.swift */,
 			);
 			path = Count;
 			sourceTree = "<group>";
@@ -144,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				34F2867224A5E87700D7C509 /* ScoreViewController.swift */,
+				34F2868424A5FA3B00D7C509 /* ScoreCollectionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +201,32 @@
 				34F2868024A5F62100D7C509 /* ScoreRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		34F2868624A6021100D7C509 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				34F2868724A6021D00D7C509 /* Extensions */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		34F2868724A6021D00D7C509 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				34F2868824A6022D00D7C509 /* UIVIew.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		34F2868C24A60FAA00D7C509 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34F2866C24A5E5FD00D7C509 /* History.swift */,
+				34F2866E24A5E62E00D7C509 /* Category.swift */,
+				34F2866A24A5DA2F00D7C509 /* Currency.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,20 +300,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F2868924A6022D00D7C509 /* UIVIew.swift in Sources */,
 				34F2867324A5E87700D7C509 /* ScoreViewController.swift in Sources */,
 				34F2868124A5F62100D7C509 /* ScoreRouter.swift in Sources */,
+				34F2868B24A602F800D7C509 /* TempStorageService.swift in Sources */,
 				34F2867F24A5F59A00D7C509 /* ScorePresenter.swift in Sources */,
 				34F2866624A5331700D7C509 /* RequestBuilder.swift in Sources */,
 				34F2867A24A5EA9600D7C509 /* ModuleTransitionable.swift in Sources */,
 				34F2867624A5EA7200D7C509 /* Protocols.swift in Sources */,
 				34F2866D24A5E5FD00D7C509 /* History.swift in Sources */,
-				34F2866B24A5DA2F00D7C509 /* Concurrency.swift in Sources */,
+				34F2866B24A5DA2F00D7C509 /* Currency.swift in Sources */,
 				34F2864B24A527A100D7C509 /* AppDelegate.swift in Sources */,
 				34F2866F24A5E62E00D7C509 /* Category.swift in Sources */,
 				34F2866224A52EC700D7C509 /* Support.swift in Sources */,
 				34F2866424A52FD500D7C509 /* LInkCalculator.swift in Sources */,
+				34F2868524A5FA3B00D7C509 /* ScoreCollectionCell.swift in Sources */,
 				34F2868324A5F74900D7C509 /* ScoreConfigurator.swift in Sources */,
-				34F2866924A5D74100D7C509 /* Count.swift in Sources */,
+				34F2866924A5D74100D7C509 /* Score.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

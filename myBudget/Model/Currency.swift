@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Concurrency: String {
+enum Currency: String, Codable {
     case ruble = "Ruble"
     case bRuble = "Belarusian Ruble"
     case USD = "USD"

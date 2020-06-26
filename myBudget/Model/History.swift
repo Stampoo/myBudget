@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Transaction {
+struct Transaction: Codable {
     let anount: Double
-    let concurrency: Concurrency
+    let concurrency: Currency
     let category: Category
     let date = Date()
 }
