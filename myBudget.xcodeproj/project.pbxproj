@@ -26,7 +26,9 @@
 		34F2868324A5F74900D7C509 /* ScoreConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868224A5F74900D7C509 /* ScoreConfigurator.swift */; };
 		34F2868524A5FA3B00D7C509 /* ScoreCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868424A5FA3B00D7C509 /* ScoreCollectionCell.swift */; };
 		34F2868924A6022D00D7C509 /* UIVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868824A6022D00D7C509 /* UIVIew.swift */; };
-		34F2868B24A602F800D7C509 /* TempStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868A24A602F800D7C509 /* TempStorageService.swift */; };
+		34F2868B24A602F800D7C509 /* TempHistoryStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868A24A602F800D7C509 /* TempHistoryStorageService.swift */; };
+		34F2868F24A6120A00D7C509 /* TempBudgetStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868E24A6120A00D7C509 /* TempBudgetStorageService.swift */; };
+		34F2869124A612BF00D7C509 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2869024A612BF00D7C509 /* Budget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +53,9 @@
 		34F2868224A5F74900D7C509 /* ScoreConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreConfigurator.swift; sourceTree = "<group>"; };
 		34F2868424A5FA3B00D7C509 /* ScoreCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCollectionCell.swift; sourceTree = "<group>"; };
 		34F2868824A6022D00D7C509 /* UIVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIew.swift; sourceTree = "<group>"; };
-		34F2868A24A602F800D7C509 /* TempStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempStorageService.swift; sourceTree = "<group>"; };
+		34F2868A24A602F800D7C509 /* TempHistoryStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempHistoryStorageService.swift; sourceTree = "<group>"; };
+		34F2868E24A6120A00D7C509 /* TempBudgetStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempBudgetStorageService.swift; sourceTree = "<group>"; };
+		34F2869024A612BF00D7C509 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +125,7 @@
 				34F2866124A52EC700D7C509 /* Support.swift */,
 				34F2866324A52FD500D7C509 /* LInkCalculator.swift */,
 				34F2866524A5331700D7C509 /* RequestBuilder.swift */,
-				34F2868A24A602F800D7C509 /* TempStorageService.swift */,
+				34F2868D24A611DC00D7C509 /* StorageService */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -225,8 +229,18 @@
 				34F2866C24A5E5FD00D7C509 /* History.swift */,
 				34F2866E24A5E62E00D7C509 /* Category.swift */,
 				34F2866A24A5DA2F00D7C509 /* Currency.swift */,
+				34F2869024A612BF00D7C509 /* Budget.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		34F2868D24A611DC00D7C509 /* StorageService */ = {
+			isa = PBXGroup;
+			children = (
+				34F2868A24A602F800D7C509 /* TempHistoryStorageService.swift */,
+				34F2868E24A6120A00D7C509 /* TempBudgetStorageService.swift */,
+			);
+			path = StorageService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,14 +316,16 @@
 			files = (
 				34F2868924A6022D00D7C509 /* UIVIew.swift in Sources */,
 				34F2867324A5E87700D7C509 /* ScoreViewController.swift in Sources */,
+				34F2868F24A6120A00D7C509 /* TempBudgetStorageService.swift in Sources */,
 				34F2868124A5F62100D7C509 /* ScoreRouter.swift in Sources */,
-				34F2868B24A602F800D7C509 /* TempStorageService.swift in Sources */,
+				34F2868B24A602F800D7C509 /* TempHistoryStorageService.swift in Sources */,
 				34F2867F24A5F59A00D7C509 /* ScorePresenter.swift in Sources */,
 				34F2866624A5331700D7C509 /* RequestBuilder.swift in Sources */,
 				34F2867A24A5EA9600D7C509 /* ModuleTransitionable.swift in Sources */,
 				34F2867624A5EA7200D7C509 /* Protocols.swift in Sources */,
 				34F2866D24A5E5FD00D7C509 /* History.swift in Sources */,
 				34F2866B24A5DA2F00D7C509 /* Currency.swift in Sources */,
+				34F2869124A612BF00D7C509 /* Budget.swift in Sources */,
 				34F2864B24A527A100D7C509 /* AppDelegate.swift in Sources */,
 				34F2866F24A5E62E00D7C509 /* Category.swift in Sources */,
 				34F2866224A52EC700D7C509 /* Support.swift in Sources */,
