@@ -10,10 +10,20 @@ import UIKit
 
 final class ScoreCollectionCell: UICollectionViewCell {
     
+    //MARK: - IBOutlets
+    
     @IBOutlet private weak var backgroundCardView: UIView!
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var currencyLabel: UILabel!
     @IBOutlet private weak var amountTextField: UITextField!
+    
+    
+    //MARK: - Lifecycle
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        configureCard()
+    }
     
     
     //MARK: - Public methods
