@@ -24,6 +24,8 @@ protocol AddViewOutput: class {
 
     func dismiss(with newBudget: Budget)
 
+    func pop(with newBudget: Budget)
+
 }
 
 protocol AddViewRouterInput: class {

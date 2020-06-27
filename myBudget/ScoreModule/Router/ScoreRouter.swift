@@ -25,7 +25,7 @@ extension ScoreRouter: ScoreViewRouterInput {
     
     func presentModule(with moduleOutput: ModuleOutput) {
         let addModule = AddConfigurator().configureModule(with: moduleOutput)
-        view?.presentModule(module: addModule, animated: true, completion: nil)
+        view?.pushModule(module: addModule, animated: true)
     }
     
     func dismiss() {

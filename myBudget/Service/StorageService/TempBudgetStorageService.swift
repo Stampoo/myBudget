@@ -43,6 +43,11 @@ final class TempBudgetStorageService {
         let encodedBudgetList = encodingBudgetList(budgetList: budgetList)
         storage.set(encodedBudgetList, forKey: Constants.budgetList)
     }
+
+    func saveBudgetList(budgetList: [Budget]) {
+        let encodedBudgetList = encodingBudgetList(budgetList: budgetList)
+        storage.set(encodedBudgetList, forKey: Constants.budgetList)
+    }
     
     
     //MARK: - Private methods

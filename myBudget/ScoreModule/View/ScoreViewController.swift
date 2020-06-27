@@ -33,6 +33,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        output?.viewLoaded()
         configureScoreCollection()
         configurateNavbar()
         configureAddButton()
@@ -82,6 +83,7 @@ extension ScoreViewController: UITableViewDataSource {
                                                        for: indexPath) as? ScoreTableViewCell else {
                                                         return UITableViewCell()
         }
+        cell.configureCell(with: budgetList[indexPath.row])
         return cell
     }
 
@@ -92,11 +94,22 @@ extension ScoreViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return view.bounds.height / 8
     }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            budgetList.remove(at: indexPath.row)
+            TempBudgetStorageService.shared.saveBudgetList(budgetList: budgetList)
+            tableView.reloadData()
+        }
+    }
 }
 
 extension ScoreViewController: ScoreViewInput {
     
-    func configure() {}
+    func configure(with budgetList: [Budget]) {
+        self.budgetList = budgetList
+        tableView.reloadData()
+    }
     
     func setupInitialState() {
         budgetList = TempBudgetStorageService.shared.openBudgetList()

@@ -19,8 +19,8 @@ final class AddViewController: UIViewController, ModuleTransitionable {
 
     //MARK: - IBOutlets
 
-    @IBOutlet private weak var nameBudget: UILabel!
-    @IBOutlet private weak var amountMonth: UILabel!
+    @IBOutlet private weak var nameBudget: UITextField!
+    @IBOutlet private weak var amountMonth: UITextField!
     @IBOutlet private weak var currencyButton: UIButton!
     @IBOutlet private weak var createButton: UIButton!
 
@@ -45,10 +45,14 @@ final class AddViewController: UIViewController, ModuleTransitionable {
         configureCurrencyPicker()
         configureCurrencyButton()
         configureCreateButton()
+        modalPresentationStyle = .fullScreen
     }
 
 
     //MARK: - Private methods
+
+    private func configureLables() {
+    }
 
     private func configureCurrencyPicker() {
         let pickerFrame = CGRect(x: 0,
@@ -109,7 +113,7 @@ final class AddViewController: UIViewController, ModuleTransitionable {
                 return
         }
         let budget = Budget(name: name, amount: amountDouble, currency: currency)
-        output?.dismiss(with: budget)
+        output?.pop(with: budget)
     }
 
 }

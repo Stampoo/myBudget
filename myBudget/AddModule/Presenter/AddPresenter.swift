@@ -32,4 +32,9 @@ extension AddPresenter: AddViewOutput {
         router?.dismiss()
     }
 
+    func pop(with newBudget: Budget) {
+        moduleOutput?.moduleOutput(with: newBudget)
+        router?.popModule()
+    }
+
 }

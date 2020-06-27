@@ -10,7 +10,7 @@ import Foundation
 
 protocol ScoreViewInput: class {
     
-    func configure()
+    func configure(with budgetList: [Budget])
     
     func setupInitialState()
     
