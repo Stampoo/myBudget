@@ -64,7 +64,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     }
 
     @objc private func addNewBudget() {
-        output?.presentModule()
+        output?.pushModule()
     }
     
 }
@@ -102,6 +102,12 @@ extension ScoreViewController: UITableViewDelegate {
             tableView.reloadData()
         }
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let budget = budgetList[indexPath.row]
+        output?.pushTransactionModule(with: budget)
+    }
+
 }
 
 extension ScoreViewController: ScoreViewInput {

@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionViewController" customModule="myBudget" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundTopView" destination="WKX-RX-TOP" id="2yv-mo-Ou2"/>
+                <outlet property="budgetAmountLabel" destination="m3i-1z-wyj" id="4Qr-Ad-UoL"/>
+                <outlet property="budgetSpentLabel" destination="jXD-PI-r0M" id="4vd-sI-cEf"/>
                 <outlet property="nameBudgetLabel" destination="Rtz-Vl-fHw" id="0TA-0d-Tgs"/>
                 <outlet property="tableView" destination="L7x-J3-9iT" id="VJ7-g3-HMg"/>
                 <outlet property="transferButton" destination="5rO-Ze-Dij" id="ufO-Pm-zCj"/>
@@ -33,6 +35,20 @@
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtz-Vl-fHw">
                             <rect key="frame" x="8" y="52" width="398" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3i-1z-wyj">
+                            <rect key="frame" x="8" y="140" width="398" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXD-PI-r0M">
+                            <rect key="frame" x="8" y="192" width="398" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>

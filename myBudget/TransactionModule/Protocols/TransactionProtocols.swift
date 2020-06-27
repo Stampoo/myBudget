@@ -10,7 +10,7 @@ import Foundation
 
 protocol TransactionViewInput: class {
 
-    func configure()
+    func configure(with budget: Budget)
 
     func setupInitialState()
 
@@ -21,10 +21,6 @@ protocol TransactionViewOutput: class {
     func reload()
 
     func viewLoaded()
-
-    func dismiss(with newBudget: Budget)
-
-    func pop(with newBudget: Budget)
 
 }
 

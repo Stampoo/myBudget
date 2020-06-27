@@ -25,10 +25,15 @@ extension TransactionPresenter: TransactionViewOutput {
 
     func reload() {}
 
-    func viewLoaded() {}
+    func viewLoaded() {
+        moduleOutput?.transitionBudget(completion: { (budget) in
+            self.view?.configure(with: budget)
+        })
+    }
 
     func dismiss(with newBudget: Budget) {}
 
     func pop(with newBudget: Budget) {}
 
 }
+

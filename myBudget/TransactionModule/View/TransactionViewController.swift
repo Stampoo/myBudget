@@ -16,6 +16,8 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     @IBOutlet private weak var backgroundTopView: UIView!
     @IBOutlet private weak var transferButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var budgetAmountLabel: UILabel!
+    @IBOutlet private weak var budgetSpentLabel: UILabel!
 
 
     //MARK: - Public properties
@@ -27,6 +29,15 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        output?.viewLoaded()
+        configureLables()
+    }
+
+
+    //MARK: - Privat methods
+
+    private func configureLables() {
+        nameBudgetLabel.textColor = .white
     }
 
 }
@@ -34,8 +45,13 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
 
 //MARK: - Extensions
 
-extension TransactionViewController: TransactionViewInput
-    func configure() {}
+extension TransactionViewController: TransactionViewInput {
+    
+    func configure(with budget: Budget) {
+        nameBudgetLabel.text = budget.name
+        budgetAmountLabel.text = "Budget = \(budget.amount)"
+        budgetSpentLabel.text = "Budget"
+    }
 
     func setupInitialState() {}
 

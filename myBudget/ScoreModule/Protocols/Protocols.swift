@@ -23,12 +23,18 @@ protocol ScoreViewOutput: class {
     func viewLoaded()
 
     func presentModule()
+
+    func pushModule()
+
+    func pushTransactionModule(with budget: Budget)
     
 }
 
 protocol ScoreViewRouterInput: class {
-    
-    func pushModule()
+
+    func pushModule(with moduleOutput: ModuleOutput)
+
+    func pushTransactionModule(with moduleOutput: ModuleOutput)
     
     func presentModule(with moduleOutput: ModuleOutput)
     
@@ -42,4 +48,13 @@ protocol ModuleOutput: class {
 
     func moduleOutput(with budget: Budget)
 
+    func transitionBudget(completion: (Budget) -> Void)
+
 }
+
+protocol ModuleInput: class {
+
+    func configure(with budget: Budget)
+    
+}
+

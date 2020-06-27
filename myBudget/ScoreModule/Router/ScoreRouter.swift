@@ -20,13 +20,18 @@ final class ScoreRouter {
 //MARK: - Extensions
 
 extension ScoreRouter: ScoreViewRouterInput {
+
+    func pushTransactionModule(with moduleOutput: ModuleOutput) {
+        let transactionModule = TransactionConfigurator().configureModule(with: moduleOutput)
+        view?.pushModule(module: transactionModule, animated: true)
+    }
     
-    func pushModule() {}
-    
-    func presentModule(with moduleOutput: ModuleOutput) {
+    func pushModule(with moduleOutput: ModuleOutput) {
         let addModule = AddConfigurator().configureModule(with: moduleOutput)
         view?.pushModule(module: addModule, animated: true)
     }
+    
+    func presentModule(with moduleOutput: ModuleOutput) {}
     
     func dismiss() {
         view?.dismiss(completion: nil)

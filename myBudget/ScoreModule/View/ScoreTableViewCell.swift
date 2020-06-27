@@ -31,14 +31,13 @@ final class ScoreTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        
     }
 
 
     //MARK: - Public methods
 
     func configureCell(with budget: Budget) {
+        BudgetName.text = budget.name
         budgetTitle.text = Constants.monthTitle
         budgetAmount.text = "\(budget.amount)"
         spentTitle.text = Constants.spentTtitle
