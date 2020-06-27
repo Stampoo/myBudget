@@ -14,6 +14,8 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     
     private enum Constants {
         static let cellIdentifire = "ScoreCell"
+        static let nibName = "ScoreTableViewCell"
+        static let budgetTitle = "My budget"
     }
     
     //MARK: - Public properties
@@ -23,7 +25,8 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     
     //MARK: - Private properties
     
-    @IBOutlet private weak var scoreCollectionVIew: UICollectionView!
+    private let tableView = UITableView()
+    private var budgetList = [Budget]()
     
     
     //MARK: - Lifecycle
@@ -31,37 +34,74 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureScoreCollection()
+        configurateNavbar()
+        configureAddButton()
     }
     
     
     //MARK: - Private methods
     
-    private func configureScoreCollection() {}
+    private func configureScoreCollection() {
+        let nib = UINib(nibName: Constants.nibName, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: Constants.cellIdentifire)
+        tableView.frame = view.bounds
+        tableView.dataSource = self
+        tableView.delegate = self
+        view.addSubview(tableView)
+    }
+
+    private func configurateNavbar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = Constants.budgetTitle
+    }
+
+    private func configureAddButton() {
+        let button = UIButton(type: .contactAdd)
+        button.setTitleColor(.black, for: .normal)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        button.addTarget(self, action: #selector(addNewBudget), for: .touchUpInside)
+    }
+
+    @objc private func addNewBudget() {
+        output?.presentModule()
+    }
     
 }
 
 
 //MARK: - Extensions
 
-extension ScoreViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        2
+extension ScoreViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return budgetList.count
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        ScoreCollectionCell()
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifire,
+                                                       for: indexPath) as? ScoreTableViewCell else {
+                                                        return UITableViewCell()
+        }
+        return cell
     }
-    
+
 }
 
-extension ScoreViewController: UICollectionViewDelegate {}
+extension ScoreViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.bounds.height / 8
+    }
+}
 
 extension ScoreViewController: ScoreViewInput {
     
     func configure() {}
     
-    func setupInitialState() {}
+    func setupInitialState() {
+        budgetList = TempBudgetStorageService.shared.openBudgetList()
+        tableView.reloadData()
+    }
     
 }
 

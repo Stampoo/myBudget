@@ -21,6 +21,8 @@ protocol ScoreViewOutput: class {
     func reload()
     
     func viewLoaded()
+
+    func presentModule()
     
 }
 
@@ -28,10 +30,16 @@ protocol ScoreViewRouterInput: class {
     
     func pushModule()
     
-    func presentModule()
+    func presentModule(with moduleOutput: ModuleOutput)
     
     func dismiss()
     
     func popModule()
     
+}
+
+protocol ModuleOutput: class {
+
+    func moduleOutput(with budget: Budget)
+
 }

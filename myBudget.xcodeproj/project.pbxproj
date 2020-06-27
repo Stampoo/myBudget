@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341D2D2724A74AD1007C5979 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341D2D2624A74AD1007C5979 /* UIColor.swift */; };
+		347F60B624A64D4A0012BB7D /* AddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60B524A64D4A0012BB7D /* AddPresenter.swift */; };
+		347F60B824A64D7D0012BB7D /* AddConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60B724A64D7D0012BB7D /* AddConfigurator.swift */; };
+		347F60BA24A64DBA0012BB7D /* AddProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60B924A64DBA0012BB7D /* AddProtocols.swift */; };
+		347F60BC24A64E2B0012BB7D /* AddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60BB24A64E2B0012BB7D /* AddRouter.swift */; };
+		347F60BF24A64E670012BB7D /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60BD24A64E670012BB7D /* AddViewController.swift */; };
+		347F60C024A64E670012BB7D /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347F60BE24A64E670012BB7D /* AddViewController.xib */; };
+		34C24DB924A62C00006AE65E /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C24DB724A62C00006AE65E /* ScoreTableViewCell.swift */; };
+		34C24DBA24A62C00006AE65E /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C24DB824A62C00006AE65E /* ScoreTableViewCell.xib */; };
 		34F2864B24A527A100D7C509 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2864A24A527A100D7C509 /* AppDelegate.swift */; };
 		34F2865224A527A100D7C509 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34F2865024A527A100D7C509 /* Main.storyboard */; };
 		34F2865424A527A400D7C509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F2865324A527A400D7C509 /* Assets.xcassets */; };
@@ -24,7 +33,6 @@
 		34F2867F24A5F59A00D7C509 /* ScorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2867E24A5F59A00D7C509 /* ScorePresenter.swift */; };
 		34F2868124A5F62100D7C509 /* ScoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868024A5F62100D7C509 /* ScoreRouter.swift */; };
 		34F2868324A5F74900D7C509 /* ScoreConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868224A5F74900D7C509 /* ScoreConfigurator.swift */; };
-		34F2868524A5FA3B00D7C509 /* ScoreCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868424A5FA3B00D7C509 /* ScoreCollectionCell.swift */; };
 		34F2868924A6022D00D7C509 /* UIVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868824A6022D00D7C509 /* UIVIew.swift */; };
 		34F2868B24A602F800D7C509 /* TempHistoryStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868A24A602F800D7C509 /* TempHistoryStorageService.swift */; };
 		34F2868F24A6120A00D7C509 /* TempBudgetStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868E24A6120A00D7C509 /* TempBudgetStorageService.swift */; };
@@ -32,6 +40,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		341D2D2624A74AD1007C5979 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		347F60B524A64D4A0012BB7D /* AddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPresenter.swift; sourceTree = "<group>"; };
+		347F60B724A64D7D0012BB7D /* AddConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConfigurator.swift; sourceTree = "<group>"; };
+		347F60B924A64DBA0012BB7D /* AddProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProtocols.swift; sourceTree = "<group>"; };
+		347F60BB24A64E2B0012BB7D /* AddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouter.swift; sourceTree = "<group>"; };
+		347F60BD24A64E670012BB7D /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		347F60BE24A64E670012BB7D /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
+		34C24DB724A62C00006AE65E /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
+		34C24DB824A62C00006AE65E /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
 		34F2864724A527A100D7C509 /* myBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F2864A24A527A100D7C509 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34F2865124A527A100D7C509 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,7 +68,6 @@
 		34F2867E24A5F59A00D7C509 /* ScorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePresenter.swift; sourceTree = "<group>"; };
 		34F2868024A5F62100D7C509 /* ScoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRouter.swift; sourceTree = "<group>"; };
 		34F2868224A5F74900D7C509 /* ScoreConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreConfigurator.swift; sourceTree = "<group>"; };
-		34F2868424A5FA3B00D7C509 /* ScoreCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCollectionCell.swift; sourceTree = "<group>"; };
 		34F2868824A6022D00D7C509 /* UIVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIew.swift; sourceTree = "<group>"; };
 		34F2868A24A602F800D7C509 /* TempHistoryStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempHistoryStorageService.swift; sourceTree = "<group>"; };
 		34F2868E24A6120A00D7C509 /* TempBudgetStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempBudgetStorageService.swift; sourceTree = "<group>"; };
@@ -69,6 +85,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34C24DBB24A64C01006AE65E /* AddModule */ = {
+			isa = PBXGroup;
+			children = (
+				34C24DC424A64CA2006AE65E /* Configurator */,
+				34C24DBC24A64CA2006AE65E /* Presenter */,
+				34C24DBE24A64CA2006AE65E /* Protocols */,
+				34C24DC624A64CA2006AE65E /* Router */,
+				34C24DC024A64CA2006AE65E /* View */,
+			);
+			path = AddModule;
+			sourceTree = "<group>";
+		};
+		34C24DBC24A64CA2006AE65E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				347F60B524A64D4A0012BB7D /* AddPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		34C24DBE24A64CA2006AE65E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				347F60B924A64DBA0012BB7D /* AddProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		34C24DC024A64CA2006AE65E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				347F60BD24A64E670012BB7D /* AddViewController.swift */,
+				347F60BE24A64E670012BB7D /* AddViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		34C24DC424A64CA2006AE65E /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				347F60B724A64D7D0012BB7D /* AddConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		34C24DC624A64CA2006AE65E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				347F60BB24A64E2B0012BB7D /* AddRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		34F2863E24A527A100D7C509 = {
 			isa = PBXGroup;
 			children = (
@@ -90,9 +159,10 @@
 			children = (
 				34F2868624A6021100D7C509 /* Library */,
 				34F2867724A5EA8000D7C509 /* Basic */,
-				34F2867024A5E84500D7C509 /* ScoreModule */,
-				34F2868C24A60FAA00D7C509 /* Model */,
 				34F2866024A52DFD00D7C509 /* Service */,
+				34F2868C24A60FAA00D7C509 /* Model */,
+				34F2867024A5E84500D7C509 /* ScoreModule */,
+				34C24DBB24A64C01006AE65E /* AddModule */,
 				34F2865F24A528DD00D7C509 /* Resource */,
 				34F2865E24A5283000D7C509 /* Application */,
 			);
@@ -122,10 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				34F2866724A5D72700D7C509 /* Count */,
+				34F2868D24A611DC00D7C509 /* StorageService */,
 				34F2866124A52EC700D7C509 /* Support.swift */,
 				34F2866324A52FD500D7C509 /* LInkCalculator.swift */,
 				34F2866524A5331700D7C509 /* RequestBuilder.swift */,
-				34F2868D24A611DC00D7C509 /* StorageService */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -154,7 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				34F2867224A5E87700D7C509 /* ScoreViewController.swift */,
-				34F2868424A5FA3B00D7C509 /* ScoreCollectionCell.swift */,
+				34C24DB724A62C00006AE65E /* ScoreTableViewCell.swift */,
+				34C24DB824A62C00006AE65E /* ScoreTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				34F2868824A6022D00D7C509 /* UIVIew.swift */,
+				341D2D2624A74AD1007C5979 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -303,6 +375,8 @@
 			files = (
 				34F2865724A527A400D7C509 /* LaunchScreen.storyboard in Resources */,
 				34F2865424A527A400D7C509 /* Assets.xcassets in Resources */,
+				347F60C024A64E670012BB7D /* AddViewController.xib in Resources */,
+				34C24DBA24A62C00006AE65E /* ScoreTableViewCell.xib in Resources */,
 				34F2865224A527A100D7C509 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,22 +389,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				34F2868924A6022D00D7C509 /* UIVIew.swift in Sources */,
+				34C24DB924A62C00006AE65E /* ScoreTableViewCell.swift in Sources */,
+				347F60BF24A64E670012BB7D /* AddViewController.swift in Sources */,
 				34F2867324A5E87700D7C509 /* ScoreViewController.swift in Sources */,
+				347F60B624A64D4A0012BB7D /* AddPresenter.swift in Sources */,
 				34F2868F24A6120A00D7C509 /* TempBudgetStorageService.swift in Sources */,
 				34F2868124A5F62100D7C509 /* ScoreRouter.swift in Sources */,
 				34F2868B24A602F800D7C509 /* TempHistoryStorageService.swift in Sources */,
+				347F60BA24A64DBA0012BB7D /* AddProtocols.swift in Sources */,
 				34F2867F24A5F59A00D7C509 /* ScorePresenter.swift in Sources */,
 				34F2866624A5331700D7C509 /* RequestBuilder.swift in Sources */,
 				34F2867A24A5EA9600D7C509 /* ModuleTransitionable.swift in Sources */,
+				347F60B824A64D7D0012BB7D /* AddConfigurator.swift in Sources */,
 				34F2867624A5EA7200D7C509 /* Protocols.swift in Sources */,
 				34F2866D24A5E5FD00D7C509 /* History.swift in Sources */,
 				34F2866B24A5DA2F00D7C509 /* Currency.swift in Sources */,
 				34F2869124A612BF00D7C509 /* Budget.swift in Sources */,
 				34F2864B24A527A100D7C509 /* AppDelegate.swift in Sources */,
 				34F2866F24A5E62E00D7C509 /* Category.swift in Sources */,
+				341D2D2724A74AD1007C5979 /* UIColor.swift in Sources */,
 				34F2866224A52EC700D7C509 /* Support.swift in Sources */,
 				34F2866424A52FD500D7C509 /* LInkCalculator.swift in Sources */,
-				34F2868524A5FA3B00D7C509 /* ScoreCollectionCell.swift in Sources */,
+				347F60BC24A64E2B0012BB7D /* AddRouter.swift in Sources */,
 				34F2868324A5F74900D7C509 /* ScoreConfigurator.swift in Sources */,
 				34F2866924A5D74100D7C509 /* Score.swift in Sources */,
 			);

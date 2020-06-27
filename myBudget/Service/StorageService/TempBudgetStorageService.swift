@@ -31,7 +31,7 @@ final class TempBudgetStorageService {
     
     func openBudgetList() -> [Budget] {
         guard let budgetList = storage.value(forKey: Constants.budgetList) as? [Data] else {
-            return [Budget]()
+            return []
         }
         let decodedBudgetList = decodingBudgetList(data: budgetList)
         return decodedBudgetList

@@ -1,5 +1,5 @@
 //
-//  ScoreRouter.swift
+//  AddRouter.swift
 //  myBudget
 //
 //  Created by fivecoil on 26/06/2020.
@@ -8,32 +8,29 @@
 
 import Foundation
 
-final class ScoreRouter {
-    
+final class AddRouter {
+
     //MARK: - Public properties
-    
+
     var view: ModuleTransitionable?
-    
+
 }
 
 
 //MARK: - Extensions
 
-extension ScoreRouter: ScoreViewRouterInput {
-    
+extension AddRouter: AddViewRouterInput {
+
     func pushModule() {}
-    
-    func presentModule(with moduleOutput: ModuleOutput) {
-        let addModule = AddConfigurator().configureModule(with: moduleOutput)
-        view?.presentModule(module: addModule, animated: true, completion: nil)
-    }
-    
+
+    func presentModule() {}
+
     func dismiss() {
         view?.dismiss(completion: nil)
     }
-    
+
     func popModule() {
         view?.popModule(animated: true)
     }
-    
+
 }

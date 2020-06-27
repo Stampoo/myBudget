@@ -14,6 +14,7 @@ final class ScorePresenter {
     
     var view: ScoreViewInput?
     var router: ScoreViewRouterInput?
+    let budgetStorage = TempBudgetStorageService.shared
     
 }
 
@@ -25,5 +26,17 @@ extension ScorePresenter: ScoreViewOutput {
     func reload() {}
     
     func viewLoaded() {}
+
+    func presentModule() {
+        router?.presentModule(with: self)
+    }
     
+}
+
+extension ScorePresenter: ModuleOutput {
+
+    func moduleOutput(with budget: Budget) {
+        budgetStorage.addBudgetInList(budget: budget)
+    }
+
 }

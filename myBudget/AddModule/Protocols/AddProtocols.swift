@@ -1,0 +1,39 @@
+//
+//  AddProtocols.swift
+//  myBudget
+//
+//  Created by fivecoil on 26/06/2020.
+//  Copyright © 2020 fivecoil. All rights reserved.
+//
+
+import Foundation
+
+protocol AddViewInput: class {
+
+    func configure()
+
+    func setupInitialState()
+
+}
+
+protocol AddViewOutput: class {
+
+    func reload()
+
+    func viewLoaded()
+
+    func dismiss(with newBudget: Budget)
+
+}
+
+protocol AddViewRouterInput: class {
+
+    func pushModule()
+
+    func presentModule()
+
+    func dismiss()
+
+    func popModule()
+
+}
