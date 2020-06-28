@@ -10,9 +10,11 @@ import Foundation
 
 protocol TransactionViewInput: class {
 
+    func configure(with transaction: Transaction)
+
     func configure(with budget: Budget)
 
-    func setupInitialState()
+    func setupInitialState(with transactionHistory: [Transaction])
 
 }
 
@@ -22,13 +24,15 @@ protocol TransactionViewOutput: class {
 
     func viewLoaded()
 
+    func present()
+
 }
 
 protocol TransactionViewRouterInput: class {
 
     func pushModule()
 
-    func presentModule()
+    func presentModule(with moduleOutput: TransactionModuleOutput)
 
     func dismiss()
 
@@ -36,3 +40,10 @@ protocol TransactionViewRouterInput: class {
 
 }
 
+protocol TransactionModuleOutput: class {
+
+    func moduleOutput(with transaction: Transaction)
+
+    func isTransactionAdd(answer: (Bool) -> Void)
+
+}

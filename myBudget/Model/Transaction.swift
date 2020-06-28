@@ -9,8 +9,7 @@
 import Foundation
 
 struct Transaction: Codable {
-    let anount: Double
-    let concurrency: Currency
-    let category: Category
-    let date = Date()
+    let name: String
+    let amount: Double
+    let date: Date
 }

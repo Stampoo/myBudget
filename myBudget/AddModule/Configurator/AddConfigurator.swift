@@ -25,4 +25,19 @@ final class AddConfigurator {
         return view
     }
 
+    func configureModule(with moduleOutput: TransactionModuleOutput) -> UIViewController {
+
+           let view = AddViewController()
+           let presenter = AddPresenter()
+           let router = AddRouter()
+
+           view.output = presenter
+           presenter.view = view
+           presenter.router = router
+           presenter.transactionModuleOutput = moduleOutput
+           router.view = view
+
+           return view
+       }
+
 }

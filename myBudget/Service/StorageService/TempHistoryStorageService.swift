@@ -47,6 +47,13 @@ final class TempHistoryStorageService {
         let encodedHistory = encodingTransaction(transactions: history)
         storage.set(encodedHistory, forKey: budget.name)
     }
+
+    func calculateSpent(budget: Budget) -> Double {
+        var spent = 0.0
+        let history = TempHistoryStorageService.shared.openHistory(budget: budget)
+        history.forEach { spent += $0.amount }
+        return spent
+    }
     
     
     //MARK: - Private methods

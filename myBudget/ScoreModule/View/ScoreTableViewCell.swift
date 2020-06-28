@@ -52,7 +52,7 @@ final class ScoreTableViewCell: UITableViewCell {
     private func calculateSpent(budget: Budget) -> Double {
         var spent = 0.0
         let history = TempHistoryStorageService.shared.openHistory(budget: budget)
-        history.forEach { spent += $0.anount }
+        history.forEach { spent += $0.amount }
         return spent
     }
 

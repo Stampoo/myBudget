@@ -15,6 +15,7 @@ final class AddPresenter {
     var view: AddViewInput?
     var router: AddViewRouterInput?
     var moduleOutput: ModuleOutput?
+    var transactionModuleOutput: TransactionModuleOutput?
 
 }
 
@@ -23,7 +24,16 @@ final class AddPresenter {
 
 extension AddPresenter: AddViewOutput {
 
-    func reload() {}
+    func reload() {
+        guard let _ = transactionModuleOutput?.isTransactionAdd(answer: { (answer) in
+            if answer {
+                view?.configureDate()
+            }
+        }) else {
+             view?.configureCurrency()
+            return
+        }
+    }
 
     func viewLoaded() {}
 
@@ -35,6 +45,11 @@ extension AddPresenter: AddViewOutput {
     func pop(with newBudget: Budget) {
         moduleOutput?.moduleOutput(with: newBudget)
         router?.popModule()
+    }
+
+    func dismiss(with newTransaction: Transaction) {
+        transactionModuleOutput?.moduleOutput(with: newTransaction)
+        router?.dismiss()
     }
 
 }

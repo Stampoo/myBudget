@@ -57,14 +57,20 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     }
 
     private func configureAddButton() {
-        let button = UIButton(type: .contactAdd)
-        button.setTitleColor(.black, for: .normal)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
-        button.addTarget(self, action: #selector(addNewBudget), for: .touchUpInside)
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewBudget))
+        navigationItem.rightBarButtonItem = addButton
+        navigationItem.rightBarButtonItem?.tintColor = .black
+        let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(pop))
+        navigationItem.backBarButtonItem = backBarButtton
+        navigationItem.backBarButtonItem?.tintColor = .white
+    }
+
+    @objc private func pop() {
+        popModule(animated: true)
     }
 
     @objc private func addNewBudget() {
-        output?.pushModule()
+        output?.presentModule()
     }
     
 }

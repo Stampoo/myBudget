@@ -1,5 +1,5 @@
 //
-//  TransactionRouter.swift
+//  AddTransactionRouter.swift
 //  myBudget
 //
 //  Created by fivecoil on 28/06/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class TransactionRouter {
+final class AddTransactionRouter {
 
     //MARK: - Public properties
 
@@ -19,14 +19,11 @@ final class TransactionRouter {
 
 //MARK: - Extensions
 
-extension TransactionRouter: TransactionViewRouterInput {
+extension AddTransactionRouter: AddTransactionViewRouterInput {
 
     func pushModule() {}
 
-    func presentModule(with moduleOutput: TransactionModuleOutput) {
-        let addModule = AddConfigurator().configureModule(with: moduleOutput)
-        view?.presentModule(module: addModule, animated: true, completion: nil)
-    }
+    func presentModule() {}
 
     func dismiss() {
         view?.dismiss(completion: nil)

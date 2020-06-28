@@ -10,7 +10,9 @@ import Foundation
 
 protocol AddViewInput: class {
 
-    func configure()
+    func configureDate()
+
+    func configureCurrency()
 
     func setupInitialState()
 
@@ -23,6 +25,8 @@ protocol AddViewOutput: class {
     func viewLoaded()
 
     func dismiss(with newBudget: Budget)
+
+    func dismiss(with newTransaction: Transaction)
 
     func pop(with newBudget: Budget)
 

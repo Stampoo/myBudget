@@ -14,7 +14,9 @@ final class AddViewController: UIViewController, ModuleTransitionable {
 
     private enum Constants {
         static let pickerAnimationDuration = 0.5
-        static let createButtonTitle = "Create budget"
+        static let namePlaceHolder = "Type name of ur budget"
+        static let amountPlaceHolder = "Type amount"
+        static let createButtonTitle = "Create"
     }
 
     //MARK: - IBOutlets
@@ -23,6 +25,7 @@ final class AddViewController: UIViewController, ModuleTransitionable {
     @IBOutlet private weak var amountMonth: UITextField!
     @IBOutlet private weak var currencyButton: UIButton!
     @IBOutlet private weak var createButton: UIButton!
+    @IBOutlet private weak var dateLabel: UILabel!
 
 
     //MARK: - Public properties
@@ -33,25 +36,35 @@ final class AddViewController: UIViewController, ModuleTransitionable {
     //MARK: - Private properties
 
     private var currencyList: [Currency] = [.bRuble, .euro, .ruble, .USD]
+    private var currencyDate = Date()
     private let picker = UIPickerView()
+    private let datePicker = UIDatePicker()
     private var pickerIsHidden = true
     private var currentCurency: Currency?
+    private var isTransactionMode = false
 
 
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateLabel.isHidden = true
+        dateLabel.text = ""
+        output?.reload()
+        configureFields()
         configureCurrencyPicker()
         configureCurrencyButton()
         configureCreateButton()
-        modalPresentationStyle = .fullScreen
     }
 
 
     //MARK: - Private methods
 
-    private func configureLables() {
+    private func configureFields() {
+        nameBudget.borderStyle = .none
+        nameBudget.placeholder = Constants.namePlaceHolder
+        amountMonth.borderStyle = .none
+        amountMonth.placeholder = Constants.amountPlaceHolder
     }
 
     private func configureCurrencyPicker() {
@@ -67,30 +80,31 @@ final class AddViewController: UIViewController, ModuleTransitionable {
 
     private func configureCurrencyButton() {
         currencyButton.addTarget(self, action: #selector(appearPicker), for: .touchUpInside)
-        currencyButton.backgroundColor = .cyan
-        currencyButton.layer.cornerRadius = currencyButton.frame.height / 2
+        currencyButton.backgroundColor = UIColor().getCustom(color: .indigo)
+        currencyButton.layer.cornerRadius = currencyButton.frame.height / 4
         currencyButton.setTitleColor(.white, for: .normal)
     }
 
     @objc private func appearPicker() {
+        let pickerView = isTransactionMode ? datePicker : picker
         switch pickerIsHidden {
         case true:
-            animatePicker(isHidden: true, duration: Constants.pickerAnimationDuration)
+            animatePicker(isHidden: true, duration: Constants.pickerAnimationDuration, picker: pickerView)
             pickerIsHidden = !pickerIsHidden
         case false:
-            animatePicker(isHidden: false, duration: Constants.pickerAnimationDuration)
+            animatePicker(isHidden: false, duration: Constants.pickerAnimationDuration, picker: pickerView)
             pickerIsHidden = !pickerIsHidden
         }
     }
 
-    private func animatePicker(isHidden: Bool, duration: Double) {
+    private func animatePicker(isHidden: Bool, duration: Double, picker: UIView) {
         let viewHeight = view.bounds.height
         let animation = UIViewPropertyAnimator(duration: duration, curve: .linear, animations: {})
         animation.addAnimations {
             if isHidden {
-                self.picker.transform = CGAffineTransform(translationX: 0, y: viewHeight * -0.4)
+                picker.transform = CGAffineTransform(translationX: 0, y: viewHeight * -0.4)
             } else {
-                self.picker.transform = CGAffineTransform(translationX: 0, y: viewHeight * 0.4)
+                picker.transform = CGAffineTransform(translationX: 0, y: viewHeight * 0.4)
             }
         }
         animation.startAnimation()
@@ -102,10 +116,29 @@ final class AddViewController: UIViewController, ModuleTransitionable {
         createButton.setTitle(Constants.createButtonTitle, for: .normal)
         createButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
         createButton.layer.cornerRadius = createButton.frame.height / 4
-        createButton.addTarget(self, action: #selector(dismissAndCreateBudget), for: .touchUpInside)
+        createButton.addTarget(self, action: #selector(dismissAndCreate), for: .touchUpInside)
     }
 
-    @objc private func dismissAndCreateBudget() {
+    @objc private func dismissAndCreate() {
+        switch isTransactionMode {
+        case true:
+            createTransaction()
+        case false:
+            createBudget()
+        }
+    }
+
+    private func createTransaction() {
+        guard let name = nameBudget.text,
+            let amount = amountMonth.text,
+            let amountDouble = Double(amount) else {
+                return
+        }
+        let transaction = Transaction(name: name, amount: amountDouble, date: currencyDate)
+        output?.dismiss(with: transaction)
+    }
+
+    private func createBudget() {
         guard let name = nameBudget.text,
             let amount = amountMonth.text,
             let amountDouble = Double(amount),
@@ -113,7 +146,25 @@ final class AddViewController: UIViewController, ModuleTransitionable {
                 return
         }
         let budget = Budget(name: name, amount: amountDouble, currency: currency)
-        output?.pop(with: budget)
+        output?.dismiss(with: budget)
+
+    }
+
+    private func createDatePicker() {
+        let pickerFrame = CGRect(x: 0,
+                                 y: view.bounds.height,
+                                 width: view.bounds.width,
+                                 height: view.bounds.height * 0.4)
+        datePicker.frame = pickerFrame
+        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        view.addSubview(datePicker)
+    }
+
+    @objc private func dateChanged(target: UIDatePicker) {
+        let fromat = "EEEE, MMM d, yyyy"
+        let formattingDate = target.date.getFormattedDate(format: fromat)
+        currencyDate = target.date
+        dateLabel.text = formattingDate
     }
 
 }
@@ -123,7 +174,18 @@ final class AddViewController: UIViewController, ModuleTransitionable {
 
 extension AddViewController: AddViewInput {
 
-    func configure() {}
+    func configureCurrency() {
+        currencyButton.setTitle("Currency", for: .normal)
+        print("currency")
+    }
+
+    func configureDate() {
+        currencyButton.setTitle("Date", for: .normal)
+        print("date")
+        isTransactionMode = true
+        createDatePicker()
+        dateLabel.isHidden = false
+    }
 
     func setupInitialState() {}
 
@@ -150,7 +212,7 @@ extension AddViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currencyButton.setTitle(currencyList[row].rawValue, for: .normal)
         currentCurency = currencyList[row]
-        animatePicker(isHidden: false, duration: Constants.pickerAnimationDuration)
+        animatePicker(isHidden: false, duration: Constants.pickerAnimationDuration, picker: picker)
         pickerIsHidden = !pickerIsHidden
     }
 

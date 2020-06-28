@@ -20,6 +20,16 @@
 		347F60BC24A64E2B0012BB7D /* AddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60BB24A64E2B0012BB7D /* AddRouter.swift */; };
 		347F60BF24A64E670012BB7D /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60BD24A64E670012BB7D /* AddViewController.swift */; };
 		347F60C024A64E670012BB7D /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347F60BE24A64E670012BB7D /* AddViewController.xib */; };
+		34922EA524A8BD9E00F0AE9F /* AddTransactionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EA424A8BD9E00F0AE9F /* AddTransactionConfigurator.swift */; };
+		34922EA724A8BDAE00F0AE9F /* AddTransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EA624A8BDAE00F0AE9F /* AddTransactionPresenter.swift */; };
+		34922EA924A8BDB800F0AE9F /* AddTransactionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EA824A8BDB800F0AE9F /* AddTransactionProtocols.swift */; };
+		34922EAB24A8BDC200F0AE9F /* AddTransactionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EAA24A8BDC200F0AE9F /* AddTransactionRouter.swift */; };
+		34922EAE24A8BDCF00F0AE9F /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EAC24A8BDCF00F0AE9F /* AddTransactionViewController.swift */; };
+		34922EAF24A8BDCF00F0AE9F /* AddTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34922EAD24A8BDCF00F0AE9F /* AddTransactionViewController.xib */; };
+		34922EB424A8E64300F0AE9F /* ModuleTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EB324A8E64300F0AE9F /* ModuleTransitionable.swift */; };
+		34922EB724A8EBF800F0AE9F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EB624A8EBF800F0AE9F /* Date.swift */; };
+		34922EBC24A8F3B200F0AE9F /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EBA24A8F3B200F0AE9F /* TransactionTableViewCell.swift */; };
+		34922EBD24A8F3B200F0AE9F /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34922EBB24A8F3B200F0AE9F /* TransactionTableViewCell.xib */; };
 		34C24DB924A62C00006AE65E /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C24DB724A62C00006AE65E /* ScoreTableViewCell.swift */; };
 		34C24DBA24A62C00006AE65E /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C24DB824A62C00006AE65E /* ScoreTableViewCell.xib */; };
 		34F2864B24A527A100D7C509 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2864A24A527A100D7C509 /* AppDelegate.swift */; };
@@ -31,11 +41,10 @@
 		34F2866624A5331700D7C509 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866524A5331700D7C509 /* RequestBuilder.swift */; };
 		34F2866924A5D74100D7C509 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866824A5D74100D7C509 /* Score.swift */; };
 		34F2866B24A5DA2F00D7C509 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866A24A5DA2F00D7C509 /* Currency.swift */; };
-		34F2866D24A5E5FD00D7C509 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866C24A5E5FD00D7C509 /* History.swift */; };
+		34F2866D24A5E5FD00D7C509 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866C24A5E5FD00D7C509 /* Transaction.swift */; };
 		34F2866F24A5E62E00D7C509 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866E24A5E62E00D7C509 /* Category.swift */; };
 		34F2867324A5E87700D7C509 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2867224A5E87700D7C509 /* ScoreViewController.swift */; };
 		34F2867624A5EA7200D7C509 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2867524A5EA7200D7C509 /* Protocols.swift */; };
-		34F2867A24A5EA9600D7C509 /* ModuleTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2867924A5EA9600D7C509 /* ModuleTransitionable.swift */; };
 		34F2867F24A5F59A00D7C509 /* ScorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2867E24A5F59A00D7C509 /* ScorePresenter.swift */; };
 		34F2868124A5F62100D7C509 /* ScoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868024A5F62100D7C509 /* ScoreRouter.swift */; };
 		34F2868324A5F74900D7C509 /* ScoreConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2868224A5F74900D7C509 /* ScoreConfigurator.swift */; };
@@ -59,6 +68,16 @@
 		347F60BB24A64E2B0012BB7D /* AddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouter.swift; sourceTree = "<group>"; };
 		347F60BD24A64E670012BB7D /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		347F60BE24A64E670012BB7D /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
+		34922EA424A8BD9E00F0AE9F /* AddTransactionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionConfigurator.swift; sourceTree = "<group>"; };
+		34922EA624A8BDAE00F0AE9F /* AddTransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionPresenter.swift; sourceTree = "<group>"; };
+		34922EA824A8BDB800F0AE9F /* AddTransactionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionProtocols.swift; sourceTree = "<group>"; };
+		34922EAA24A8BDC200F0AE9F /* AddTransactionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionRouter.swift; sourceTree = "<group>"; };
+		34922EAC24A8BDCF00F0AE9F /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
+		34922EAD24A8BDCF00F0AE9F /* AddTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTransactionViewController.xib; sourceTree = "<group>"; };
+		34922EB324A8E64300F0AE9F /* ModuleTransitionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTransitionable.swift; sourceTree = "<group>"; };
+		34922EB624A8EBF800F0AE9F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		34922EBA24A8F3B200F0AE9F /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		34922EBB24A8F3B200F0AE9F /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 		34C24DB724A62C00006AE65E /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		34C24DB824A62C00006AE65E /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
 		34F2864724A527A100D7C509 /* myBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,11 +91,10 @@
 		34F2866524A5331700D7C509 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		34F2866824A5D74100D7C509 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		34F2866A24A5DA2F00D7C509 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
-		34F2866C24A5E5FD00D7C509 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		34F2866C24A5E5FD00D7C509 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		34F2866E24A5E62E00D7C509 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		34F2867224A5E87700D7C509 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		34F2867524A5EA7200D7C509 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		34F2867924A5EA9600D7C509 /* ModuleTransitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTransitionable.swift; sourceTree = "<group>"; };
 		34F2867E24A5F59A00D7C509 /* ScorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePresenter.swift; sourceTree = "<group>"; };
 		34F2868024A5F62100D7C509 /* ScoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRouter.swift; sourceTree = "<group>"; };
 		34F2868224A5F74900D7C509 /* ScoreConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreConfigurator.swift; sourceTree = "<group>"; };
@@ -122,6 +140,8 @@
 			children = (
 				342E486924A7EB51004B39D3 /* TransactionViewController.swift */,
 				342E486A24A7EB51004B39D3 /* TransactionViewController.xib */,
+				34922EBA24A8F3B200F0AE9F /* TransactionTableViewCell.swift */,
+				34922EBB24A8F3B200F0AE9F /* TransactionTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,14 +170,83 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		34922E9E24A8BD6A00F0AE9F /* AddTransactionModule */ = {
+			isa = PBXGroup;
+			children = (
+				34922EA224A8BD8100F0AE9F /* Protocols */,
+				34922EA124A8BD8100F0AE9F /* Presenter */,
+				34922EA324A8BD8200F0AE9F /* View */,
+				34922EA024A8BD8100F0AE9F /* Router */,
+				34922E9F24A8BD8100F0AE9F /* Configurator */,
+			);
+			path = AddTransactionModule;
+			sourceTree = "<group>";
+		};
+		34922E9F24A8BD8100F0AE9F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				34922EA424A8BD9E00F0AE9F /* AddTransactionConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		34922EA024A8BD8100F0AE9F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				34922EAA24A8BDC200F0AE9F /* AddTransactionRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		34922EA124A8BD8100F0AE9F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				34922EA624A8BDAE00F0AE9F /* AddTransactionPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		34922EA224A8BD8100F0AE9F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				34922EA824A8BDB800F0AE9F /* AddTransactionProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		34922EA324A8BD8200F0AE9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				34922EAC24A8BDCF00F0AE9F /* AddTransactionViewController.swift */,
+				34922EAD24A8BDCF00F0AE9F /* AddTransactionViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		34922EB224A8E62500F0AE9F /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				34922EB524A8E64C00F0AE9F /* Protocols */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		34922EB524A8E64C00F0AE9F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				34922EB324A8E64300F0AE9F /* ModuleTransitionable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		34C24DBB24A64C01006AE65E /* AddModule */ = {
 			isa = PBXGroup;
 			children = (
-				34C24DC424A64CA2006AE65E /* Configurator */,
-				34C24DBC24A64CA2006AE65E /* Presenter */,
 				34C24DBE24A64CA2006AE65E /* Protocols */,
-				34C24DC624A64CA2006AE65E /* Router */,
+				34C24DBC24A64CA2006AE65E /* Presenter */,
 				34C24DC024A64CA2006AE65E /* View */,
+				34C24DC624A64CA2006AE65E /* Router */,
+				34C24DC424A64CA2006AE65E /* Configurator */,
 			);
 			path = AddModule;
 			sourceTree = "<group>";
@@ -223,12 +312,13 @@
 			isa = PBXGroup;
 			children = (
 				34F2868624A6021100D7C509 /* Library */,
-				34F2867724A5EA8000D7C509 /* Basic */,
+				34922EB224A8E62500F0AE9F /* Basic */,
 				34F2866024A52DFD00D7C509 /* Service */,
 				34F2868C24A60FAA00D7C509 /* Model */,
 				34F2867024A5E84500D7C509 /* ScoreModule */,
 				34C24DBB24A64C01006AE65E /* AddModule */,
 				342E485F24A7E8AE004B39D3 /* TransactionModule */,
+				34922E9E24A8BD6A00F0AE9F /* AddTransactionModule */,
 				34F2865F24A528DD00D7C509 /* Resource */,
 				34F2865E24A5283000D7C509 /* Application */,
 			);
@@ -304,22 +394,6 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		34F2867724A5EA8000D7C509 /* Basic */ = {
-			isa = PBXGroup;
-			children = (
-				34F2867824A5EA8500D7C509 /* Protocols */,
-			);
-			path = Basic;
-			sourceTree = "<group>";
-		};
-		34F2867824A5EA8500D7C509 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				34F2867924A5EA9600D7C509 /* ModuleTransitionable.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		34F2867B24A5F4F200D7C509 /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +431,7 @@
 			children = (
 				34F2868824A6022D00D7C509 /* UIVIew.swift */,
 				341D2D2624A74AD1007C5979 /* UIColor.swift */,
+				34922EB624A8EBF800F0AE9F /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,7 +439,7 @@
 		34F2868C24A60FAA00D7C509 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				34F2866C24A5E5FD00D7C509 /* History.swift */,
+				34F2866C24A5E5FD00D7C509 /* Transaction.swift */,
 				34F2866E24A5E62E00D7C509 /* Category.swift */,
 				34F2866A24A5DA2F00D7C509 /* Currency.swift */,
 				34F2869024A612BF00D7C509 /* Budget.swift */,
@@ -443,7 +518,9 @@
 				34F2865424A527A400D7C509 /* Assets.xcassets in Resources */,
 				347F60C024A64E670012BB7D /* AddViewController.xib in Resources */,
 				34C24DBA24A62C00006AE65E /* ScoreTableViewCell.xib in Resources */,
+				34922EAF24A8BDCF00F0AE9F /* AddTransactionViewController.xib in Resources */,
 				34F2865224A527A100D7C509 /* Main.storyboard in Resources */,
+				34922EBD24A8F3B200F0AE9F /* TransactionTableViewCell.xib in Resources */,
 				342E486C24A7EB51004B39D3 /* TransactionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,19 +537,24 @@
 				347F60BF24A64E670012BB7D /* AddViewController.swift in Sources */,
 				34F2867324A5E87700D7C509 /* ScoreViewController.swift in Sources */,
 				347F60B624A64D4A0012BB7D /* AddPresenter.swift in Sources */,
+				34922EB424A8E64300F0AE9F /* ModuleTransitionable.swift in Sources */,
+				34922EAB24A8BDC200F0AE9F /* AddTransactionRouter.swift in Sources */,
+				34922EB724A8EBF800F0AE9F /* Date.swift in Sources */,
 				34F2868F24A6120A00D7C509 /* TempBudgetStorageService.swift in Sources */,
 				34F2868124A5F62100D7C509 /* ScoreRouter.swift in Sources */,
 				34F2868B24A602F800D7C509 /* TempHistoryStorageService.swift in Sources */,
+				34922EA924A8BDB800F0AE9F /* AddTransactionProtocols.swift in Sources */,
 				347F60BA24A64DBA0012BB7D /* AddProtocols.swift in Sources */,
 				342E486824A7E94D004B39D3 /* TransactionPresenter.swift in Sources */,
+				34922EAE24A8BDCF00F0AE9F /* AddTransactionViewController.swift in Sources */,
+				34922EBC24A8F3B200F0AE9F /* TransactionTableViewCell.swift in Sources */,
 				34F2867F24A5F59A00D7C509 /* ScorePresenter.swift in Sources */,
 				34F2866624A5331700D7C509 /* RequestBuilder.swift in Sources */,
-				34F2867A24A5EA9600D7C509 /* ModuleTransitionable.swift in Sources */,
 				347F60B824A64D7D0012BB7D /* AddConfigurator.swift in Sources */,
 				34F2867624A5EA7200D7C509 /* Protocols.swift in Sources */,
 				342E487024A7ED2C004B39D3 /* TransactionConfigurator.swift in Sources */,
 				342E486B24A7EB51004B39D3 /* TransactionViewController.swift in Sources */,
-				34F2866D24A5E5FD00D7C509 /* History.swift in Sources */,
+				34F2866D24A5E5FD00D7C509 /* Transaction.swift in Sources */,
 				34F2866B24A5DA2F00D7C509 /* Currency.swift in Sources */,
 				34F2869124A612BF00D7C509 /* Budget.swift in Sources */,
 				34F2864B24A527A100D7C509 /* AppDelegate.swift in Sources */,
@@ -481,10 +563,12 @@
 				34F2866224A52EC700D7C509 /* Support.swift in Sources */,
 				34F2866424A52FD500D7C509 /* LInkCalculator.swift in Sources */,
 				347F60BC24A64E2B0012BB7D /* AddRouter.swift in Sources */,
+				34922EA524A8BD9E00F0AE9F /* AddTransactionConfigurator.swift in Sources */,
 				34F2868324A5F74900D7C509 /* ScoreConfigurator.swift in Sources */,
 				342E486E24A7ECF1004B39D3 /* TransactionRouter.swift in Sources */,
 				342E486624A7E91D004B39D3 /* TransactionProtocols.swift in Sources */,
 				34F2866924A5D74100D7C509 /* Score.swift in Sources */,
+				34922EA724A8BDAE00F0AE9F /* AddTransactionPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

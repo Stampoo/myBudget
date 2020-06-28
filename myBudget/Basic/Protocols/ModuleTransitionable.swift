@@ -30,7 +30,7 @@ extension ModuleTransitionable where Self: UIViewController {
     }
     
     func dismiss(completion: EmptyColser?) {
-        self.dismiss(completion: nil)
+        self.dismiss(animated: true, completion: completion)
     }
     
     func pushModule(module: UIViewController, animated: Bool) {
