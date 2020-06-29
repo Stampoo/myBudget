@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Budget: Codable {
+struct Budget: Codable, Equatable {
     let name: String
-    let amount: Double
+    var amount: Double
     let currency: Currency
 }

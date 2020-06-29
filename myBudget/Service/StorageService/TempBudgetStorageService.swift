@@ -39,16 +39,20 @@ final class TempBudgetStorageService {
     
     func addBudgetInList(budget: Budget) {
         var budgetList = openBudgetList()
-        budgetList.append(budget)
-        let encodedBudgetList = encodingBudgetList(budgetList: budgetList)
-        storage.set(encodedBudgetList, forKey: Constants.budgetList)
+        if let index = isInStorage(budget: budget) {
+            saveInStorage(budget: budget, index: index)
+        } else {
+            budgetList.append(budget)
+            let encodedBudgetList = encodingBudgetList(budgetList: budgetList)
+            storage.set(encodedBudgetList, forKey: Constants.budgetList)
+        }
     }
 
     func saveBudgetList(budgetList: [Budget]) {
         let encodedBudgetList = encodingBudgetList(budgetList: budgetList)
         storage.set(encodedBudgetList, forKey: Constants.budgetList)
     }
-    
+
     
     //MARK: - Private methods
     
@@ -72,6 +76,45 @@ final class TempBudgetStorageService {
             decodedBudgetList.append(decodedBudget)
         }
         return decodedBudgetList
+    }
+
+    private func saveInStorage(budget: Budget, index: Int) {
+           if let currentIndex = isInStorage(budget: budget) {
+               let (_, _) = delete(budget: budget)
+               save(budget: budget, index: currentIndex)
+           } else {
+               save(budget: budget, index: index)
+           }
+       }
+
+    private func delete(budget: Budget) -> (Int, Budget?) {
+        var deletingBudget: (Int, Budget?) = (0, nil)
+        var budgetList = openBudgetList()
+        for oldBudget in budgetList {
+            if oldBudget.name == budget.name,
+                let index = budgetList.firstIndex(of: budget) {
+                deletingBudget = (index, oldBudget)
+                budgetList.remove(at: index)
+                let encodedBudget = encodingBudgetList(budgetList: budgetList)
+                storage.set(encodedBudget, forKey: Constants.budgetList)
+            }
+        }
+        return deletingBudget
+    }
+
+    private func isInStorage(budget: Budget) -> Int? {
+        let budgetList = openBudgetList()
+        if let index = budgetList.firstIndex(of: budget) {
+            return index
+        }
+        return nil
+    }
+
+    private func save(budget: Budget, index: Int) {
+        var budgetList = openBudgetList()
+        budgetList.insert(budget, at: index)
+        let encodingBudget = encodingBudgetList(budgetList: budgetList)
+        storage.set(encodingBudget, forKey: Constants.budgetList)
     }
     
 }

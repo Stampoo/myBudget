@@ -28,6 +28,11 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     @IBOutlet private weak var budgetSpentLabel: UILabel!
     @IBOutlet private weak var sortButton: UIButton!
 
+    @IBOutlet private weak var cancelButton: UIButton!
+    @IBOutlet private weak var toButton: UIButton!
+    @IBOutlet private weak var amountTextField: UITextField!
+    @IBOutlet private weak var sendButton: UIButton!
+
 
     //MARK: - Public properties
 
@@ -37,12 +42,18 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     //MARK: - Private properties
 
     private var transactionHistory = [Transaction]()
+    private var isTransferMode = false
+    private let budgetPicker = UIPickerView()
+    private let budgetList = TempBudgetStorageService.shared.openBudgetList()
 
 
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTransferViews()
+        createPicker()
+        transferMode(isTransfer: isTransferMode)
         output?.viewLoaded()
         configureFilterButton()
         configreTransferButton()
@@ -53,6 +64,27 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
 
 
     //MARK: - Privat methods
+
+    private func configureTransferViews() {
+        let buttons = [
+            cancelButton,
+            toButton,
+            amountTextField,
+            sendButton
+        ]
+        buttons.forEach { $0?.layer.cornerRadius = ($0?.frame.height ?? 0) / 4 }
+        cancelButton.addTarget(self, action: #selector(enableTransfer), for: .touchUpInside)
+    }
+
+    private func createPicker() {
+        let frame = CGRect(x: 0,
+                           y: view.frame.height,
+                           width: view.frame.width,
+                           height: view.frame.height * 0.4)
+        budgetPicker.frame = frame
+        budgetPicker.dataSource = self
+        budgetPicker.delegate = self
+    }
 
     private func configureTable() {
         let nib = UINib(nibName: Constants.cellNib, bundle: nil)
@@ -89,7 +121,15 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         transferButton.setTitleColor(.white, for: .normal)
         transferButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
         transferButton.layer.cornerRadius = transferButton.frame.height / 4
+        transferButton.addTarget(self, action: #selector(enableTransfer), for: .touchUpInside)
     }
+
+    @objc private func enableTransfer() {
+        isTransferMode = !isTransferMode
+        transferMode(isTransfer: isTransferMode)
+        transferButton.isHidden = isTransferMode
+    }
+
 
     private func configureFilterButton() {
         sortButton.tintColor = .white
@@ -140,3 +180,37 @@ extension TransactionViewController: UITableViewDataSource {
 }
 
 extension TransactionViewController: UITableViewDelegate {}
+
+extension TransactionViewController {
+
+    private func transferMode(isTransfer: Bool) {
+        let transferView =  [
+            cancelButton,
+            toButton,
+            amountTextField,
+            sendButton
+        ]
+        transferView.forEach { $0?.isHidden = !isTransfer }
+    }
+
+}
+
+extension TransactionViewController: UIPickerViewDataSource {
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        budgetList.count
+    }
+
+}
+
+extension TransactionViewController: UIPickerViewDelegate {
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        budgetList[row].name
+    }
+
+}
