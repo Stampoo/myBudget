@@ -193,6 +193,12 @@ extension TransactionViewController {
         transferView.forEach { $0?.isHidden = !isTransfer }
     }
 
+    @objc private func animateView() {}
+
+    private func appearPicker(picker: UIView) {
+        let transform = CGAffineTransform(translationX: 0, y: view.frame.height * -0.4)
+    }
+
 }
 
 extension TransactionViewController: UIPickerViewDataSource {
