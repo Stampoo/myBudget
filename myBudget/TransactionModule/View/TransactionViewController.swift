@@ -45,6 +45,9 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     private var isTransferMode = false
     private let budgetPicker = UIPickerView()
     private let budgetList = TempBudgetStorageService.shared.openBudgetList()
+    private var isChoiseREcipient = false
+    private var toBudget: Budget?
+    private var fromBudget: Budget?
 
 
     //MARK: - Lifecycle
@@ -74,6 +77,21 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         ]
         buttons.forEach { $0?.layer.cornerRadius = ($0?.frame.height ?? 0) / 4 }
         cancelButton.addTarget(self, action: #selector(enableTransfer), for: .touchUpInside)
+        toButton.addTarget(self, action: #selector(choiseRecipient), for: .touchUpInside)
+        sendButton.addTarget(self, action: #selector(createTransfer), for: .touchUpInside)
+    }
+
+    @objc private func createTransfer() {
+        guard let toBudget = toBudget,
+            let amount = amountTextField.text,
+            let amountDouble = Double(amount),
+            let fromBudget = fromBudget else {
+                return
+        }
+        let transferService = Transfer()
+        transferService.trasferMoney(from: fromBudget, to: toBudget, amount: amountDouble)
+        enableTransfer()
+        tableView.reloadData()
     }
 
     private func createPicker() {
@@ -84,6 +102,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         budgetPicker.frame = frame
         budgetPicker.dataSource = self
         budgetPicker.delegate = self
+        view.addSubview(budgetPicker)
     }
 
     private func configureTable() {
@@ -146,6 +165,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
 extension TransactionViewController: TransactionViewInput {
     
     func configure(with budget: Budget) {
+        fromBudget = budget
         let historyStorage = TempHistoryStorageService.shared
         nameBudgetLabel.text = budget.name
         budgetAmountLabel.text = "Budget: \(budget.amount)"
@@ -193,10 +213,19 @@ extension TransactionViewController {
         transferView.forEach { $0?.isHidden = !isTransfer }
     }
 
-    @objc private func animateView() {}
+    @objc private func choiseRecipient() {
+        appearPicker(picker: budgetPicker)
+    }
 
     private func appearPicker(picker: UIView) {
-        let transform = CGAffineTransform(translationX: 0, y: view.frame.height * -0.4)
+        let position: CGFloat = !isChoiseREcipient ? -0.4 : 0.4
+        let transform = CGAffineTransform(translationX: 0, y: view.frame.height * position)
+        let animation = UIViewPropertyAnimator(duration: 0.5, curve: .linear, animations: nil)
+        animation.addAnimations {
+            picker.transform = transform
+            self.isChoiseREcipient = !self.isChoiseREcipient
+        }
+        animation.startAnimation()
     }
 
 }
@@ -217,6 +246,13 @@ extension TransactionViewController: UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         budgetList[row].name
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let choosenBudget = budgetList[row]
+        toBudget = choosenBudget
+        toButton.setTitle(choosenBudget.name, for: .normal)
+        appearPicker(picker: budgetPicker)
     }
 
 }
