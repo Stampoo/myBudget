@@ -79,6 +79,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         cancelButton.addTarget(self, action: #selector(enableTransfer), for: .touchUpInside)
         toButton.addTarget(self, action: #selector(choiseRecipient), for: .touchUpInside)
         sendButton.addTarget(self, action: #selector(createTransfer), for: .touchUpInside)
+        amountTextField.keyboardType = .numberPad
     }
 
     @objc private func createTransfer() {
