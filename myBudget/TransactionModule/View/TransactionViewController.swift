@@ -92,7 +92,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         let transferService = Transfer()
         transferService.trasferMoney(from: fromBudget, to: toBudget, amount: amountDouble)
         enableTransfer()
-        tableView.reloadData()
+        output?.reload()
     }
 
     private func createPicker() {

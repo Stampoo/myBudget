@@ -29,7 +29,14 @@ final class TransactionPresenter {
 
 extension TransactionPresenter: TransactionViewOutput {
 
-    func reload() {}
+    func reload() {
+        guard let budget = budget else {
+            return
+        }
+        let transactionHistory = transactionStorage.openHistory(budget: budget)
+        view?.setupInitialState(with: transactionHistory)
+        view?.configure(with: budget)
+    }
 
     func viewLoaded() {
         moduleOutput?.transitionBudget(completion: { (budget) in

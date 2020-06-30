@@ -27,7 +27,7 @@ final class TransactionTableViewCell: UITableViewCell {
     //MARK: - Public methods
 
     func configureCell(with transaction: Transaction) {
-        targetLabel.text = ""
+        targetLabel.text = transaction.name
         dateLabel.text = transaction.date.getFormattedDate(format: "EEEE, MMM d, yyyy")
         amountLabel.text = "\(transaction.amount)"
     }

@@ -34,7 +34,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     override func viewDidLoad() {
         super.viewDidLoad()
         output?.viewLoaded()
-        configureScoreCollection()
+        configureTableView()
         configurateNavbar()
         configureAddButton()
     }
@@ -47,12 +47,13 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     
     //MARK: - Private methods
     
-    private func configureScoreCollection() {
+    private func configureTableView() {
         let nib = UINib(nibName: Constants.nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: Constants.cellIdentifire)
         tableView.frame = view.bounds
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = .none
         view.addSubview(tableView)
     }
 
@@ -101,10 +102,6 @@ extension ScoreViewController: UITableViewDataSource {
 }
 
 extension ScoreViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.bounds.height / 8
-    }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

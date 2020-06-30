@@ -13,36 +13,41 @@ final class ScoreTableViewCell: UITableViewCell {
     //MARK: - Constants
 
     private enum Constants {
-        static let monthTitle = "Month budget"
-        static let spentTtitle = "Spent budget"
+        static let monthTitle = "Budget"
+        static let spentTtitle = "Spent from this budget"
     }
 
     //MARK: - IBOutlets
 
-    @IBOutlet private weak var budgetTitle: UILabel!
     @IBOutlet private weak var budgetAmount: UILabel!
+    @IBOutlet private weak var budgetTitle: UILabel!
     @IBOutlet private weak var spentTitle: UILabel!
     @IBOutlet private weak var spentAmount: UILabel!
     @IBOutlet private weak var BudgetName: UILabel!
     @IBOutlet private weak var budgetBar: UIProgressView!
+    @IBOutlet private weak var colorView: UIView!
+    @IBOutlet private weak var cardView: UIView!
+    @IBOutlet private weak var categoryImageView: UIImageView!
 
 
     //MARK: - Lifecycle
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureCard()
+        configureLabels()
+        configureBar()
     }
 
 
     //MARK: - Public methods
 
     func configureCell(with budget: Budget) {
+        let symbol = budget.currency.rawValue
         BudgetName.text = budget.name
-        budgetTitle.text = Constants.monthTitle
-        budgetAmount.text = "\(budget.amount)"
-        spentTitle.text = Constants.spentTtitle
+        budgetAmount.text = "\(budget.amount) \(symbol)"
         let spent = calculateSpent(budget: budget)
-        spentAmount.text = "\(spent)"
+        spentAmount.text = "\(spent) \(symbol)"
         configureProgress(at: budget)
     }
 
@@ -57,7 +62,19 @@ final class ScoreTableViewCell: UITableViewCell {
     }
 
     private func configureLabels() {
+        budgetTitle.text = Constants.monthTitle
+        spentTitle.text = Constants.spentTtitle
+    }
 
+    private func configureBar() {
+    }
+
+    private func configureCard() {
+        selectionStyle = .none
+        cardView.layer.cornerRadius = cardView.frame.height / 8
+        cardView.clipsToBounds = true
+        colorView.addLightShadow()
+        colorView.clipsToBounds = false
     }
 
     private func configureProgress(at budget: Budget) {

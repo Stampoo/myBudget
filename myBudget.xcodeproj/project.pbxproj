@@ -16,6 +16,7 @@
 		342E486C24A7EB51004B39D3 /* TransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 342E486A24A7EB51004B39D3 /* TransactionViewController.xib */; };
 		342E486E24A7ECF1004B39D3 /* TransactionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342E486D24A7ECF1004B39D3 /* TransactionRouter.swift */; };
 		342E487024A7ED2C004B39D3 /* TransactionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342E486F24A7ED2C004B39D3 /* TransactionConfigurator.swift */; };
+		3467AD0724AB94D7002A706C /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467AD0624AB94D7002A706C /* Progress.swift */; };
 		347F60B624A64D4A0012BB7D /* AddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60B524A64D4A0012BB7D /* AddPresenter.swift */; };
 		347F60B824A64D7D0012BB7D /* AddConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60B724A64D7D0012BB7D /* AddConfigurator.swift */; };
 		347F60BA24A64DBA0012BB7D /* AddProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60B924A64DBA0012BB7D /* AddProtocols.swift */; };
@@ -66,6 +67,7 @@
 		342E486A24A7EB51004B39D3 /* TransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionViewController.xib; sourceTree = "<group>"; };
 		342E486D24A7ECF1004B39D3 /* TransactionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRouter.swift; sourceTree = "<group>"; };
 		342E486F24A7ED2C004B39D3 /* TransactionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfigurator.swift; sourceTree = "<group>"; };
+		3467AD0624AB94D7002A706C /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		347F60B524A64D4A0012BB7D /* AddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPresenter.swift; sourceTree = "<group>"; };
 		347F60B724A64D7D0012BB7D /* AddConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConfigurator.swift; sourceTree = "<group>"; };
 		347F60B924A64DBA0012BB7D /* AddProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProtocols.swift; sourceTree = "<group>"; };
@@ -181,6 +183,22 @@
 				342E486D24A7ECF1004B39D3 /* TransactionRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		3467AD0824AB9599002A706C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				34F2866324A52FD500D7C509 /* LInkCalculator.swift */,
+				34F2866524A5331700D7C509 /* RequestBuilder.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3467AD0D24ABB45A002A706C /* ColorService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ColorService;
 			sourceTree = "<group>";
 		};
 		34922E9E24A8BD6A00F0AE9F /* AddTransactionModule */ = {
@@ -363,9 +381,10 @@
 				34F2866724A5D72700D7C509 /* Count */,
 				34F2868D24A611DC00D7C509 /* StorageService */,
 				3427FAE424A9DF44006AC3B7 /* Transaction */,
+				3467AD0824AB9599002A706C /* Network */,
+				3467AD0D24ABB45A002A706C /* ColorService */,
 				34F2866124A52EC700D7C509 /* Support.swift */,
-				34F2866324A52FD500D7C509 /* LInkCalculator.swift */,
-				34F2866524A5331700D7C509 /* RequestBuilder.swift */,
+				3467AD0624AB94D7002A706C /* Progress.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -583,6 +602,7 @@
 				34F2868324A5F74900D7C509 /* ScoreConfigurator.swift in Sources */,
 				342E486E24A7ECF1004B39D3 /* TransactionRouter.swift in Sources */,
 				342E486624A7E91D004B39D3 /* TransactionProtocols.swift in Sources */,
+				3467AD0724AB94D7002A706C /* Progress.swift in Sources */,
 				34F2866924A5D74100D7C509 /* Score.swift in Sources */,
 				34922EA724A8BDAE00F0AE9F /* AddTransactionPresenter.swift in Sources */,
 			);
