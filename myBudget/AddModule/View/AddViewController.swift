@@ -65,6 +65,7 @@ final class AddViewController: UIViewController, ModuleTransitionable {
         nameBudget.placeholder = Constants.namePlaceHolder
         amountMonth.borderStyle = .none
         amountMonth.placeholder = Constants.amountPlaceHolder
+        amountMonth.keyboardType = .numberPad
     }
 
     private func configureCurrencyPicker() {
