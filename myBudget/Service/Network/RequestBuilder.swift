@@ -13,11 +13,13 @@ final class RequestBuilder {
     
     //MARK: - Public methods
     
-    func calculateRequest(by route: Router) {
+    func calculateRequest(by route: Router) -> URLRequest? {
         guard let url = URL(string: route.baseURL + route.path) else {
-            return
+            return nil
         }
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.httpMethod = route.method.rawValue
+        return request
     }
     
 }
