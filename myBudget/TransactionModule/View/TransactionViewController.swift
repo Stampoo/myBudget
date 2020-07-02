@@ -48,6 +48,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     private var isChoiseREcipient = false
     private var toBudget: Budget?
     private var fromBudget: Budget?
+    private var isDecrease = true
 
 
     //MARK: - Lifecycle
@@ -79,7 +80,19 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         cancelButton.addTarget(self, action: #selector(enableTransfer), for: .touchUpInside)
         toButton.addTarget(self, action: #selector(choiseRecipient), for: .touchUpInside)
         sendButton.addTarget(self, action: #selector(createTransfer), for: .touchUpInside)
+        sortButton.addTarget(self, action: #selector(sortTransaction), for: .touchUpInside)
         amountTextField.keyboardType = .numberPad
+    }
+
+    @objc private func sortTransaction() {
+        guard let budget = fromBudget else {
+            return
+        }
+        let sortService = TransactionFilter()
+        let sortedTransaction = sortService.filterBy(type: .date, to: budget)
+        transactionHistory = isDecrease ? sortedTransaction : sortedTransaction.reversed()
+        tableView.reloadData()
+        isDecrease = !isDecrease
     }
 
     @objc private func createTransfer() {
