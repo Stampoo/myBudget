@@ -114,6 +114,9 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
                            width: view.frame.width,
                            height: view.frame.height * 0.4)
         budgetPicker.frame = frame
+        budgetPicker.layer.cornerRadius = frame.height / 8
+        budgetPicker.addLightShadow()
+        budgetPicker.backgroundColor = .white
         budgetPicker.dataSource = self
         budgetPicker.delegate = self
         view.addSubview(budgetPicker)
@@ -229,6 +232,7 @@ extension TransactionViewController {
 
     @objc private func choiseRecipient() {
         appearPicker(picker: budgetPicker)
+        view.endEditing(true)
     }
 
     private func appearPicker(picker: UIView) {

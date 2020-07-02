@@ -17,6 +17,7 @@ final class AddViewController: UIViewController, ModuleTransitionable {
         static let namePlaceHolder = "Type name of ur budget"
         static let amountPlaceHolder = "Type amount"
         static let createButtonTitle = "Create"
+        static let fieldColor = UIColor.init(red: 240/255, green: 237/255, blue: 238/255, alpha: 1)
     }
 
     //MARK: - IBOutlets
@@ -26,6 +27,7 @@ final class AddViewController: UIViewController, ModuleTransitionable {
     @IBOutlet private weak var currencyButton: UIButton!
     @IBOutlet private weak var createButton: UIButton!
     @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
 
 
     //MARK: - Public properties
@@ -52,6 +54,7 @@ final class AddViewController: UIViewController, ModuleTransitionable {
         dateLabel.text = ""
         output?.reload()
         configureFields()
+        configureLabels()
         configureCurrencyPicker()
         configureCurrencyButton()
         configureCreateButton()
@@ -60,10 +63,17 @@ final class AddViewController: UIViewController, ModuleTransitionable {
 
     //MARK: - Private methods
 
+    private func configureLabels() {
+        titleLabel.font = .boldSystemFont(ofSize: 25)
+        titleLabel.textAlignment = .center
+    }
+
     private func configureFields() {
-        nameBudget.borderStyle = .none
+        let fields = [nameBudget, amountMonth]
+        fields.forEach { $0?.borderStyle = .none }
+        fields.forEach { $0?.backgroundColor = Constants.fieldColor }
+        fields.forEach { $0?.layer.cornerRadius = ($0?.frame.height ?? 0) / 8 }
         nameBudget.placeholder = Constants.namePlaceHolder
-        amountMonth.borderStyle = .none
         amountMonth.placeholder = Constants.amountPlaceHolder
         amountMonth.keyboardType = .numberPad
     }
@@ -74,6 +84,9 @@ final class AddViewController: UIViewController, ModuleTransitionable {
                                  width: view.bounds.width,
                                  height: view.bounds.height * 0.3)
         picker.frame = pickerFrame
+        picker.layer.cornerRadius = pickerFrame.height / 8
+        picker.addLightShadow()
+        picker.backgroundColor = .white
         picker.dataSource = self
         picker.delegate = self
         view.addSubview(picker)
@@ -96,6 +109,7 @@ final class AddViewController: UIViewController, ModuleTransitionable {
             animatePicker(isHidden: false, duration: Constants.pickerAnimationDuration, picker: pickerView)
             pickerIsHidden = !pickerIsHidden
         }
+        view.endEditing(true)
     }
 
     private func animatePicker(isHidden: Bool, duration: Double, picker: UIView) {
@@ -157,6 +171,9 @@ final class AddViewController: UIViewController, ModuleTransitionable {
                                  width: view.bounds.width,
                                  height: view.bounds.height * 0.4)
         datePicker.frame = pickerFrame
+        datePicker.layer.cornerRadius = pickerFrame.height / 8
+        datePicker.addLightShadow()
+        datePicker.backgroundColor = .white
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         view.addSubview(datePicker)
     }
@@ -177,12 +194,12 @@ extension AddViewController: AddViewInput {
 
     func configureCurrency() {
         currencyButton.setTitle("Currency", for: .normal)
-        print("currency")
+        titleLabel.text = "Create new budget"
     }
 
     func configureDate() {
+        titleLabel.text = "Create new transaction"
         currencyButton.setTitle("Date", for: .normal)
-        print("date")
         isTransactionMode = true
         createDatePicker()
         dateLabel.isHidden = false
