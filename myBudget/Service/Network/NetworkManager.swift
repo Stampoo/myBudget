@@ -15,16 +15,24 @@ final class NetworkManager {
 
     private let session = URLSession(configuration: .default)
     private let requestBuilder = RequestBuilder()
+    private let decoder = JSONDecoder()
+    private let queue = DispatchQueue.global(qos: .utility)
 
     //MARK: - Public methods
 
-    func getActualCurrency(at: String, forCurrency: String) {
+    func getActualCurrency(at: String, forCurrency: String, completion: @escaping (CurrencyRate) -> Void) {
         let api = FixerAPI.getActualCurrency(at, forCurrency)
         guard let request = requestBuilder.calculateRequest(by: api) else {
             return
         }
-        session.dataTask(with: request) { (data, responce, error) in
-            
-        }
+        session.dataTask(with: request) { (data, _, _) in
+            guard let data = data,
+            let rate = try? self.decoder.decode(CurrencyRate.self, from: data) else {
+                return
+            }
+            self.queue.async {
+                completion(rate)
+            }
+        }.resume()
     }
 }

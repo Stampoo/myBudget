@@ -10,25 +10,61 @@ import Foundation
 
 final class CurrencyConverter {
 
-    //MARK: - Types
-
-    enum Currency: String {
-        case USD = "USD"
-        case bRuble = "BYN"
-        case ruble = "RUB"
-        case euro = "EUR"
-    }
-
 
     //MARK: - Private properties
 
     private let networkManager = NetworkManager()
+    private let storage = UserDefaults.standard
 
 
     //MARK: - Public methods
 
-    func currencyRate(forCurrency: Currency, at: Currency) {
-        networkManager.getActualCurrency(at: at.rawValue, forCurrency: forCurrency.rawValue)
+    func convert(from: CurrencyType, to: CurrencyType, amount: Double) -> Double? {
+        print(to.rawValue)
+        print(from.rawValue)
+        guard let fromRate = storage.value(forKey: from.rawValue) as? Double,
+            let toRate = storage.value(forKey: to.rawValue) as? Double else {
+            return nil
+        }
+        print(toRate, fromRate, amount)
+        return toRate / fromRate * amount
+    }
+
+    func updateRates() {
+        for currency in Currency.allCases {
+            saveRatesInStorage(savedCurrency: currency)
+        }
+    }
+
+    //MARK: - Private methods
+
+    private func saveRatesInStorage(savedCurrency: CurrencyType) {
+        getCurrencyToEuro(currency: savedCurrency, completion: {(currency) in
+            guard let multiplier = self.searchResult(from: currency.rates) else {
+                return
+            }
+            self.storage.set(multiplier, forKey: savedCurrency.rawValue)
+        })
+    }
+
+    private func getCurrencyToEuro(currency: CurrencyType, completion: @escaping (CurrencyRate) -> Void) {
+        networkManager.getActualCurrency(at: "EUR", forCurrency: currency.rawValue, completion: completion)
+    }
+
+    private func searchResult(from rates: Rates?) -> Double? {
+        let rateArray = [
+            rates?.BYN,
+            rates?.EUR,
+            rates?.RUB,
+            rates?.USD
+        ]
+
+        for rate in rateArray {
+            if let unwrapRate = rate {
+                return unwrapRate
+            }
+        }
+        return nil
     }
 
 }

@@ -10,13 +10,19 @@ import Foundation
 
 struct CurrencyRate: Codable {
     let success: Bool
-    let base: String
-    let rates: Rates
+    let error: Errors?
+    let base: String?
+    let rates: Rates?
 }
 
 struct Rates: Codable {
-    let BYN: String?
-    let RUB: String?
-    let USD: String?
-    let EUR: String?
+    let BYN: Double?
+    let RUB: Double?
+    let USD: Double?
+    let EUR: Double?
+}
+
+struct Errors: Codable {
+    let code: Int
+    let type: String
 }

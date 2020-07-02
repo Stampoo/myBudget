@@ -20,6 +20,7 @@
 		3438738A24AC882D00010714 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3438738924AC882D00010714 /* RequestBuilder.swift */; };
 		3438738D24AC8E8100010714 /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3438738C24AC8E8100010714 /* CurrencyConverter.swift */; };
 		3438738F24AC906C00010714 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3438738E24AC906C00010714 /* CurrencyRate.swift */; };
+		3438739124ACAF0300010714 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3438739024ACAF0300010714 /* Double.swift */; };
 		3467AD0724AB94D7002A706C /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467AD0624AB94D7002A706C /* Progress.swift */; };
 		347F60B624A64D4A0012BB7D /* AddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60B524A64D4A0012BB7D /* AddPresenter.swift */; };
 		347F60B824A64D7D0012BB7D /* AddConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60B724A64D7D0012BB7D /* AddConfigurator.swift */; };
@@ -73,6 +74,7 @@
 		3438738924AC882D00010714 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		3438738C24AC8E8100010714 /* CurrencyConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
 		3438738E24AC906C00010714 /* CurrencyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
+		3438739024ACAF0300010714 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		3467AD0624AB94D7002A706C /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		347F60B524A64D4A0012BB7D /* AddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPresenter.swift; sourceTree = "<group>"; };
 		347F60B724A64D7D0012BB7D /* AddConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConfigurator.swift; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 				34F2868824A6022D00D7C509 /* UIVIew.swift */,
 				341D2D2624A74AD1007C5979 /* UIColor.swift */,
 				34922EB624A8EBF800F0AE9F /* Date.swift */,
+				3438739024ACAF0300010714 /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				34F2869124A612BF00D7C509 /* Budget.swift in Sources */,
 				34F2864B24A527A100D7C509 /* AppDelegate.swift in Sources */,
 				34F2866F24A5E62E00D7C509 /* Category.swift in Sources */,
+				3438739124ACAF0300010714 /* Double.swift in Sources */,
 				341D2D2724A74AD1007C5979 /* UIColor.swift in Sources */,
 				3438738D24AC8E8100010714 /* CurrencyConverter.swift in Sources */,
 				34F2866224A52EC700D7C509 /* Support.swift in Sources */,

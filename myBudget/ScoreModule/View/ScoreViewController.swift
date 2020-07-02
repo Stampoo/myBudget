@@ -33,6 +33,8 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let converter = CurrencyConverter()
+        converter.updateRates()
         output?.viewLoaded()
         configureTableView()
         configurateNavbar()

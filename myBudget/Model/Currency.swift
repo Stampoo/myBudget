@@ -8,9 +8,31 @@
 
 import Foundation
 
-enum Currency: String, Codable {
+enum Currency: String, Codable, CaseIterable {
     case ruble = "₽"
     case bRuble = "Br"
     case USD = "$"
     case euro = "€"
 }
+
+protocol CurrencyType {
+    var rawValue: String { get }
+}
+
+extension Currency: CurrencyType {
+
+    var rawValue: String {
+        switch self {
+        case .bRuble:
+            return "BYN"
+        case .euro:
+            return "EUR"
+        case .ruble:
+            return "RUB"
+        case .USD:
+            return "USD"
+        }
+    }
+
+}
+

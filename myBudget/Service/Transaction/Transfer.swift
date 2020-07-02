@@ -26,17 +26,20 @@ final class Transfer {
 
     //MARK: - Private methods
 
-    private func transfer(from: inout Budget, to: inout Budget, amount: Double) {
-        from.amount -= amount
-        to.amount += amount
-    }
-
     private func writeInHistory(from: Budget, to: Budget, amount: Double) {
+        guard let convertedMoney = convertMoneyFrom(from: from, to: to, amount: amount) else {
+            return
+        }
+        print(convertedMoney)
         let transactionFrom = Transaction(name: "Outgoing transfer", amount: -amount, date: Date())
-        let transactionTo = Transaction(name: "Incoming transfer", amount: amount, date: Date())
+        let transactionTo = Transaction(name: "Incoming transfer", amount: convertedMoney, date: Date())
         transactionStoraget.addTransactionInHistory(budget: from, transaction: transactionFrom)
         transactionStoraget.addTransactionInHistory(budget: to, transaction: transactionTo)
     }
 
+    private func convertMoneyFrom(from: Budget, to: Budget, amount: Double) -> Double? {
+        let converter = CurrencyConverter()
+        return converter.convert(from: from.currency, to: to.currency, amount: amount)
+    }
 
 }

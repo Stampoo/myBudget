@@ -47,9 +47,10 @@ extension FixerAPI: Router {
     }
 
     var path: String {
+        let key = "f10db5b8439d9f80397cb6aedaa403af"
         switch self {
         case let .getActualCurrency(atCurrency, forCurrency):
-            return "latest?access_key=&base=\(atCurrency)&symbols=\(forCurrency)"
+            return "latest?access_key=\(key)&base=\(atCurrency)&symbols=\(forCurrency)"
         }
     }
 
