@@ -398,8 +398,8 @@
 				3427FAE424A9DF44006AC3B7 /* Transaction */,
 				3467AD0824AB9599002A706C /* Network */,
 				3467AD0D24ABB45A002A706C /* ColorService */,
-				3467AD0624AB94D7002A706C /* Progress.swift */,
 				3438738B24AC8E5C00010714 /* CurrencyService */,
+				3467AD0624AB94D7002A706C /* Progress.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
