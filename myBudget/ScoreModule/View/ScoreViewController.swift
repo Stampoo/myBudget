@@ -56,6 +56,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor().getCustom(color: .lightGray)
         view.addSubview(tableView)
     }
 

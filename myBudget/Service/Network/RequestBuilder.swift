@@ -17,7 +17,6 @@ final class RequestBuilder {
         guard let url = URL(string: route.baseURL + route.path) else {
             return nil
         }
-        print(route.baseURL + route.path)
         var request = URLRequest(url: url)
         request.httpMethod = route.method.rawValue
         return request

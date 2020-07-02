@@ -9,20 +9,38 @@
 import UIKit
 
 extension UIColor {
-    enum CustomColors {
+    enum CustomColors: CustomColorsRawValue {
+        var rawValue: [CGFloat] {
+            switch self {
+            case .lightGray:
+                return [233, 239, 237]
+            case .blue:
+                return [60, 122, 254]
+            case .gray:
+                return [238, 238, 240]
+            case .indigo:
+                return [88, 86, 214]
+            }
+        }
+
         case blue
         case gray
+        case lightGray
         case indigo
     }
 
     func getCustom(color: CustomColors) -> UIColor {
-        switch color {
-        case .blue:
-            return .init(red: 60/255, green: 122/255, blue: 254/255, alpha: 1)
-        case .gray:
-            return .init(red: 238/255, green: 238/255, blue: 240/255, alpha: 1)
-        case .indigo:
-            return .init(red: 88/255, green: 86/255, blue: 214/255, alpha: 1)
-        }
+        return getColor(color: color)
     }
+
+    private func getColor(color: CustomColorsRawValue) -> UIColor {
+        return .init(red: color.rawValue[0] / 255,
+                     green: color.rawValue[1] / 255,
+                     blue: color.rawValue[2] / 255, alpha: 1)
+    }
+
+}
+
+protocol CustomColorsRawValue {
+    var rawValue: [CGFloat] { get }
 }

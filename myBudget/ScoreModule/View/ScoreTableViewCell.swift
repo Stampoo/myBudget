@@ -28,6 +28,7 @@ final class ScoreTableViewCell: UITableViewCell {
     @IBOutlet private weak var colorView: UIView!
     @IBOutlet private weak var cardView: UIView!
     @IBOutlet private weak var categoryImageView: UIImageView!
+    @IBOutlet private weak var shadowView: UIView!
 
 
     //MARK: - Lifecycle
@@ -37,6 +38,7 @@ final class ScoreTableViewCell: UITableViewCell {
         configureCard()
         configureLabels()
         configureBar()
+        self.contentView.backgroundColor = UIColor().getCustom(color: .lightGray)
     }
 
 
@@ -73,8 +75,9 @@ final class ScoreTableViewCell: UITableViewCell {
         selectionStyle = .none
         cardView.layer.cornerRadius = cardView.frame.height / 8
         cardView.clipsToBounds = true
-        colorView.addLightShadow()
-        colorView.clipsToBounds = false
+        shadowView.clipsToBounds = false
+        shadowView.addLightShadow()
+        print(shadowView.frame)
     }
 
     private func configureProgress(at budget: Budget) {

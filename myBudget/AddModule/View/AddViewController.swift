@@ -14,8 +14,8 @@ final class AddViewController: UIViewController, ModuleTransitionable {
 
     private enum Constants {
         static let pickerAnimationDuration = 0.5
-        static let namePlaceHolder = "Type name of ur budget"
-        static let amountPlaceHolder = "Type amount"
+        static let namePlaceHolder = "  Type name of ur budget"
+        static let amountPlaceHolder = "  Type amount"
         static let createButtonTitle = "Create"
         static let fieldColor = UIColor.init(red: 240/255, green: 237/255, blue: 238/255, alpha: 1)
     }
@@ -70,9 +70,12 @@ final class AddViewController: UIViewController, ModuleTransitionable {
 
     private func configureFields() {
         let fields = [nameBudget, amountMonth]
-        fields.forEach { $0?.borderStyle = .none }
-        fields.forEach { $0?.backgroundColor = Constants.fieldColor }
-        fields.forEach { $0?.layer.cornerRadius = ($0?.frame.height ?? 0) / 8 }
+        fields.forEach {
+            $0?.borderStyle = .none
+            $0?.backgroundColor = Constants.fieldColor
+            $0?.layer.cornerRadius = ($0?.frame.height ?? 0) / 4
+            $0?.clipsToBounds = true
+        }
         nameBudget.placeholder = Constants.namePlaceHolder
         amountMonth.placeholder = Constants.amountPlaceHolder
         amountMonth.keyboardType = .numberPad
