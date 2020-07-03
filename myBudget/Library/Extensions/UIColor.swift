@@ -9,6 +9,9 @@
 import UIKit
 
 extension UIColor {
+
+    static let shared = UIColor()
+
     enum CustomColors: CustomColorsRawValue {
         var rawValue: [CGFloat] {
             switch self {

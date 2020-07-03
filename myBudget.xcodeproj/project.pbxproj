@@ -13,6 +13,7 @@
 		341C622B24AF50E300A509AC /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 341C622724AF50E300A509AC /* add.png */; };
 		341C622C24AF50E300A509AC /* transfer.png in Resources */ = {isa = PBXBuildFile; fileRef = 341C622824AF50E300A509AC /* transfer.png */; };
 		341C622D24AF50E300A509AC /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 341C622924AF50E300A509AC /* main.png */; };
+		341C623024AF570F00A509AC /* PickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C622F24AF570F00A509AC /* PickColorView.swift */; };
 		341D2D2724A74AD1007C5979 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341D2D2624A74AD1007C5979 /* UIColor.swift */; };
 		3427FAE324A9D4BA006AC3B7 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427FAE224A9D4BA006AC3B7 /* Transfer.swift */; };
 		3427FAE624A9DF5E006AC3B7 /* TransactionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427FAE524A9DF5E006AC3B7 /* TransactionFilter.swift */; };
@@ -73,6 +74,7 @@
 		341C622724AF50E300A509AC /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		341C622824AF50E300A509AC /* transfer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer.png; sourceTree = "<group>"; };
 		341C622924AF50E300A509AC /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
+		341C622F24AF570F00A509AC /* PickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickColorView.swift; sourceTree = "<group>"; };
 		341D2D2624A74AD1007C5979 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		3427FAE224A9D4BA006AC3B7 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
 		3427FAE524A9DF5E006AC3B7 /* TransactionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilter.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				341C622424AF4D2300A509AC /* CustomTextField.swift */,
+				341C622F24AF570F00A509AC /* PickColorView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -303,8 +306,8 @@
 		34922EB224A8E62500F0AE9F /* Basic */ = {
 			isa = PBXGroup;
 			children = (
-				341C622324AF4D0700A509AC /* Class */,
 				34922EB524A8E64C00F0AE9F /* Protocols */,
+				341C622324AF4D0700A509AC /* Class */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				347F60BA24A64DBA0012BB7D /* AddProtocols.swift in Sources */,
 				3438738A24AC882D00010714 /* RequestBuilder.swift in Sources */,
 				342E486824A7E94D004B39D3 /* TransactionPresenter.swift in Sources */,
+				341C623024AF570F00A509AC /* PickColorView.swift in Sources */,
 				34922EAE24A8BDCF00F0AE9F /* AddTransactionViewController.swift in Sources */,
 				3427FAE624A9DF5E006AC3B7 /* TransactionFilter.swift in Sources */,
 				34922EBC24A8F3B200F0AE9F /* TransactionTableViewCell.swift in Sources */,

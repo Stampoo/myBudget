@@ -31,10 +31,16 @@ final class ScoreTableViewCell: UITableViewCell {
     @IBOutlet private weak var shadowView: UIView!
 
 
+    //MARK: - Private properties
+
+    private let colorPickView = PickColorView()
+
+
     //MARK: - Lifecycle
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureColorView()
         configureCard()
         configureLabels()
         configureBar()
@@ -55,6 +61,21 @@ final class ScoreTableViewCell: UITableViewCell {
 
 
     //MARK: - Private methods
+
+    private func configureColorView() {
+        colorView.isUserInteractionEnabled = true
+        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(appearColorPick))
+        colorView.addGestureRecognizer(longTap)
+        colorPickView.delegate = self
+        addSubview(colorPickView)
+        colorPickView.isHidden = true
+    }
+
+    @objc private func appearColorPick(longPress: UILongPressGestureRecognizer) {
+        let location = longPress.location(in: colorView)
+        colorPickView.center = location
+        colorPickView.isHidden = false
+    }
 
     private func calculateSpent(budget: Budget) -> Double {
         var spent = 0.0
@@ -86,4 +107,15 @@ final class ScoreTableViewCell: UITableViewCell {
         budgetBar.progress = Float(progress)
     }
     
+}
+
+
+//MARK: - Extensions
+
+extension ScoreTableViewCell: PickColorViewDelegate {
+
+    func didColorSelect(selected colors: UIColor) {
+        colorView.backgroundColor = colors
+    }
+
 }
