@@ -20,13 +20,10 @@ final class CurrencyConverter {
     //MARK: - Public methods
 
     func convert(from: Currency, to: Currency, amount: Double) -> Double? {
-        print(to.rawValue)
-        print(from.rawValue)
         guard let fromRate = storage.value(forKey: from.rawValue) as? Double,
             let toRate = storage.value(forKey: to.rawValue) as? Double else {
             return nil
         }
-        print(toRate, fromRate, amount)
         return toRate / fromRate * amount
     }
 

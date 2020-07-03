@@ -10,15 +10,16 @@ import Foundation
 
 extension Double {
 
-    enum Currency: String {
-        case USD = "USD"
-        case bRuble = "BYN"
-        case ruble = "RUB"
-        case euro = "EUR"
+    var isInt: Bool {
+        self == self.rounded()
     }
 
-    func convert(to: Currency) {
-        let converter = CurrencyConverter()
+    mutating func formatNumber() -> String {
+        if isInt {
+            return "\(Int(self))"
+        } else {
+            let double = (self * 2) / 2
+            return "\(Darwin.round(double))"
+        }
     }
-
 }

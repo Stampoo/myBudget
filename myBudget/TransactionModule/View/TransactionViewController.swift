@@ -187,8 +187,9 @@ extension TransactionViewController: TransactionViewInput {
         fromBudget = budget
         let historyStorage = TempHistoryStorageService.shared
         nameBudgetLabel.text = budget.name
-        budgetAmountLabel.text = "Budget: \(budget.amount)"
-        budgetSpentLabel.text = "Left: \(budget.amount - historyStorage.calculateSpent(budget: budget))"
+        budgetAmountLabel.text = "Budget: " + DoubleFormatter.shared.convertToString(from: budget.amount)
+        let spent = budget.amount - historyStorage.calculateSpent(budget: budget)
+        budgetSpentLabel.text = "Left: " + DoubleFormatter.shared.convertToString(from: spent)
         tableView.reloadData()
     }
 

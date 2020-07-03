@@ -29,7 +29,7 @@ final class TransactionTableViewCell: UITableViewCell {
     func configureCell(with transaction: Transaction) {
         targetLabel.text = transaction.name
         dateLabel.text = transaction.date.getFormattedDate(format: "EEEE, MMM d, yyyy")
-        amountLabel.text = "\(transaction.amount)"
+        amountLabel.text = DoubleFormatter.shared.convertToString(from: transaction.amount)
     }
     
 }
