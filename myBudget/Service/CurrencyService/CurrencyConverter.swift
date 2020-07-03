@@ -19,7 +19,7 @@ final class CurrencyConverter {
 
     //MARK: - Public methods
 
-    func convert(from: CurrencyType, to: CurrencyType, amount: Double) -> Double? {
+    func convert(from: Currency, to: Currency, amount: Double) -> Double? {
         print(to.rawValue)
         print(from.rawValue)
         guard let fromRate = storage.value(forKey: from.rawValue) as? Double,
@@ -38,7 +38,7 @@ final class CurrencyConverter {
 
     //MARK: - Private methods
 
-    private func saveRatesInStorage(savedCurrency: CurrencyType) {
+    private func saveRatesInStorage(savedCurrency: Currency) {
         getCurrencyToEuro(currency: savedCurrency, completion: {(currency) in
             guard let multiplier = self.searchResult(from: currency.rates) else {
                 return
@@ -47,7 +47,7 @@ final class CurrencyConverter {
         })
     }
 
-    private func getCurrencyToEuro(currency: CurrencyType, completion: @escaping (CurrencyRate) -> Void) {
+    private func getCurrencyToEuro(currency: Currency, completion: @escaping (CurrencyRate) -> Void) {
         networkManager.getActualCurrency(at: "EUR", forCurrency: currency.rawValue, completion: completion)
     }
 

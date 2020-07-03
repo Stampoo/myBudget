@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341C622124AF3B9900A509AC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C622024AF3B9900A509AC /* String.swift */; };
 		341D2D2724A74AD1007C5979 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341D2D2624A74AD1007C5979 /* UIColor.swift */; };
 		3427FAE324A9D4BA006AC3B7 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427FAE224A9D4BA006AC3B7 /* Transfer.swift */; };
 		3427FAE624A9DF5E006AC3B7 /* TransactionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427FAE524A9DF5E006AC3B7 /* TransactionFilter.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		341C622024AF3B9900A509AC /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		341D2D2624A74AD1007C5979 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		3427FAE224A9D4BA006AC3B7 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
 		3427FAE524A9DF5E006AC3B7 /* TransactionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilter.swift; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 				341D2D2624A74AD1007C5979 /* UIColor.swift */,
 				34922EB624A8EBF800F0AE9F /* Date.swift */,
 				3438739024ACAF0300010714 /* Double.swift */,
+				341C622024AF3B9900A509AC /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				3438739124ACAF0300010714 /* Double.swift in Sources */,
 				341D2D2724A74AD1007C5979 /* UIColor.swift in Sources */,
 				3438738D24AC8E8100010714 /* CurrencyConverter.swift in Sources */,
+				341C622124AF3B9900A509AC /* String.swift in Sources */,
 				34F2866224A52EC700D7C509 /* Support.swift in Sources */,
 				347F60BC24A64E2B0012BB7D /* AddRouter.swift in Sources */,
 				34922EA524A8BD9E00F0AE9F /* AddTransactionConfigurator.swift in Sources */,

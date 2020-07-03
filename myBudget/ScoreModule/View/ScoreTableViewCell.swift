@@ -45,7 +45,7 @@ final class ScoreTableViewCell: UITableViewCell {
     //MARK: - Public methods
 
     func configureCell(with budget: Budget) {
-        let symbol = budget.currency.rawValue
+        let symbol = budget.currency.rawValue.getCurrencyLiteral()
         BudgetName.text = budget.name
         budgetAmount.text = "\(budget.amount) \(symbol)"
         let spent = calculateSpent(budget: budget)
@@ -77,7 +77,6 @@ final class ScoreTableViewCell: UITableViewCell {
         cardView.clipsToBounds = true
         shadowView.clipsToBounds = false
         shadowView.addLightShadow()
-        print(shadowView.frame)
     }
 
     private func configureProgress(at budget: Budget) {
