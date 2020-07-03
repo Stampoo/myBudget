@@ -15,6 +15,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     private enum Constants {
         static let cellIdentifire = "TransactionCell"
         static let cellNib = "TransactionTableViewCell"
+        static let transferAmountPlaceHolder = "Type amount"
     }
 
 
@@ -76,6 +77,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
             amountTextField,
             sendButton
         ]
+        amountTextField.placeholder = Constants.transferAmountPlaceHolder
         buttons.forEach { $0?.layer.cornerRadius = ($0?.frame.height ?? 0) / 4 }
         cancelButton.addTarget(self, action: #selector(enableTransfer), for: .touchUpInside)
         toButton.addTarget(self, action: #selector(choiseRecipient), for: .touchUpInside)
