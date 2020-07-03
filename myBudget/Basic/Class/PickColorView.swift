@@ -57,7 +57,7 @@ final class PickColorView: UIView {
         for color in Constants.defaultColors {
             let colorButton = UIButton()
             colorButton.backgroundColor = color
-            colorButton.layer.cornerRadius = colorButton.frame.height / 2
+            colorButton.layer.cornerRadius = 7.5
             colorButton.clipsToBounds = true
             colorButton.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
             colorButtons.append(colorButton)
@@ -79,7 +79,9 @@ final class PickColorView: UIView {
     private func createStackView() {
         let stackView = UIStackView(arrangedSubviews: colorButtons)
         stackView.axis = .horizontal
-        stackView.contentMode = .scaleToFill
+        stackView.alignment = .fill
+        stackView.spacing = 2
+        stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stackView)
         NSLayoutConstraint.activate([
