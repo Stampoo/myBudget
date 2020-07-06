@@ -58,6 +58,7 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
     private lazy var pickedCurrency = budget?.currency
     private var isAppeared = false
     private var budgetStorage = TempBudgetStorageService.shared
+    private var transactionStorage = TempHistoryStorageService.shared
 
 
     //MARK: - Lifecycle
@@ -133,6 +134,7 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
         let newBudget = Budget(name: newName, amount: newAmount, currency: newCurrency)
         budgetStorage.addBudgetInList(budget: newBudget)
         _ = budgetStorage.delete(budget: budget)
+        transactionStorage.migrateHistoryAfterRename(from: budget, toBudget: newBudget)
         output?.reload(with: newBudget)
     }
 

@@ -54,8 +54,14 @@ final class TempHistoryStorageService {
         history.forEach { spent += transactionRecognizing(transaction: $0) }
         return spent
     }
-    
-    
+
+    func migrateHistoryAfterRename(from budget: Budget, toBudget: Budget) {
+        let decodingHistory = openHistory(budget: budget)
+        saveHistory(at: toBudget, history: decodingHistory)
+        deleteHistory(at: budget)
+    }
+
+
     //MARK: - Private methods
     
     private func encodingTransaction(transactions: [Transaction]) -> [Data] {
@@ -90,5 +96,14 @@ final class TempHistoryStorageService {
             return transaction.amount
         }
     }
-    
+
+    private func deleteHistory(at budget: Budget) {
+        storage.set(nil, forKey: budget.name)
+    }
+
+    private func saveHistory(at budget: Budget, history: [Transaction]) {
+        let encodingHistory = encodingTransaction(transactions: history)
+        storage.set(encodingHistory, forKey: budget.name)
+    }
+
 }
