@@ -44,18 +44,18 @@ final class AddViewController: UIViewController, ModuleTransitionable {
     private var pickerIsHidden = true
     private var currentCurency: Currency?
     private var isTransactionMode = false
+    private var pickerHeightAnchor = NSLayoutConstraint()
 
 
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateLabel.isHidden = true
-        dateLabel.text = ""
-        output?.reload()
         configureFields()
         configureLabels()
+        configureDatePicker()
         configureCurrencyPicker()
+        output?.reload()
         configureCurrencyButton()
         configureCreateButton()
     }
@@ -85,16 +85,11 @@ final class AddViewController: UIViewController, ModuleTransitionable {
     }
 
     private func configureCurrencyPicker() {
-        let pickerFrame = CGRect(x: 0,
-                                 y: view.bounds.height,
-                                 width: view.bounds.width,
-                                 height: view.bounds.height * 0.3)
-        picker.frame = pickerFrame
-        picker.layer.cornerRadius = pickerFrame.height / 8
-        picker.addLightShadow()
-        picker.backgroundColor = .white
+        picker.layer.cornerRadius = view.frame.height * 0.3 / 8
+        picker.backgroundColor = UIColor.shared.getCustom(color: .lightGray)
         picker.dataSource = self
         picker.delegate = self
+        picker.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(picker)
     }
 
@@ -119,16 +114,15 @@ final class AddViewController: UIViewController, ModuleTransitionable {
     }
 
     private func animatePicker(isHidden: Bool, duration: Double, picker: UIView) {
-        let viewHeight = view.bounds.height
-        let animation = UIViewPropertyAnimator(duration: duration, curve: .linear, animations: {})
-        animation.addAnimations {
-            if isHidden {
-                picker.transform = CGAffineTransform(translationX: 0, y: viewHeight * -0.4)
+        UIView.animate(withDuration: 0.3) {
+            if !isHidden {
+                self.pickerHeightAnchor.constant = 0
+                self.view.layoutIfNeeded()
             } else {
-                picker.transform = CGAffineTransform(translationX: 0, y: viewHeight * 0.4)
+                self.pickerHeightAnchor.constant = self.view.frame.height * 0.3
+                self.view.layoutIfNeeded()
             }
         }
-        animation.startAnimation()
     }
 
     private func configureCreateButton() {
@@ -171,16 +165,11 @@ final class AddViewController: UIViewController, ModuleTransitionable {
 
     }
 
-    private func createDatePicker() {
-        let pickerFrame = CGRect(x: 0,
-                                 y: view.bounds.height,
-                                 width: view.bounds.width,
-                                 height: view.bounds.height * 0.4)
-        datePicker.frame = pickerFrame
-        datePicker.layer.cornerRadius = pickerFrame.height / 8
-        datePicker.addLightShadow()
-        datePicker.backgroundColor = .white
+    private func configureDatePicker() {
+        datePicker.layer.cornerRadius = view.frame.height * 0.3 / 8
+        datePicker.backgroundColor = UIColor.shared.getCustom(color: .lightGray)
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(datePicker)
     }
 
@@ -201,14 +190,19 @@ extension AddViewController: AddViewInput {
     func configureCurrency() {
         currencyButton.setTitle("Currency", for: .normal)
         titleLabel.text = "Create new budget"
+        datePicker.isHidden = true
+        dateLabel.isHidden = true
+        dateLabel.text = ""
+        pickerConstraint()
     }
 
     func configureDate() {
         titleLabel.text = "Create new transaction"
         currencyButton.setTitle("Date", for: .normal)
+        picker.isHidden = true
         isTransactionMode = true
-        createDatePicker()
         dateLabel.isHidden = false
+        pickerConstraint()
     }
 
     func setupInitialState() {}
@@ -238,6 +232,21 @@ extension AddViewController: UIPickerViewDelegate {
         currentCurency = currencyList[row]
         animatePicker(isHidden: false, duration: Constants.pickerAnimationDuration, picker: picker)
         pickerIsHidden = !pickerIsHidden
+    }
+
+}
+
+extension AddViewController {
+
+    private func pickerConstraint() {
+        let picker = isTransactionMode ? datePicker : self.picker
+        pickerHeightAnchor = picker.heightAnchor.constraint(equalToConstant: 0)
+        NSLayoutConstraint.activate([
+            picker.leftAnchor.constraint(equalTo: view.leftAnchor),
+            picker.rightAnchor.constraint(equalTo: view.rightAnchor),
+            picker.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            pickerHeightAnchor
+        ])
     }
 
 }
