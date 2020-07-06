@@ -149,7 +149,7 @@ final class AddViewController: UIViewController, ModuleTransitionable {
             let amountDouble = Double(amount) else {
                 return
         }
-        let transaction = Transaction(name: name, amount: amountDouble, date: currencyDate)
+        let transaction = Transaction(name: name, amount: -amountDouble, date: currencyDate)
         output?.dismiss(with: transaction)
     }
 
@@ -192,11 +192,11 @@ extension AddViewController: AddViewInput {
         titleLabel.text = "Create new budget"
         datePicker.isHidden = true
         dateLabel.isHidden = true
-        dateLabel.text = ""
         pickerConstraint()
     }
 
     func configureDate() {
+        dateLabel.text = ""
         titleLabel.text = "Create new transaction"
         currencyButton.setTitle("Date", for: .normal)
         picker.isHidden = true

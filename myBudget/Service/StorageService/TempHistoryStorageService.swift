@@ -51,13 +51,7 @@ final class TempHistoryStorageService {
     func calculateSpent(budget: Budget) -> Double {
         var spent = 0.0
         let history = TempHistoryStorageService.shared.openHistory(budget: budget)
-        history.forEach {
-            if $0.amount > 0, $0.name == "Transfer" {
-                spent += $0.amount
-            } else {
-                spent -= $0.amount
-            }
-        }
+        history.forEach { spent += transactionRecognizing(transaction: $0) }
         return spent
     }
     
@@ -84,6 +78,17 @@ final class TempHistoryStorageService {
             decodedTransactions.append(decodedTransaction)
         }
         return decodedTransactions
+    }
+
+    private func transactionRecognizing(transaction: Transaction) -> Double {
+        switch transaction.transfer.isTransfer {
+        case true where transaction.transfer.isOutput:
+            return -transaction.amount
+        case true where !transaction.transfer.isOutput:
+            return -transaction.amount
+        default:
+            return transaction.amount
+        }
     }
     
 }

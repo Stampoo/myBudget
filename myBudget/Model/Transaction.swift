@@ -12,4 +12,10 @@ struct Transaction: Codable {
     let name: String
     let amount: Double
     let date: Date
+    var transfer = TransferOption()
+}
+
+struct TransferOption: Codable {
+    var isTransfer = false
+    var isOutput = false
 }
