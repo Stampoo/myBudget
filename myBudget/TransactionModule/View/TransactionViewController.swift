@@ -50,6 +50,8 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     private var toBudget: Budget?
     private var fromBudget: Budget?
     private var isDecrease = true
+    private var toPickerHeightAnchor = NSLayoutConstraint()
+    private var isAppeared = false
 
 
     //MARK: - Lifecycle
@@ -115,17 +117,13 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     }
 
     private func createPicker() {
-        let frame = CGRect(x: 0,
-                           y: view.frame.height,
-                           width: view.frame.width,
-                           height: view.frame.height * 0.4)
-        budgetPicker.frame = frame
-        budgetPicker.layer.cornerRadius = frame.height / 8
-        budgetPicker.addLightShadow()
-        budgetPicker.backgroundColor = .white
+        budgetPicker.layer.cornerRadius = view.frame.height * 0.3 / 4
+        budgetPicker.backgroundColor = UIColor.shared.getCustom(color: .lightGray)
         budgetPicker.dataSource = self
         budgetPicker.delegate = self
+        budgetPicker.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(budgetPicker)
+        currencyPickerConstraint()
     }
 
     private func configureTable() {
@@ -168,7 +166,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         transferButton.backgroundColor = UIColor().getCustom(color: .blue)
         transferButton.setTitleColor(.white, for: .normal)
         transferButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
-        transferButton.layer.cornerRadius = transferButton.frame.height / 4
+        transferButton.layer.cornerRadius = transferButton.frame.height / 8
         transferButton.addTarget(self, action: #selector(enableTransfer), for: .touchUpInside)
     }
 
@@ -249,14 +247,17 @@ extension TransactionViewController {
     }
 
     private func appearPicker(picker: UIView) {
-        let position: CGFloat = !isChoiseREcipient ? -0.4 : 0.4
-        let transform = CGAffineTransform(translationX: 0, y: view.frame.height * position)
-        let animation = UIViewPropertyAnimator(duration: 0.5, curve: .linear, animations: nil)
-        animation.addAnimations {
-            picker.transform = transform
-            self.isChoiseREcipient = !self.isChoiseREcipient
+        UIView.animate(withDuration: 0.3) {
+            if self.isAppeared {
+                self.toPickerHeightAnchor.constant = 0
+                self.isAppeared = !self.isAppeared
+                self.view.layoutIfNeeded()
+            } else {
+                self.toPickerHeightAnchor.constant = self.view.frame.height * 0.3
+                self.view.layoutIfNeeded()
+                self.isAppeared = !self.isAppeared
+            }
         }
-        animation.startAnimation()
     }
 
 }
@@ -284,6 +285,20 @@ extension TransactionViewController: UIPickerViewDelegate {
         toBudget = choosenBudget
         toButton.setTitle(choosenBudget.name, for: .normal)
         appearPicker(picker: budgetPicker)
+    }
+
+}
+
+extension TransactionViewController {
+
+    private func currencyPickerConstraint() {
+        toPickerHeightAnchor = budgetPicker.heightAnchor.constraint(equalToConstant: 0)
+        NSLayoutConstraint.activate([
+            budgetPicker.leftAnchor.constraint(equalTo: view.leftAnchor),
+            budgetPicker.rightAnchor.constraint(equalTo: view.rightAnchor),
+            budgetPicker.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            toPickerHeightAnchor
+        ])
     }
 
 }
