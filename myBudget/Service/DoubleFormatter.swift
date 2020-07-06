@@ -28,7 +28,7 @@ final class DoubleFormatter {
         let numberList = String(double).split(separator: Constants.pointSeparator)
         let afterPoint = numberList[1]
         let beforePoint = numberList[0]
-        let formattedBeforePoint = afterPoint + "." + rounded(string: String(beforePoint), to: 2)
+        let formattedBeforePoint = beforePoint + "." + rounded(string: String(afterPoint), to: 2)
         if double.isInt {
             return String(beforePoint)
         } else {

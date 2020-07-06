@@ -41,14 +41,14 @@
                                     <constraint firstItem="ETP-rG-N5e" firstAttribute="leading" secondItem="0sS-gJ-cPp" secondAttribute="leading" constant="23" id="zUI-ab-9kG"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTO-Do-68z">
-                                <rect key="frame" x="107" y="51" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTO-Do-68z">
+                                <rect key="frame" x="107" y="51" width="118" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VO6-fX-rKY">
-                                <rect key="frame" x="107" y="80" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VO6-fX-rKY">
+                                <rect key="frame" x="107" y="80" width="118" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,9 +89,11 @@
                             <constraint firstItem="oti-Pv-ncg" firstAttribute="top" secondItem="zxk-zk-Ik0" secondAttribute="top" constant="17" id="L1H-xq-xEA"/>
                             <constraint firstItem="FIf-JI-Ryn" firstAttribute="top" secondItem="ry0-Mk-hdK" secondAttribute="bottom" constant="8" id="SbH-3S-S4J"/>
                             <constraint firstAttribute="trailing" secondItem="FIf-JI-Ryn" secondAttribute="trailing" constant="8" id="SyN-Vx-9ML"/>
+                            <constraint firstItem="FIf-JI-Ryn" firstAttribute="leading" secondItem="VO6-fX-rKY" secondAttribute="trailing" constant="20" id="T2e-ZC-63R"/>
                             <constraint firstAttribute="height" constant="109" id="YN6-Qo-oZn"/>
                             <constraint firstItem="m9u-Mx-hbx" firstAttribute="leading" secondItem="0sS-gJ-cPp" secondAttribute="trailing" constant="19" id="chU-zV-0Rj"/>
                             <constraint firstItem="FTO-Do-68z" firstAttribute="leading" secondItem="0sS-gJ-cPp" secondAttribute="trailing" constant="8" id="h3d-JC-Trk"/>
+                            <constraint firstItem="ry0-Mk-hdK" firstAttribute="leading" secondItem="FTO-Do-68z" secondAttribute="trailing" constant="20" id="ikz-Vv-E6Q"/>
                             <constraint firstAttribute="trailing" secondItem="m9u-Mx-hbx" secondAttribute="trailing" constant="18" id="izx-xU-cMe"/>
                             <constraint firstItem="ry0-Mk-hdK" firstAttribute="top" secondItem="m9u-Mx-hbx" secondAttribute="bottom" constant="8" id="m6a-gU-adq"/>
                             <constraint firstItem="VO6-fX-rKY" firstAttribute="leading" secondItem="0sS-gJ-cPp" secondAttribute="trailing" constant="8" id="mc5-PC-IA0"/>
@@ -110,16 +112,16 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="BudgetName" destination="oti-Pv-ncg" id="Rc1-VB-egT"/>
-                <outlet property="budgetAmount" destination="VO6-fX-rKY" id="cyu-cg-2eH"/>
+                <outlet property="budgetAmount" destination="ry0-Mk-hdK" id="8py-cz-fa0"/>
                 <outlet property="budgetBar" destination="m9u-Mx-hbx" id="A1C-ct-PR4"/>
+                <outlet property="budgetName" destination="oti-Pv-ncg" id="Rc1-VB-egT"/>
                 <outlet property="budgetTitle" destination="FTO-Do-68z" id="IW0-Tm-Lkz"/>
                 <outlet property="cardView" destination="zxk-zk-Ik0" id="jat-2o-W24"/>
                 <outlet property="categoryImageView" destination="ETP-rG-N5e" id="ZKZ-I0-i6l"/>
                 <outlet property="colorView" destination="0sS-gJ-cPp" id="Cjw-zI-ohU"/>
                 <outlet property="shadowView" destination="K61-tx-8yf" id="5Cw-Wc-nlF"/>
                 <outlet property="spentAmount" destination="FIf-JI-Ryn" id="YpE-SJ-TRB"/>
-                <outlet property="spentTitle" destination="ry0-Mk-hdK" id="8py-cz-fa0"/>
+                <outlet property="spentTitle" destination="VO6-fX-rKY" id="cyu-cg-2eH"/>
             </connections>
             <point key="canvasLocation" x="115.94202898550725" y="96.428571428571431"/>
         </tableViewCell>
