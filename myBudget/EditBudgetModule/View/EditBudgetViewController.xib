@@ -26,6 +26,9 @@
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyJ-Wa-rcV">
                     <rect key="frame" x="20" y="812" width="374" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="zsk-wB-cQR"/>
+                    </constraints>
                     <state key="normal" title="Button"/>
                 </button>
             </subviews>
