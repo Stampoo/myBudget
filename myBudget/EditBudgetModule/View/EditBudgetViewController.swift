@@ -111,6 +111,7 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
     }
 
     @objc private func appearedPicker() {
+        view.resignFirstResponder()
         UIView.animate(withDuration: 0.3) {
             if self.isAppeared {
                 self.currencyPickerHeightAnchor.constant = 0

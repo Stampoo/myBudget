@@ -21,26 +21,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PXd-4L-8R2">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="804"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyJ-Wa-rcV">
-                    <rect key="frame" x="20" y="794" width="374" height="68"/>
-                    <constraints>
-                        <constraint firstAttribute="height" priority="500" constant="68" id="Mle-Fi-jmr"/>
-                    </constraints>
+                    <rect key="frame" x="20" y="812" width="374" height="30"/>
                     <state key="normal" title="Button"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="PXd-4L-8R2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4W8-qa-5q1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YyJ-Wa-rcV" secondAttribute="trailing" constant="20" id="4fL-S2-S6X"/>
-                <constraint firstItem="PXd-4L-8R2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Cz9-Cy-AdV"/>
-                <constraint firstItem="YyJ-Wa-rcV" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="F1w-bs-Mj4"/>
-                <constraint firstItem="PXd-4L-8R2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="MbQ-a7-hx6"/>
-                <constraint firstItem="YyJ-Wa-rcV" firstAttribute="top" secondItem="PXd-4L-8R2" secondAttribute="bottom" constant="8" id="Mt0-YK-Cv1"/>
-                <constraint firstItem="YyJ-Wa-rcV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="P28-7N-hxC"/>
+                <constraint firstItem="PXd-4L-8R2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0aX-g5-Sgu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YyJ-Wa-rcV" secondAttribute="bottom" constant="20" id="6zc-fx-XNM"/>
+                <constraint firstItem="PXd-4L-8R2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Gve-xQ-a8H"/>
+                <constraint firstItem="PXd-4L-8R2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XsW-q5-Vnm"/>
+                <constraint firstItem="YyJ-Wa-rcV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Z8P-ET-gVS"/>
+                <constraint firstItem="YyJ-Wa-rcV" firstAttribute="top" secondItem="PXd-4L-8R2" secondAttribute="bottom" constant="8" id="dJf-D6-Oxd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YyJ-Wa-rcV" secondAttribute="trailing" constant="20" id="xog-BZ-vmd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="110.49107142857143"/>
