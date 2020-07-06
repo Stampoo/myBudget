@@ -34,14 +34,6 @@
                         <color key="titleShadowColor" red="0.23564726114273071" green="0.47793257236480713" blue="0.99448353052139282" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekD-La-igZ">
-                    <rect key="frame" x="16" y="313.5" width="343" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="15c-uI-OMg"/>
-                        <constraint firstAttribute="width" constant="343" id="VP7-2e-zGZ"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aY8-s1-cvd" customClass="CustomTextField" customModule="myBudget" customModuleProvider="target">
                     <rect key="frame" x="16" y="100" width="343" height="34"/>
                     <constraints>
@@ -77,12 +69,19 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekD-La-igZ">
+                    <rect key="frame" x="62" y="313.5" width="250" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="15c-uI-OMg"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ekD-La-igZ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="1kX-fa-oeE"/>
                 <constraint firstItem="d36-VM-Coj" firstAttribute="leading" secondItem="Yh4-mS-eS3" secondAttribute="trailing" constant="8" id="4mt-Cf-h0K"/>
                 <constraint firstItem="d36-VM-Coj" firstAttribute="top" secondItem="aY8-s1-cvd" secondAttribute="bottom" constant="15.5" id="9zh-3F-mih"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ekD-La-igZ" secondAttribute="trailing" constant="63" id="BeI-Yy-Jne"/>
                 <constraint firstItem="Yh4-mS-eS3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="EcP-Sj-pBe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oJQ-44-x4X" secondAttribute="trailing" constant="16" id="Hpl-TG-C8R"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="d36-VM-Coj" secondAttribute="trailing" constant="16" id="Kth-lb-Eed"/>
@@ -92,6 +91,7 @@
                 <constraint firstItem="oJQ-44-x4X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="gOl-lj-ZpF"/>
                 <constraint firstItem="aY8-s1-cvd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="jQM-fR-qfF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="33k-cO-0yl" secondAttribute="trailing" constant="16" id="ktx-xT-gu3"/>
+                <constraint firstItem="ekD-La-igZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="62" id="nKx-VI-xDK"/>
                 <constraint firstItem="33k-cO-0yl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pdZ-Xc-EvW"/>
                 <constraint firstItem="oJQ-44-x4X" firstAttribute="top" secondItem="Yh4-mS-eS3" secondAttribute="bottom" constant="8" id="rhl-cI-drd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aY8-s1-cvd" secondAttribute="trailing" constant="16" id="yFR-Q1-vJv"/>

@@ -25,8 +25,6 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var betweenConstraint: NSLayoutConstraint!
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
 
 
     //MARK: - Public properties

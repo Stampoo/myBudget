@@ -13,17 +13,17 @@ final class ScoreTableViewCell: UITableViewCell {
     //MARK: - Constants
 
     private enum Constants {
-        static let monthTitle = "Budget"
-        static let spentTtitle = "Spent from this budget"
+        static let monthTitle = "Budget:"
+        static let spentTtitle = "Spent:"
     }
 
     //MARK: - IBOutlets
 
-    @IBOutlet private weak var budgetAmount: UILabel!
-    @IBOutlet private weak var budgetTitle: UILabel!
     @IBOutlet private weak var spentTitle: UILabel!
+    @IBOutlet private weak var budgetTitle: UILabel!
+    @IBOutlet private weak var budgetAmount: UILabel!
     @IBOutlet private weak var spentAmount: UILabel!
-    @IBOutlet private weak var BudgetName: UILabel!
+    @IBOutlet private weak var budgetName: UILabel!
     @IBOutlet private weak var budgetBar: UIProgressView!
     @IBOutlet private weak var colorView: UIView!
     @IBOutlet private weak var cardView: UIView!
@@ -34,6 +34,7 @@ final class ScoreTableViewCell: UITableViewCell {
     //MARK: - Private properties
 
     private let colorPickView = PickColorView()
+    private let transactionStorage = TempHistoryStorageService.shared
 
 
     //MARK: - Lifecycle
@@ -44,6 +45,7 @@ final class ScoreTableViewCell: UITableViewCell {
         configureCard()
         configureLabels()
         configureBar()
+        configureLeftSide()
         self.contentView.backgroundColor = UIColor().getCustom(color: .lightGray)
     }
 
@@ -52,11 +54,10 @@ final class ScoreTableViewCell: UITableViewCell {
 
     func configureCell(with budget: Budget) {
         let symbol = budget.currency.rawValue.getCurrencyLiteral()
-        BudgetName.text = budget.name
-        budgetAmount.text = "\(budget.amount) \(symbol)"
-        let spent = calculateSpent(budget: budget)
-        spentAmount.text = "\(spent) \(symbol)"
-        configureProgress(at: budget)
+        budgetName.text = budget.name
+        budgetAmount.text = DoubleFormatter.shared.convertToString(from: budget.amount) + symbol
+        let spent = transactionStorage.calculateSpent(budget: budget)
+        spentAmount.text = DoubleFormatter.shared.convertToString(from: spent) + symbol
     }
 
 
@@ -77,13 +78,6 @@ final class ScoreTableViewCell: UITableViewCell {
         colorPickView.isHidden = false
     }
 
-    private func calculateSpent(budget: Budget) -> Double {
-        var spent = 0.0
-        let history = TempHistoryStorageService.shared.openHistory(budget: budget)
-        history.forEach { spent += $0.amount }
-        return spent
-    }
-
     private func configureLabels() {
         budgetTitle.text = Constants.monthTitle
         spentTitle.text = Constants.spentTtitle
@@ -100,11 +94,9 @@ final class ScoreTableViewCell: UITableViewCell {
         shadowView.addLightShadow()
     }
 
-    private func configureProgress(at budget: Budget) {
-        let onePercentBudget = budget.amount / 100
-        let spent = calculateSpent(budget: budget)
-        let progress = 100 - spent / onePercentBudget
-        budgetBar.progress = Float(progress)
+    private func configureLeftSide() {
+        categoryImageView.alpha = 0.3
+        categoryImageView.layer.cornerRadius = categoryImageView.frame.height / 2
     }
     
 }

@@ -10,8 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditBudgetViewController" customModule="myBudget" customModuleProvider="target">
             <connections>
-                <outlet property="betweenConstraint" destination="Mt0-YK-Cv1" id="XLI-0K-1in"/>
-                <outlet property="heightConstraint" destination="Mle-Fi-jmr" id="jch-xO-b65"/>
                 <outlet property="saveButton" destination="YyJ-Wa-rcV" id="c4c-Uo-PuS"/>
                 <outlet property="tableView" destination="PXd-4L-8R2" id="xbH-Iu-vwM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -29,7 +27,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyJ-Wa-rcV">
                     <rect key="frame" x="20" y="794" width="374" height="68"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="68" id="Mle-Fi-jmr"/>
+                        <constraint firstAttribute="height" priority="500" constant="68" id="Mle-Fi-jmr"/>
                     </constraints>
                     <state key="normal" title="Button"/>
                 </button>
