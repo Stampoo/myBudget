@@ -93,7 +93,7 @@ final class TempHistoryStorageService {
         case true where !transaction.transfer.isOutput:
             return -transaction.amount
         default:
-            return transaction.amount
+            return -transaction.amount
         }
     }
 

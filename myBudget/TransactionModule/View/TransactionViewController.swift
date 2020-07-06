@@ -196,6 +196,7 @@ extension TransactionViewController: TransactionViewInput {
         let symbol = budget.currency.rawValue.getCurrencyLiteral()
         fromBudget = budget
         let historyStorage = TempHistoryStorageService.shared
+        transactionHistory = historyStorage.openHistory(budget: budget)
         nameBudgetLabel.text = budget.name
         budgetAmountLabel.text = "Budget: " + DoubleFormatter.shared.convertToString(from: budget.amount) + symbol
         let left = budget.amount - historyStorage.calculateSpent(budget: budget)

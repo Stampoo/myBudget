@@ -42,6 +42,7 @@ final class TransactionFilter {
                     tempSlotForTransaction = transaction
                     transactions[index] = trans
                     transactions[ind] = tempSlotForTransaction
+                    break
                 }
             }
         }
