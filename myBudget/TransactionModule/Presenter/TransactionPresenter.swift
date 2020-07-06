@@ -46,9 +46,9 @@ extension TransactionPresenter: TransactionViewOutput {
         })
     }
 
-    func dismiss(with newBudget: Budget) {}
-
-    func pop(with newBudget: Budget) {}
+    func push() {
+        router?.pushModule(with: self)
+    }
 
     func present() {
         router?.presentModule(with: self)
@@ -70,4 +70,17 @@ extension TransactionPresenter: TransactionModuleOutput {
         view?.configure(with: budget)
     }
     
+}
+
+extension TransactionPresenter: ModuleOutput {
+
+    func moduleOutput(with budget: Budget) {}
+
+    func transitionBudget(completion: (Budget) -> Void) {
+        guard let budget = budget else {
+            return
+        }
+        completion(budget)
+    }
+
 }

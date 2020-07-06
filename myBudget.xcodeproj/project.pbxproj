@@ -46,6 +46,14 @@
 		34922EB724A8EBF800F0AE9F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EB624A8EBF800F0AE9F /* Date.swift */; };
 		34922EBC24A8F3B200F0AE9F /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EBA24A8F3B200F0AE9F /* TransactionTableViewCell.swift */; };
 		34922EBD24A8F3B200F0AE9F /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34922EBB24A8F3B200F0AE9F /* TransactionTableViewCell.xib */; };
+		349CD35724B314EE0008AAA9 /* EditBudgetProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CD35624B314EE0008AAA9 /* EditBudgetProtocols.swift */; };
+		349CD35924B3155D0008AAA9 /* EditBudgetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CD35824B3155D0008AAA9 /* EditBudgetPresenter.swift */; };
+		349CD35B24B315CB0008AAA9 /* EditBudgetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CD35A24B315CB0008AAA9 /* EditBudgetRouter.swift */; };
+		349CD35E24B316270008AAA9 /* EditBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CD35C24B316270008AAA9 /* EditBudgetViewController.swift */; };
+		349CD35F24B316270008AAA9 /* EditBudgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349CD35D24B316270008AAA9 /* EditBudgetViewController.xib */; };
+		349CD36124B316AE0008AAA9 /* EditBudgetConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CD36024B316AE0008AAA9 /* EditBudgetConfigurator.swift */; };
+		349CD36424B3179F0008AAA9 /* EditBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CD36224B3179F0008AAA9 /* EditBudgetTableViewCell.swift */; };
+		349CD36524B3179F0008AAA9 /* EditBudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349CD36324B3179F0008AAA9 /* EditBudgetTableViewCell.xib */; };
 		34C24DB924A62C00006AE65E /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C24DB724A62C00006AE65E /* ScoreTableViewCell.swift */; };
 		34C24DBA24A62C00006AE65E /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C24DB824A62C00006AE65E /* ScoreTableViewCell.xib */; };
 		34F2864B24A527A100D7C509 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2864A24A527A100D7C509 /* AppDelegate.swift */; };
@@ -108,6 +116,14 @@
 		34922EB624A8EBF800F0AE9F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		34922EBA24A8F3B200F0AE9F /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		34922EBB24A8F3B200F0AE9F /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
+		349CD35624B314EE0008AAA9 /* EditBudgetProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBudgetProtocols.swift; sourceTree = "<group>"; };
+		349CD35824B3155D0008AAA9 /* EditBudgetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBudgetPresenter.swift; sourceTree = "<group>"; };
+		349CD35A24B315CB0008AAA9 /* EditBudgetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBudgetRouter.swift; sourceTree = "<group>"; };
+		349CD35C24B316270008AAA9 /* EditBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBudgetViewController.swift; sourceTree = "<group>"; };
+		349CD35D24B316270008AAA9 /* EditBudgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditBudgetViewController.xib; sourceTree = "<group>"; };
+		349CD36024B316AE0008AAA9 /* EditBudgetConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBudgetConfigurator.swift; sourceTree = "<group>"; };
+		349CD36224B3179F0008AAA9 /* EditBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBudgetTableViewCell.swift; sourceTree = "<group>"; };
+		349CD36324B3179F0008AAA9 /* EditBudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditBudgetTableViewCell.xib; sourceTree = "<group>"; };
 		34C24DB724A62C00006AE65E /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		34C24DB824A62C00006AE65E /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
 		34F2864724A527A100D7C509 /* myBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -322,6 +338,61 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		349CD35024B314AC0008AAA9 /* EditBudgetModule */ = {
+			isa = PBXGroup;
+			children = (
+				349CD35524B314CC0008AAA9 /* Protocols */,
+				349CD35324B314CC0008AAA9 /* Presenter */,
+				349CD35224B314CC0008AAA9 /* Router */,
+				349CD35424B314CC0008AAA9 /* View */,
+				349CD35124B314CC0008AAA9 /* Configurator */,
+			);
+			path = EditBudgetModule;
+			sourceTree = "<group>";
+		};
+		349CD35124B314CC0008AAA9 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				349CD36024B316AE0008AAA9 /* EditBudgetConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		349CD35224B314CC0008AAA9 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				349CD35A24B315CB0008AAA9 /* EditBudgetRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		349CD35324B314CC0008AAA9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				349CD35824B3155D0008AAA9 /* EditBudgetPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		349CD35424B314CC0008AAA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				349CD35C24B316270008AAA9 /* EditBudgetViewController.swift */,
+				349CD35D24B316270008AAA9 /* EditBudgetViewController.xib */,
+				349CD36224B3179F0008AAA9 /* EditBudgetTableViewCell.swift */,
+				349CD36324B3179F0008AAA9 /* EditBudgetTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		349CD35524B314CC0008AAA9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				349CD35624B314EE0008AAA9 /* EditBudgetProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		34C24DBB24A64C01006AE65E /* AddModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +472,7 @@
 				34F2867024A5E84500D7C509 /* ScoreModule */,
 				34C24DBB24A64C01006AE65E /* AddModule */,
 				342E485F24A7E8AE004B39D3 /* TransactionModule */,
+				349CD35024B314AC0008AAA9 /* EditBudgetModule */,
 				34922E9E24A8BD6A00F0AE9F /* AddTransactionModule */,
 				34F2865F24A528DD00D7C509 /* Resource */,
 				34F2865E24A5283000D7C509 /* Application */,
@@ -614,7 +686,9 @@
 				34F2865224A527A100D7C509 /* Main.storyboard in Resources */,
 				341C622D24AF50E300A509AC /* main.png in Resources */,
 				34922EBD24A8F3B200F0AE9F /* TransactionTableViewCell.xib in Resources */,
+				349CD36524B3179F0008AAA9 /* EditBudgetTableViewCell.xib in Resources */,
 				342E486C24A7EB51004B39D3 /* TransactionViewController.xib in Resources */,
+				349CD35F24B316270008AAA9 /* EditBudgetViewController.xib in Resources */,
 				341C622A24AF50E300A509AC /* detail.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,6 +734,7 @@
 				34F2866F24A5E62E00D7C509 /* Category.swift in Sources */,
 				3438739124ACAF0300010714 /* Double.swift in Sources */,
 				341D2D2724A74AD1007C5979 /* UIColor.swift in Sources */,
+				349CD35924B3155D0008AAA9 /* EditBudgetPresenter.swift in Sources */,
 				3438738D24AC8E8100010714 /* CurrencyConverter.swift in Sources */,
 				341C622124AF3B9900A509AC /* String.swift in Sources */,
 				34F2866224A52EC700D7C509 /* Support.swift in Sources */,
@@ -668,10 +743,15 @@
 				34F2868324A5F74900D7C509 /* ScoreConfigurator.swift in Sources */,
 				342E486E24A7ECF1004B39D3 /* TransactionRouter.swift in Sources */,
 				342E486624A7E91D004B39D3 /* TransactionProtocols.swift in Sources */,
+				349CD36124B316AE0008AAA9 /* EditBudgetConfigurator.swift in Sources */,
+				349CD36424B3179F0008AAA9 /* EditBudgetTableViewCell.swift in Sources */,
+				349CD35724B314EE0008AAA9 /* EditBudgetProtocols.swift in Sources */,
 				3467AD0724AB94D7002A706C /* Progress.swift in Sources */,
+				349CD35B24B315CB0008AAA9 /* EditBudgetRouter.swift in Sources */,
 				34F2866924A5D74100D7C509 /* Score.swift in Sources */,
 				34922EA724A8BDAE00F0AE9F /* AddTransactionPresenter.swift in Sources */,
 				341C622524AF4D2300A509AC /* CustomTextField.swift in Sources */,
+				349CD35E24B316270008AAA9 /* EditBudgetViewController.swift in Sources */,
 				341C623424AFAF8000A509AC /* DoubleFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

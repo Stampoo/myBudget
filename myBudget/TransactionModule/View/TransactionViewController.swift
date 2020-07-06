@@ -144,13 +144,19 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     }
 
     private func addButton() {
-        let leftBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTransaction))
-        leftBarButton.tintColor = .white
-        navigationItem.rightBarButtonItem = leftBarButton
+        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTransaction))
+        let secondRightBarButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editBudget))
+        rightBarButton.tintColor = .white
+        secondRightBarButton.tintColor = .white
+        navigationItem.rightBarButtonItems = [rightBarButton, secondRightBarButton]
     }
 
     @objc private func addTransaction() {
         output?.present()
+    }
+
+    @objc private func editBudget() {
+        output?.push()
     }
 
     private func configreTransferButton() {

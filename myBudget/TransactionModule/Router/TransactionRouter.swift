@@ -21,7 +21,10 @@ final class TransactionRouter {
 
 extension TransactionRouter: TransactionViewRouterInput {
 
-    func pushModule() {}
+    func pushModule(with moduleOutput: ModuleOutput) {
+        let editModule = EditBudgetConfigurator().configureModule(with: moduleOutput)
+        view?.pushModule(module: editModule, animated: true)
+    }
 
     func presentModule(with moduleOutput: TransactionModuleOutput) {
         let addModule = AddConfigurator().configureModule(with: moduleOutput)

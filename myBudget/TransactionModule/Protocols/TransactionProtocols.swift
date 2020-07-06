@@ -26,11 +26,13 @@ protocol TransactionViewOutput: class {
 
     func present()
 
+    func push()
+
 }
 
 protocol TransactionViewRouterInput: class {
 
-    func pushModule()
+    func pushModule(with moduleOutput: ModuleOutput)
 
     func presentModule(with moduleOutput: TransactionModuleOutput)
 
