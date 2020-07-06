@@ -192,12 +192,13 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
 extension TransactionViewController: TransactionViewInput {
     
     func configure(with budget: Budget) {
+        let symbol = budget.currency.rawValue.getCurrencyLiteral()
         fromBudget = budget
         let historyStorage = TempHistoryStorageService.shared
         nameBudgetLabel.text = budget.name
-        budgetAmountLabel.text = "Budget: " + DoubleFormatter.shared.convertToString(from: budget.amount)
+        budgetAmountLabel.text = "Budget: " + DoubleFormatter.shared.convertToString(from: budget.amount) + symbol
         let left = budget.amount - historyStorage.calculateSpent(budget: budget)
-        budgetSpentLabel.text = "Left: " + DoubleFormatter.shared.convertToString(from: left)
+        budgetSpentLabel.text = "Left: " + DoubleFormatter.shared.convertToString(from: left) + symbol
         tableView.reloadData()
     }
 

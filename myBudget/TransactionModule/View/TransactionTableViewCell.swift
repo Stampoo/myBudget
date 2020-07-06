@@ -25,7 +25,7 @@ final class TransactionTableViewCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        frame = frame.inset(by: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
     }
 
 
