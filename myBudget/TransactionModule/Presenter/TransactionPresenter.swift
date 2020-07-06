@@ -74,7 +74,10 @@ extension TransactionPresenter: TransactionModuleOutput {
 
 extension TransactionPresenter: ModuleOutput {
 
-    func moduleOutput(with budget: Budget) {}
+    func moduleOutput(with budget: Budget) {
+        self.budget = budget
+        view?.configure(with: budget)
+    }
 
     func transitionBudget(completion: (Budget) -> Void) {
         guard let budget = budget else {

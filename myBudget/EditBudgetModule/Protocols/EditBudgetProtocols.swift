@@ -18,7 +18,7 @@ protocol EditBudgetViewInput: class {
 
 protocol EditBudgetViewOutput: class {
 
-    func reload()
+    func reload(with newBudget: Budget)
 
     func viewLoaded()
 

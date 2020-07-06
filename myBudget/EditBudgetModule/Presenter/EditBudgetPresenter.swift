@@ -29,7 +29,10 @@ final class EditBudgetPresenter {
 
 extension EditBudgetPresenter: EditBudgetViewOutput {
 
-    func reload() {}
+    func reload(with newBudget: Budget) {
+        router?.popModule()
+        moduleOutput?.moduleOutput(with: newBudget)
+    }
 
     func viewLoaded() {
         moduleOutput?.transitionBudget(completion: { (budget) in

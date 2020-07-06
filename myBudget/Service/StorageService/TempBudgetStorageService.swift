@@ -53,6 +53,21 @@ final class TempBudgetStorageService {
         storage.set(encodedBudgetList, forKey: Constants.budgetList)
     }
 
+    func delete(budget: Budget) -> (Int, Budget?) {
+        var deletingBudget: (Int, Budget?) = (0, nil)
+        var budgetList = openBudgetList()
+        for oldBudget in budgetList {
+            if oldBudget.name == budget.name,
+                let index = budgetList.firstIndex(of: budget) {
+                deletingBudget = (index, oldBudget)
+                budgetList.remove(at: index)
+                let encodedBudget = encodingBudgetList(budgetList: budgetList)
+                storage.set(encodedBudget, forKey: Constants.budgetList)
+            }
+        }
+        return deletingBudget
+    }
+
     
     //MARK: - Private methods
     
@@ -86,21 +101,6 @@ final class TempBudgetStorageService {
                save(budget: budget, index: index)
            }
        }
-
-    private func delete(budget: Budget) -> (Int, Budget?) {
-        var deletingBudget: (Int, Budget?) = (0, nil)
-        var budgetList = openBudgetList()
-        for oldBudget in budgetList {
-            if oldBudget.name == budget.name,
-                let index = budgetList.firstIndex(of: budget) {
-                deletingBudget = (index, oldBudget)
-                budgetList.remove(at: index)
-                let encodedBudget = encodingBudgetList(budgetList: budgetList)
-                storage.set(encodedBudget, forKey: Constants.budgetList)
-            }
-        }
-        return deletingBudget
-    }
 
     private func isInStorage(budget: Budget) -> Int? {
         let budgetList = openBudgetList()

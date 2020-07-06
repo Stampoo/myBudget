@@ -124,10 +124,10 @@ extension EditBudgetTableViewCell: UITextFieldDelegate {
         switch index {
         case 0:
             newName = text
+            output?.transferNewName(newName)
         case 1:
             newAmount = Double(text)
-        case 2:
-            newCurrency = Currency.ruble
+            output?.transferNewAmount(newAmount)
         default:
             return
         }

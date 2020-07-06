@@ -18,6 +18,7 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
         static let cellCount = 3
         static let cellInSection = 1
         static let titleText = "Configure current budget"
+        static let saveButtonTitle = "Save changes"
     }
 
     //MARK: - IBOutlets
@@ -31,7 +32,12 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
     //MARK: - Public properties
 
     var output: EditBudgetViewOutput?
-    var transferNewBudgElements: (() -> Void)?
+    lazy var transferNewName: ((String?) -> Void) = { (newName) in
+        self.newName = newName
+    }
+    lazy var transferNewAmount: ((Double?) -> Void) = { (newAmount) in
+        self.newAmount = newAmount
+    }
     lazy var appearPicker = {
         self.appearedPicker()
     }
@@ -49,8 +55,11 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
     private let currencyPicker = UIPickerView()
     private var currencyPickerHeightAnchor = NSLayoutConstraint()
     private var currencyList: [Currency] = [.bRuble, .euro, .ruble, .USD]
+    private var newName: String?
+    private var newAmount: Double?
     private lazy var pickedCurrency = budget?.currency
     private var isAppeared = false
+    private var budgetStorage = TempBudgetStorageService.shared
 
 
     //MARK: - Lifecycle
@@ -63,22 +72,6 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
         configureTable()
         configureButton()
     }
-
-    @objc private func appearedPicker() {
-        UIView.animate(withDuration: 0.3) {
-            if self.isAppeared {
-                self.currencyPickerHeightAnchor.constant = 0
-                self.isAppeared = !self.isAppeared
-                self.view.layoutIfNeeded()
-            } else {
-                self.currencyPickerHeightAnchor.constant = self.view.frame.height * 0.3
-                self.view.layoutIfNeeded()
-                self.isAppeared = !self.isAppeared
-            }
-        }
-    }
-
-    @objc private func saveChanges() {}
 
 
     //MARK: - Private methods
@@ -111,8 +104,38 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
     }
 
     private func configureButton() {
-        saveButton.backgroundColor = .red
+        saveButton.backgroundColor = UIColor.shared.getCustom(color: .blue)
+        saveButton.setTitle(Constants.saveButtonTitle, for: .normal)
+        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.layer.cornerRadius = saveButton.frame.height /  4
         saveButton.addTarget(self, action: #selector(saveChanges), for: .touchUpInside)
+    }
+
+    @objc private func appearedPicker() {
+        UIView.animate(withDuration: 0.3) {
+            if self.isAppeared {
+                self.currencyPickerHeightAnchor.constant = 0
+                self.isAppeared = !self.isAppeared
+                self.view.layoutIfNeeded()
+            } else {
+                self.currencyPickerHeightAnchor.constant = self.view.frame.height * 0.3
+                self.view.layoutIfNeeded()
+                self.isAppeared = !self.isAppeared
+            }
+        }
+    }
+
+    @objc private func saveChanges() {
+        guard let budget = budget else {
+            return
+        }
+        let newName = self.newName ?? budget.name
+        let newAmount = self.newAmount ?? budget.amount
+        let newCurrency = self.pickedCurrency ?? budget.currency
+        let newBudget = Budget(name: newName, amount: newAmount, currency: newCurrency)
+        budgetStorage.addBudgetInList(budget: newBudget)
+        _ = budgetStorage.delete(budget: budget)
+        output?.reload(with: newBudget)
     }
 
 }

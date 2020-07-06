@@ -43,6 +43,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        output?.reload()
         tableView.reloadData()
     }
     

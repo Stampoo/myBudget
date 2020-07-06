@@ -67,6 +67,10 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         addButton()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+
 
     //MARK: - Privat methods
 
