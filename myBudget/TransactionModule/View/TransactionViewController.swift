@@ -45,7 +45,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     private var transactionHistory = [Transaction]()
     private var isTransferMode = false
     private let budgetPicker = UIPickerView()
-    private let budgetList = TempBudgetStorageService.shared.openBudgetList()
+    private var budgetList = [Budget]()
     private var isChoiseREcipient = false
     private var toBudget: Budget?
     private var fromBudget: Budget?
@@ -192,6 +192,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
 extension TransactionViewController: TransactionViewInput {
     
     func configure(with budget: Budget) {
+        budgetList = TempBudgetStorageService.shared.budgetListWithout(budget: budget)
         let symbol = budget.currency.rawValue.getCurrencyLiteral()
         fromBudget = budget
         let historyStorage = TempHistoryStorageService.shared
