@@ -23,6 +23,12 @@ extension UIColor {
                 return [238, 238, 240]
             case .indigo:
                 return [88, 86, 214]
+            case .red:
+                return [245, 70, 55]
+            case .orange:
+                return [247, 173, 48]
+            case .green:
+                return [179, 237, 59]
             }
         }
 
@@ -30,6 +36,9 @@ extension UIColor {
         case gray
         case lightGray
         case indigo
+        case red
+        case orange
+        case green
     }
 
     func getCustom(color: CustomColors) -> UIColor {
