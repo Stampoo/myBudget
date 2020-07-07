@@ -23,6 +23,27 @@ final class Transfer {
         writeInHistory(from: from, to: to, amount: amount)
     }
 
+    func convert(fromBudget: Budget, toBudget: Budget, amount: Double) -> Double {
+        let tryConvert = convertMoneyFrom(from: fromBudget, to: toBudget, amount: amount)
+        let converter = CurrencyConverter()
+        let transactionStorage = TempHistoryStorageService.shared
+        let transactionHistory = transactionStorage.openHistory(budget: toBudget)
+        var convertedTransactionHistory = [Transaction]()
+        for transaction in transactionHistory {
+            let newAmount = converter.convert(from: fromBudget.currency, to: toBudget.currency, amount: transaction.amount)
+            let newTransaction = Transaction(name: transaction.name,
+                                             amount: newAmount ?? 0,
+                                             date: transaction.date,
+                                             transfer: transaction.transfer)
+            convertedTransactionHistory.append(newTransaction)
+        }
+        transactionStorage.replaceCurrentTransaction(at: convertedTransactionHistory, for: toBudget)
+        guard let convertedAmount = tryConvert else {
+            return 0.0
+        }
+        return convertedAmount
+    }
+
 
     //MARK: - Private methods
 

@@ -48,6 +48,11 @@ final class TempHistoryStorageService {
         storage.set(encodedHistory, forKey: budget.name)
     }
 
+    func replaceCurrentTransaction(at newTransaction: [Transaction], for budget: Budget) {
+        deleteHistory(at: budget)
+        saveHistory(at: budget, history: newTransaction)
+    }
+
     func calculateSpent(budget: Budget) -> Double {
         var spent = 0.0
         let history = TempHistoryStorageService.shared.openHistory(budget: budget)

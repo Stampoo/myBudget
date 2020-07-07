@@ -129,14 +129,19 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
             return
         }
         let newName = self.newName ?? budget.name
-        let newAmount = self.newAmount ?? budget.amount
+        var newAmount = self.newAmount ?? budget.amount
         let newCurrency = self.pickedCurrency ?? budget.currency
-        let newBudget = Budget(name: newName, amount: newAmount, currency: newCurrency)
-        budgetStorage.addBudgetInList(budget: newBudget)
+        var newBudget = Budget(name: newName, amount: newAmount, currency: newCurrency)
         _ = budgetStorage.delete(budget: budget)
-        if budget.name != newBudget.name {
-            transactionStorage.migrateHistoryAfterRename(from: budget, toBudget: newBudget)
+        if budget.currency != newBudget.currency {
+            let transferService = Transfer()
+            newAmount = transferService.convert(fromBudget: budget, toBudget: newBudget, amount: newBudget.amount)
+            newBudget = Budget(name: newName, amount: newAmount, currency: newCurrency)
         }
+        if budget.name != newBudget.name {
+                   transactionStorage.migrateHistoryAfterRename(from: budget, toBudget: newBudget)
+               }
+        budgetStorage.addBudgetInList(budget: newBudget)
         output?.reload(with: newBudget)
     }
 
