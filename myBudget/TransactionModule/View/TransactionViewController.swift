@@ -97,7 +97,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
             return
         }
         let sortService = TransactionFilter()
-        let sortedTransaction = sortService.filterBy(type: .date, to: budget)
+        let sortedTransaction = sortService.sortBy(type: .date, to: budget)
         transactionHistory = isDecrease ? sortedTransaction : sortedTransaction.reversed()
         tableView.reloadData()
         isDecrease = !isDecrease
