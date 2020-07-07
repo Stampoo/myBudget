@@ -11,18 +11,17 @@ import UIKit
 extension UIView {
     
     func addLightShadow() {
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowRadius = 3
-        self.layer.shadowOffset = .init(width: 0.5, height: 4.0)
-        self.layer.shadowOpacity = 0.1
-        self.layer.masksToBounds = false
+        layer.shadowRadius = 5
+        layer.shadowOpacity = 0.3
+        layer.shadowOffset = .zero
+        layer.masksToBounds = false
     }
 
     func addBloom(color: UIColor) {
-        self.layer.shadowColor = color.cgColor
-        self.layer.shadowRadius = 2.0
-        self.layer.shadowOpacity = 0.9
-        self.layer.shadowOffset = .zero
+        layer.shadowColor = color.cgColor
+        layer.shadowRadius = 2.0
+        layer.shadowOpacity = 0.9
+        layer.shadowOffset = .zero
     }
     
 }

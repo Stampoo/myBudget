@@ -39,7 +39,6 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="cmf-kw-x0s"/>
                     </constraints>
-                    <color key="textColor" red="0.9401390552520752" green="0.92950206995010376" blue="0.9333769679069519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -77,7 +76,7 @@
                     <state key="normal" title="Button"/>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="d36-VM-Coj" firstAttribute="leading" secondItem="Yh4-mS-eS3" secondAttribute="trailing" constant="8" id="4mt-Cf-h0K"/>
                 <constraint firstItem="d36-VM-Coj" firstAttribute="top" secondItem="aY8-s1-cvd" secondAttribute="bottom" constant="15.5" id="9zh-3F-mih"/>

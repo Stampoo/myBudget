@@ -117,13 +117,12 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     }
 
     private func createPicker() {
-        budgetPicker.layer.cornerRadius = view.frame.height * 0.3 / 4
         budgetPicker.backgroundColor = UIColor.shared.getCustom(color: .lightGray)
         budgetPicker.dataSource = self
         budgetPicker.delegate = self
         budgetPicker.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(budgetPicker)
-        currencyPickerConstraint()
+        toPickerConstraint()
     }
 
     private func configureTable() {
@@ -294,7 +293,7 @@ extension TransactionViewController: UIPickerViewDelegate {
 
 extension TransactionViewController {
 
-    private func currencyPickerConstraint() {
+    private func toPickerConstraint() {
         toPickerHeightAnchor = budgetPicker.heightAnchor.constraint(equalToConstant: 0)
         NSLayoutConstraint.activate([
             budgetPicker.leftAnchor.constraint(equalTo: view.leftAnchor),

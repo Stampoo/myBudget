@@ -80,7 +80,6 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
         currencyPicker.delegate = self
         currencyPicker.dataSource = self
         currencyPicker.backgroundColor = UIColor.shared.getCustom(color: .lightGray)
-        currencyPicker.layer.cornerRadius = view.frame.height * 0.3 / 8
         view.addSubview(currencyPicker)
         currencyPickerConstraint()
     }
@@ -111,7 +110,7 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
     }
 
     @objc private func appearedPicker() {
-        view.resignFirstResponder()
+        view.endEditing(true)
         UIView.animate(withDuration: 0.3) {
             if self.isAppeared {
                 self.currencyPickerHeightAnchor.constant = 0

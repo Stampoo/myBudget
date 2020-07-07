@@ -70,14 +70,12 @@ final class AddViewController: UIViewController, ModuleTransitionable {
 
     private func configureFields() {
         let fields = [nameBudget, amountMonth]
-        let leftView = UIView(frame: .init(x: 0, y: 0, width: 5, height: 20))
         fields.forEach {
             $0?.borderStyle = .none
             $0?.backgroundColor = Constants.fieldColor
             $0?.layer.cornerRadius = ($0?.frame.height ?? 0) / 4
             $0?.clipsToBounds = true
             $0?.textColor = .black
-            $0?.leftView = leftView
         }
         nameBudget.placeholder = Constants.namePlaceHolder
         amountMonth.placeholder = Constants.amountPlaceHolder
@@ -85,7 +83,6 @@ final class AddViewController: UIViewController, ModuleTransitionable {
     }
 
     private func configureCurrencyPicker() {
-        picker.layer.cornerRadius = view.frame.height * 0.3 / 8
         picker.backgroundColor = UIColor.shared.getCustom(color: .lightGray)
         picker.dataSource = self
         picker.delegate = self
@@ -166,7 +163,6 @@ final class AddViewController: UIViewController, ModuleTransitionable {
     }
 
     private func configureDatePicker() {
-        datePicker.layer.cornerRadius = view.frame.height * 0.3 / 8
         datePicker.backgroundColor = UIColor.shared.getCustom(color: .lightGray)
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         datePicker.translatesAutoresizingMaskIntoConstraints = false
