@@ -68,6 +68,14 @@ final class TempBudgetStorageService {
         return deletingBudget
     }
 
+    func budgetListWithout(budget: Budget) -> [Budget] {
+        var currentBudgetList = openBudgetList()
+        if let index = isInStorage(budget: budget) {
+            currentBudgetList.remove(at: index)
+        }
+        return currentBudgetList
+    }
+
     
     //MARK: - Private methods
     
@@ -94,13 +102,13 @@ final class TempBudgetStorageService {
     }
 
     private func saveInStorage(budget: Budget, index: Int) {
-           if let currentIndex = isInStorage(budget: budget) {
-               let (_, _) = delete(budget: budget)
-               save(budget: budget, index: currentIndex)
-           } else {
-               save(budget: budget, index: index)
-           }
-       }
+        if let currentIndex = isInStorage(budget: budget) {
+            let (_, _) = delete(budget: budget)
+            save(budget: budget, index: currentIndex)
+        } else {
+            save(budget: budget, index: index)
+        }
+    }
 
     private func isInStorage(budget: Budget) -> Int? {
         let budgetList = openBudgetList()

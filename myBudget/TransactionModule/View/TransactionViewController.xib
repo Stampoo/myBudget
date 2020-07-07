@@ -133,11 +133,11 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L7x-J3-9iT">
-                    <rect key="frame" x="0.0" y="294" width="375" height="373"/>
+                    <rect key="frame" x="0.0" y="286" width="375" height="381"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLW-BC-Ynm">
-                    <rect key="frame" x="20" y="294" width="46" height="46"/>
+                    <rect key="frame" x="20" y="601" width="46" height="46"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="46" id="kvN-H0-1Ws"/>
                         <constraint firstAttribute="height" constant="46" id="pXj-AX-cuD"/>
@@ -153,9 +153,9 @@
                 <constraint firstItem="WKX-RX-TOP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IJw-a2-IR2"/>
                 <constraint firstItem="L7x-J3-9iT" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="VPI-Gr-bs3"/>
                 <constraint firstItem="CLW-BC-Ynm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="bpP-sE-Vsk"/>
-                <constraint firstItem="L7x-J3-9iT" firstAttribute="top" secondItem="WKX-RX-TOP" secondAttribute="bottom" constant="8" id="cij-At-dYS"/>
-                <constraint firstItem="CLW-BC-Ynm" firstAttribute="top" secondItem="WKX-RX-TOP" secondAttribute="bottom" constant="8" id="dgV-iI-lUh"/>
+                <constraint firstItem="L7x-J3-9iT" firstAttribute="top" secondItem="WKX-RX-TOP" secondAttribute="bottom" id="cij-At-dYS"/>
                 <constraint firstItem="8jC-0V-bua" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="svc-FL-tFm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CLW-BC-Ynm" secondAttribute="bottom" constant="20" id="va4-DF-C8j"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="110.49107142857143"/>

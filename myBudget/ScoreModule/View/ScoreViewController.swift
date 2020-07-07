@@ -33,8 +33,10 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let converter = CurrencyConverter()
         converter.updateRates()
+
         output?.viewLoaded()
         configureTableView()
         configurateNavbar()
@@ -57,7 +59,6 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor().getCustom(color: .lightGray)
         view.addSubview(tableView)
     }
 
@@ -69,7 +70,6 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     private func configureAddButton() {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewBudget))
         navigationItem.rightBarButtonItem = addButton
-        navigationItem.rightBarButtonItem?.tintColor = .black
         let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(pop))
         navigationItem.backBarButtonItem = backBarButtton
         navigationItem.backBarButtonItem?.tintColor = .white

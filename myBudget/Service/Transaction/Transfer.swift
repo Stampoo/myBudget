@@ -30,8 +30,14 @@ final class Transfer {
         guard let convertedMoney = convertMoneyFrom(from: from, to: to, amount: amount) else {
             return
         }
-        let transactionFrom = Transaction(name: "Outgoing transfer", amount: -amount, date: Date())
-        let transactionTo = Transaction(name: "Incoming transfer", amount: convertedMoney, date: Date())
+        let fromTrasferOption = TransferOption(isTransfer: true, isOutput: true)
+        let toTransferOption = TransferOption(isTransfer: true, isOutput: false)
+        let transactionFrom = Transaction(name: "Outgoing transfer",
+                                          amount: -amount,
+                                          date: Date(), transfer: fromTrasferOption)
+        let transactionTo = Transaction(name: "Incoming transfer",
+                                        amount: convertedMoney,
+                                        date: Date(), transfer: toTransferOption)
         transactionStoraget.addTransactionInHistory(budget: from, transaction: transactionFrom)
         transactionStoraget.addTransactionInHistory(budget: to, transaction: transactionTo)
     }

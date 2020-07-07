@@ -46,7 +46,7 @@ final class ScoreTableViewCell: UITableViewCell {
         configureLabels()
         configureBar()
         configureLeftSide()
-        self.contentView.backgroundColor = UIColor().getCustom(color: .lightGray)
+        protectFromNightMode()
     }
 
 
@@ -89,14 +89,24 @@ final class ScoreTableViewCell: UITableViewCell {
     private func configureCard() {
         selectionStyle = .none
         cardView.layer.cornerRadius = cardView.frame.height / 8
-        cardView.clipsToBounds = true
-        shadowView.clipsToBounds = false
+        cardView.layer.masksToBounds = true
         shadowView.addLightShadow()
     }
 
     private func configureLeftSide() {
         categoryImageView.alpha = 0.3
         categoryImageView.layer.cornerRadius = categoryImageView.frame.height / 2
+    }
+
+    private func protectFromNightMode() {
+        colorView.backgroundColor = .lightGray
+        [
+            spentTitle,
+            budgetTitle,
+            budgetAmount,
+            spentAmount,
+            budgetName
+            ].forEach { $0?.textColor = .black }
     }
     
 }

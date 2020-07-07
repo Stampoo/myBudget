@@ -58,6 +58,7 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
     private lazy var pickedCurrency = budget?.currency
     private var isAppeared = false
     private var budgetStorage = TempBudgetStorageService.shared
+    private var transactionStorage = TempHistoryStorageService.shared
 
 
     //MARK: - Lifecycle
@@ -79,7 +80,6 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
         currencyPicker.delegate = self
         currencyPicker.dataSource = self
         currencyPicker.backgroundColor = UIColor.shared.getCustom(color: .lightGray)
-        currencyPicker.layer.cornerRadius = view.frame.height * 0.3 / 8
         view.addSubview(currencyPicker)
         currencyPickerConstraint()
     }
@@ -110,6 +110,7 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
     }
 
     @objc private func appearedPicker() {
+        view.endEditing(true)
         UIView.animate(withDuration: 0.3) {
             if self.isAppeared {
                 self.currencyPickerHeightAnchor.constant = 0
@@ -133,6 +134,9 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
         let newBudget = Budget(name: newName, amount: newAmount, currency: newCurrency)
         budgetStorage.addBudgetInList(budget: newBudget)
         _ = budgetStorage.delete(budget: budget)
+        if budget.name != newBudget.name {
+            transactionStorage.migrateHistoryAfterRename(from: budget, toBudget: newBudget)
+        }
         output?.reload(with: newBudget)
     }
 
