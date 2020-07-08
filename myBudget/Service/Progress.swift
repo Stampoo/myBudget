@@ -10,12 +10,14 @@ import UIKit
 
 final class Progress {
 
-
     //MARK: - Private properties
 
     private var currentProgress: Float
     private let progressView: UIView
     private let absoluteWidth = UIScreen.main.bounds.width - 15
+
+
+    //MARK: - Initizliers
 
     init(budget: Budget, progressView: UIView) {
         self.currentProgress = 0

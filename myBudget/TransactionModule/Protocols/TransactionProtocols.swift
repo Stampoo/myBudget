@@ -10,8 +10,6 @@ import Foundation
 
 protocol TransactionViewInput: class {
 
-    func configure(with transaction: Transaction)
-
     func configure(with budget: Budget)
 
     func setupInitialState(with transactionHistory: [Transaction])

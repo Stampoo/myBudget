@@ -24,4 +24,5 @@ extension String {
             return "Not a currency"
         }
     }
+    
 }

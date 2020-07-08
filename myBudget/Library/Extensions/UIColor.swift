@@ -31,7 +31,6 @@ extension UIColor {
                 return [179, 237, 59]
             }
         }
-
         case blue
         case gray
         case lightGray
@@ -42,13 +41,9 @@ extension UIColor {
     }
 
     func getCustom(color: CustomColors) -> UIColor {
-        return getColor(color: color)
-    }
-
-    private func getColor(color: CustomColorsRawValue) -> UIColor {
-        return .init(red: color.rawValue[0] / 255,
-                     green: color.rawValue[1] / 255,
-                     blue: color.rawValue[2] / 255, alpha: 1)
+        .init(red: color.rawValue[0] / 255,
+              green: color.rawValue[1] / 255,
+              blue: color.rawValue[2] / 255, alpha: 1)
     }
 
 }

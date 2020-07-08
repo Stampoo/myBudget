@@ -16,6 +16,13 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         static let cellIdentifire = "TransactionCell"
         static let cellNib = "TransactionTableViewCell"
         static let transferAmountPlaceHolder = "Type amount"
+        static let transferText = "Transfer to"
+        static let transferFontSize: CGFloat = 17
+        static let roundingAngleMultiplier: CGFloat = 4
+        static let nameFontSize: CGFloat = 35
+        static let budgetFontSize: CGFloat = 25
+        static let spentFontSize: CGFloat = 20
+        static let pickerheightAtView: CGFloat = 0.3
     }
 
 
@@ -78,7 +85,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
             amountTextField,
             sendButton
         ]
-        buttons.forEach { $0?.layer.cornerRadius = ($0?.frame.height ?? 0) / 4 }
+        buttons.forEach { $0?.layer.cornerRadius = ($0?.frame.height ?? 0) / Constants.roundingAngleMultiplier }
         amountTextField.placeholder = Constants.transferAmountPlaceHolder
         amountTextField.keyboardType = .numberPad
         cancelButton.addTarget(self, action: #selector(enableTransfer), for: .touchUpInside)
@@ -91,7 +98,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         guard let budget = fromBudget else {
             return
         }
-        let sortService = TransactionFilter()
+        let sortService = TransactionSorter()
         let sortedTransaction = sortService.sortBy(type: .date, to: budget)
         transactionHistory = isDecrease ? sortedTransaction : sortedTransaction.reversed()
         tableView.reloadData()
@@ -105,7 +112,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
             let fromBudget = fromBudget else {
                 return
         }
-        let transferService = Transfer()
+        let transferService = TransferService()
         transferService.trasferMoney(from: fromBudget, to: toBudget, amount: amountDouble)
         enableTransfer()
         output?.reload()
@@ -127,15 +134,17 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     }
 
     private func configureLables() {
-        nameBudgetLabel.textColor = .white
-        nameBudgetLabel.textAlignment = .center
-        nameBudgetLabel.font = .boldSystemFont(ofSize: 35)
-        budgetAmountLabel.textColor = .white
-        budgetAmountLabel.textAlignment = .center
-        budgetAmountLabel.font = .boldSystemFont(ofSize: 25)
-        budgetSpentLabel.textColor = .white
-        budgetSpentLabel.textAlignment = .center
-        budgetSpentLabel.font = .boldSystemFont(ofSize: 20)
+        [
+            nameBudgetLabel,
+            budgetAmountLabel,
+            budgetSpentLabel
+            ].forEach {
+                $0?.textColor = .white
+                $0?.textAlignment = .center
+        }
+        nameBudgetLabel.font = .boldSystemFont(ofSize: Constants.nameFontSize)
+        budgetAmountLabel.font = .boldSystemFont(ofSize: Constants.budgetFontSize)
+        budgetSpentLabel.font = .boldSystemFont(ofSize: Constants.spentFontSize)
     }
 
     private func addButton() {
@@ -155,11 +164,11 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     }
 
     private func configreTransferButton() {
-        transferButton.setTitle("Transfer to", for: .normal)
-        transferButton.backgroundColor = UIColor().getCustom(color: .blue)
+        transferButton.setTitle(Constants.transferText, for: .normal)
+        transferButton.backgroundColor = UIColor.shared.getCustom(color: .blue)
         transferButton.setTitleColor(.white, for: .normal)
-        transferButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
-        transferButton.layer.cornerRadius = transferButton.frame.height / 8
+        transferButton.titleLabel?.font = .boldSystemFont(ofSize: Constants.transferFontSize)
+        transferButton.layer.cornerRadius = transferButton.frame.height / Constants.roundingAngleMultiplier
         transferButton.addTarget(self, action: #selector(enableTransfer), for: .touchUpInside)
     }
 
@@ -172,7 +181,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
 
     private func configureFilterButton() {
         sortButton.tintColor = .white
-        sortButton.backgroundColor = UIColor().getCustom(color: .blue)
+        sortButton.backgroundColor = UIColor.shared.getCustom(color: .blue)
         sortButton.addLightShadow()
         sortButton.layer.cornerRadius = sortButton.frame.height / 2
     }
@@ -196,8 +205,6 @@ extension TransactionViewController: TransactionViewInput {
         budgetSpentLabel.text = "Left: " + DoubleFormatter.shared.convertToString(from: left) + symbol
         tableView.reloadData()
     }
-
-    func configure(with transaction: Transaction) {}
 
     func setupInitialState(with transactionHistory: [Transaction]) {
         self.transactionHistory = transactionHistory
@@ -247,7 +254,7 @@ extension TransactionViewController {
                 self.isAppeared = !self.isAppeared
                 self.view.layoutIfNeeded()
             } else {
-                self.toPickerHeightAnchor.constant = self.view.frame.height * 0.3
+                self.toPickerHeightAnchor.constant = self.view.frame.height * Constants.pickerheightAtView
                 self.view.layoutIfNeeded()
                 self.isAppeared = !self.isAppeared
             }

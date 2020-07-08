@@ -12,7 +12,7 @@ final class ScoreRouter {
     
     //MARK: - Public properties
     
-    var view: ModuleTransitionable?
+    weak var view: ModuleTransitionable?
     
 }
 

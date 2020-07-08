@@ -10,6 +10,8 @@ import UIKit
 
 final class TransactionConfigurator {
 
+    //MARK: - Public methods
+    
     func configureModule(with moduleOutput: ModuleOutput) -> UIViewController {
 
         let view = TransactionViewController()

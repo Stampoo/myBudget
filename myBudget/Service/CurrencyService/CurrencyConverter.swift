@@ -10,7 +10,6 @@ import Foundation
 
 final class CurrencyConverter {
 
-
     //MARK: - Private properties
 
     private let networkManager = NetworkManager()
@@ -32,6 +31,7 @@ final class CurrencyConverter {
             saveRatesInStorage(savedCurrency: currency)
         }
     }
+
 
     //MARK: - Private methods
 
@@ -55,7 +55,6 @@ final class CurrencyConverter {
             rates?.RUB,
             rates?.USD
         ]
-
         for rate in rateArray {
             if let unwrapRate = rate {
                 return unwrapRate

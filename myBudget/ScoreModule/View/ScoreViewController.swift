@@ -17,6 +17,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
         static let nibName = "ScoreTableViewCell"
         static let budgetTitle = "My budget"
     }
+
     
     //MARK: - Public properties
     
@@ -33,10 +34,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let converter = CurrencyConverter()
-        converter.updateRates()
-
+        loadingActualRateForCurrency()
         output?.viewLoaded()
         configureTableView()
         configurateNavbar()
@@ -55,11 +53,11 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     private func configureTableView() {
         let nib = UINib(nibName: Constants.nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: Constants.cellIdentifire)
-        tableView.frame = view.bounds
+        view.addSubview(tableView)
+        tableView.setConstraints(to: view)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
-        view.addSubview(tableView)
     }
 
     private func configurateNavbar() {
@@ -68,19 +66,29 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     }
 
     private func configureAddButton() {
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewBudget))
-        let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(popToPreviousModule))
+        navigationItem.backBarButtonItem?.tintColor = .white
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                        target: self,
+                                        action: #selector(showAddModule))
+        let backBarButtton = UIBarButtonItem(title: "",
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(popToPreviousModule))
         navigationItem.rightBarButtonItem = addButton
         navigationItem.backBarButtonItem = backBarButtton
-        navigationItem.backBarButtonItem?.tintColor = .white
     }
 
     @objc private func popToPreviousModule() {
         popModule(animated: true)
     }
 
-    @objc private func addNewBudget() {
+    @objc private func showAddModule() {
         output?.presentModule()
+    }
+
+    private func loadingActualRateForCurrency() {
+        let converter = CurrencyConverter()
+        converter.updateRates()
     }
     
 }
@@ -135,5 +143,3 @@ extension ScoreViewController: ScoreViewInput {
     }
     
 }
-
-

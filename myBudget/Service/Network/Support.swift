@@ -32,7 +32,6 @@ enum FixerAPI {
 
 extension FixerAPI: Router {
 
-
     //MARK: - Constants
 
     private enum Constants {

@@ -10,6 +10,14 @@ import UIKit
 
 final class TransactionTableViewCell: UITableViewCell {
 
+    //MARK: - Constants
+
+    private enum Constants {
+        static let inset: CGFloat = 5
+        static let dateFormate = "EEEE, MMM d, yyyy"
+    }
+
+
     //MARK: - IBOutlets
 
     @IBOutlet private weak var amountLabel: UILabel!
@@ -25,7 +33,11 @@ final class TransactionTableViewCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
+        let insets = UIEdgeInsets(top: Constants.inset,
+                                  left: Constants.inset,
+                                  bottom: Constants.inset,
+                                  right: Constants.inset)
+        contentView.frame = contentView.frame.inset(by: insets)
     }
 
 
@@ -33,7 +45,7 @@ final class TransactionTableViewCell: UITableViewCell {
 
     func configureCell(with transaction: Transaction) {
         targetLabel.text = transaction.name
-        dateLabel.text = transaction.date.getFormattedDate(format: "EEEE, MMM d, yyyy")
+        dateLabel.text = transaction.date.getFormattedDate(format: Constants.dateFormate)
         amountLabel.text = DoubleFormatter.shared.convertToString(from: transaction.amount)
     }
     

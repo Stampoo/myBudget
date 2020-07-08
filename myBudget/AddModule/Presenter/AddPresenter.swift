@@ -12,7 +12,7 @@ final class AddPresenter {
 
     //MARK: - Public properties
 
-    var view: AddViewInput?
+    weak var view: AddViewInput?
     var router: AddViewRouterInput?
     var moduleOutput: ModuleOutput?
     var transactionModuleOutput: TransactionModuleOutput?
@@ -34,8 +34,6 @@ extension AddPresenter: AddViewOutput {
             return
         }
     }
-
-    func viewLoaded() {}
 
     func dismiss(with newBudget: Budget) {
         moduleOutput?.moduleOutput(with: newBudget)

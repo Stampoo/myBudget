@@ -10,7 +10,6 @@ import Foundation
 
 final class RequestBuilder {
     
-    
     //MARK: - Public methods
     
     func calculateRequest(by route: Router) -> URLRequest? {

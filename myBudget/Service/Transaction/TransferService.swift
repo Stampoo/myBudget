@@ -8,8 +8,7 @@
 
 import Foundation
 
-final class Transfer {
-
+final class TransferService {
 
     //MARK: - Private properties
 
@@ -30,7 +29,9 @@ final class Transfer {
         let transactionHistory = transactionStorage.openHistory(budget: toBudget)
         var convertedTransactionHistory = [Transaction]()
         for transaction in transactionHistory {
-            let newAmount = converter.convert(from: fromBudget.currency, to: toBudget.currency, amount: transaction.amount)
+            let newAmount = converter.convert(from: fromBudget.currency,
+                                              to: toBudget.currency,
+                                              amount: transaction.amount)
             let newTransaction = Transaction(name: transaction.name,
                                              amount: newAmount ?? 0,
                                              date: transaction.date,

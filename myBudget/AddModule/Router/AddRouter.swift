@@ -12,7 +12,7 @@ final class AddRouter {
 
     //MARK: - Public properties
 
-    var view: ModuleTransitionable?
+    weak var view: ModuleTransitionable?
 
 }
 
@@ -20,10 +20,6 @@ final class AddRouter {
 //MARK: - Extensions
 
 extension AddRouter: AddViewRouterInput {
-
-    func pushModule() {}
-
-    func presentModule() {}
 
     func dismiss() {
         view?.dismiss(completion: nil)

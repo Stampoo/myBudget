@@ -18,6 +18,7 @@ final class NetworkManager {
     private let decoder = JSONDecoder()
     private let queue = DispatchQueue.global(qos: .utility)
 
+
     //MARK: - Public methods
 
     func getActualCurrency(at: String, forCurrency: String, completion: @escaping (CurrencyRate) -> Void) {
@@ -35,4 +36,5 @@ final class NetworkManager {
             }
         }.resume()
     }
+    
 }

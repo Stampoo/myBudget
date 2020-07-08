@@ -16,6 +16,7 @@ final class CustomTextField: UITextField {
         static let defaultLeft: CGFloat = 10
         static let defaultRight: CGFloat = 10
     }
+    
 
     //MARK: Private properties
 
