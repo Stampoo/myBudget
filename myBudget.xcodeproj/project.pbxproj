@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341C4DA224B5CA11006CE076 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 341C4DA024B5CA11006CE076 /* main.png */; };
+		341C4DA324B5CA11006CE076 /* detail.png in Resources */ = {isa = PBXBuildFile; fileRef = 341C4DA124B5CA11006CE076 /* detail.png */; };
+		341C4DA524B5CA43006CE076 /* transfer.png in Resources */ = {isa = PBXBuildFile; fileRef = 341C4DA424B5CA42006CE076 /* transfer.png */; };
 		341C622124AF3B9900A509AC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C622024AF3B9900A509AC /* String.swift */; };
 		341C622524AF4D2300A509AC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C622424AF4D2300A509AC /* CustomTextField.swift */; };
-		341C622A24AF50E300A509AC /* detail.png in Resources */ = {isa = PBXBuildFile; fileRef = 341C622624AF50E300A509AC /* detail.png */; };
 		341C622B24AF50E300A509AC /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 341C622724AF50E300A509AC /* add.png */; };
-		341C622C24AF50E300A509AC /* transfer.png in Resources */ = {isa = PBXBuildFile; fileRef = 341C622824AF50E300A509AC /* transfer.png */; };
-		341C622D24AF50E300A509AC /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 341C622924AF50E300A509AC /* main.png */; };
 		341C623024AF570F00A509AC /* PickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C622F24AF570F00A509AC /* PickColorView.swift */; };
 		341C623424AFAF8000A509AC /* DoubleFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C623324AFAF8000A509AC /* DoubleFormatter.swift */; };
 		341D2D2724A74AD1007C5979 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341D2D2624A74AD1007C5979 /* UIColor.swift */; };
@@ -77,12 +77,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		341C4DA024B5CA11006CE076 /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
+		341C4DA124B5CA11006CE076 /* detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detail.png; sourceTree = "<group>"; };
+		341C4DA424B5CA42006CE076 /* transfer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer.png; sourceTree = "<group>"; };
 		341C622024AF3B9900A509AC /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		341C622424AF4D2300A509AC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		341C622624AF50E300A509AC /* detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detail.png; sourceTree = "<group>"; };
 		341C622724AF50E300A509AC /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
-		341C622824AF50E300A509AC /* transfer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer.png; sourceTree = "<group>"; };
-		341C622924AF50E300A509AC /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
 		341C622F24AF570F00A509AC /* PickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickColorView.swift; sourceTree = "<group>"; };
 		341C623324AFAF8000A509AC /* DoubleFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleFormatter.swift; sourceTree = "<group>"; };
 		341D2D2624A74AD1007C5979 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -171,10 +171,10 @@
 		341C622E24AF50EE00A509AC /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				341C4DA124B5CA11006CE076 /* detail.png */,
+				341C4DA424B5CA42006CE076 /* transfer.png */,
+				341C4DA024B5CA11006CE076 /* main.png */,
 				341C622724AF50E300A509AC /* add.png */,
-				341C622624AF50E300A509AC /* detail.png */,
-				341C622924AF50E300A509AC /* main.png */,
-				341C622824AF50E300A509AC /* transfer.png */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -678,18 +678,18 @@
 			files = (
 				34F2865724A527A400D7C509 /* LaunchScreen.storyboard in Resources */,
 				34F2865424A527A400D7C509 /* Assets.xcassets in Resources */,
+				341C4DA324B5CA11006CE076 /* detail.png in Resources */,
 				347F60C024A64E670012BB7D /* AddViewController.xib in Resources */,
-				341C622C24AF50E300A509AC /* transfer.png in Resources */,
 				341C622B24AF50E300A509AC /* add.png in Resources */,
 				34C24DBA24A62C00006AE65E /* ScoreTableViewCell.xib in Resources */,
 				34922EAF24A8BDCF00F0AE9F /* AddTransactionViewController.xib in Resources */,
 				34F2865224A527A100D7C509 /* Main.storyboard in Resources */,
-				341C622D24AF50E300A509AC /* main.png in Resources */,
+				341C4DA524B5CA43006CE076 /* transfer.png in Resources */,
 				34922EBD24A8F3B200F0AE9F /* TransactionTableViewCell.xib in Resources */,
+				341C4DA224B5CA11006CE076 /* main.png in Resources */,
 				349CD36524B3179F0008AAA9 /* EditBudgetTableViewCell.xib in Resources */,
 				342E486C24A7EB51004B39D3 /* TransactionViewController.xib in Resources */,
 				349CD35F24B316270008AAA9 /* EditBudgetViewController.xib in Resources */,
-				341C622A24AF50E300A509AC /* detail.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
