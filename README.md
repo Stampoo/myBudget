@@ -1,6 +1,3 @@
 ### Screenshots:
 
-<img src="Resource/Screenshots/main.png" />
-<img src="Resource/Screenshots/detail.png" />
-<img src="Resource/Screenshots/transfer.png" />
-<img src="Resource/Screenshots/add.png" />
+<img src="myBudget/Resource/Screenshots/main.png" /><img src="myBudget/Resource/Screenshots/detail.png" /><img src="myBudget/Resource/Screenshots/transfer.png" /><img src="myBudget/Resource/Screenshots/add.png" />
