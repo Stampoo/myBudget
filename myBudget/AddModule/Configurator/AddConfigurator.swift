@@ -10,6 +10,8 @@ import UIKit
 
 final class AddConfigurator {
 
+    //MARK: - Public methods
+
     func configureModule(with moduleOutput: ModuleOutput) -> UIViewController {
 
         let view = AddViewController()
@@ -27,17 +29,17 @@ final class AddConfigurator {
 
     func configureModule(with moduleOutput: TransactionModuleOutput) -> UIViewController {
 
-           let view = AddViewController()
-           let presenter = AddPresenter()
-           let router = AddRouter()
+        let view = AddViewController()
+        let presenter = AddPresenter()
+        let router = AddRouter()
 
-           view.output = presenter
-           presenter.view = view
-           presenter.router = router
-           presenter.transactionModuleOutput = moduleOutput
-           router.view = view
+        view.output = presenter
+        presenter.view = view
+        presenter.router = router
+        presenter.transactionModuleOutput = moduleOutput
+        router.view = view
 
-           return view
-       }
+        return view
+    }
 
 }

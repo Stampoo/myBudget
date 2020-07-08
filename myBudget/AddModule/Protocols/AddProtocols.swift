@@ -14,15 +14,11 @@ protocol AddViewInput: class {
 
     func configureCurrency()
 
-    func setupInitialState()
-
 }
 
 protocol AddViewOutput: class {
 
     func reload()
-
-    func viewLoaded()
 
     func dismiss(with newBudget: Budget)
 
@@ -33,10 +29,6 @@ protocol AddViewOutput: class {
 }
 
 protocol AddViewRouterInput: class {
-
-    func pushModule()
-
-    func presentModule()
 
     func dismiss()
 

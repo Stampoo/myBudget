@@ -9,6 +9,8 @@
 import UIKit
 
 final class ScoreConfigurator {
+
+    //MARK: - Public methods
     
     func configureModule() -> UIViewController {
         

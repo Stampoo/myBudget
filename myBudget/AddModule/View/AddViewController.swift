@@ -18,7 +18,13 @@ final class AddViewController: UIViewController, ModuleTransitionable {
         static let amountPlaceHolder = "Type amount"
         static let createButtonTitle = "Create"
         static let fieldColor = UIColor.init(red: 240/255, green: 237/255, blue: 238/255, alpha: 1)
+        static let titleFontSize: CGFloat = 25
+        static let roundingAngleMultiple: CGFloat = 4
+        static let buttonTextSize: CGFloat = 17
+        static let pickerHeightAtView: CGFloat = 0.3
+        static let dateFormat = "EEEE, MMM d, yyyy"
     }
+
 
     //MARK: - IBOutlets
 
@@ -64,7 +70,7 @@ final class AddViewController: UIViewController, ModuleTransitionable {
     //MARK: - Private methods
 
     private func configureLabels() {
-        titleLabel.font = .boldSystemFont(ofSize: 25)
+        titleLabel.font = .boldSystemFont(ofSize: Constants.titleFontSize)
         titleLabel.textAlignment = .center
     }
 
@@ -73,7 +79,7 @@ final class AddViewController: UIViewController, ModuleTransitionable {
         fields.forEach {
             $0?.borderStyle = .none
             $0?.backgroundColor = Constants.fieldColor
-            $0?.layer.cornerRadius = ($0?.frame.height ?? 0) / 4
+            $0?.layer.cornerRadius = ($0?.frame.height ?? 0) / Constants.roundingAngleMultiple
             $0?.clipsToBounds = true
             $0?.textColor = .black
         }
@@ -92,8 +98,8 @@ final class AddViewController: UIViewController, ModuleTransitionable {
 
     private func configureCurrencyButton() {
         currencyButton.addTarget(self, action: #selector(appearPicker), for: .touchUpInside)
-        currencyButton.backgroundColor = UIColor().getCustom(color: .indigo)
-        currencyButton.layer.cornerRadius = currencyButton.frame.height / 4
+        currencyButton.backgroundColor = UIColor.shared.getCustom(color: .indigo)
+        currencyButton.layer.cornerRadius = currencyButton.frame.height / Constants.roundingAngleMultiple
         currencyButton.setTitleColor(.white, for: .normal)
     }
 
@@ -116,18 +122,18 @@ final class AddViewController: UIViewController, ModuleTransitionable {
                 self.pickerHeightAnchor.constant = 0
                 self.view.layoutIfNeeded()
             } else {
-                self.pickerHeightAnchor.constant = self.view.frame.height * 0.3
+                self.pickerHeightAnchor.constant = self.view.frame.height * Constants.pickerHeightAtView
                 self.view.layoutIfNeeded()
             }
         }
     }
 
     private func configureCreateButton() {
-        createButton.backgroundColor = UIColor().getCustom(color: .blue)
+        createButton.backgroundColor = UIColor.shared.getCustom(color: .blue)
         createButton.setTitleColor(.white, for: .normal)
         createButton.setTitle(Constants.createButtonTitle, for: .normal)
-        createButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
-        createButton.layer.cornerRadius = createButton.frame.height / 4
+        createButton.titleLabel?.font = .boldSystemFont(ofSize: Constants.buttonTextSize)
+        createButton.layer.cornerRadius = createButton.frame.height / Constants.roundingAngleMultiple
         createButton.addTarget(self, action: #selector(dismissAndCreate), for: .touchUpInside)
     }
 
@@ -170,7 +176,7 @@ final class AddViewController: UIViewController, ModuleTransitionable {
     }
 
     @objc private func dateChanged(target: UIDatePicker) {
-        let fromat = "EEEE, MMM d, yyyy"
+        let fromat = Constants.dateFormat
         let formattingDate = target.date.getFormattedDate(format: fromat)
         currencyDate = target.date
         dateLabel.text = formattingDate
@@ -200,8 +206,6 @@ extension AddViewController: AddViewInput {
         dateLabel.isHidden = false
         pickerConstraint()
     }
-
-    func setupInitialState() {}
 
 }
 
