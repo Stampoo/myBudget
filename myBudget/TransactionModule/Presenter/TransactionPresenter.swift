@@ -12,7 +12,7 @@ final class TransactionPresenter {
 
     //MARK: - Public properties
 
-    var view: TransactionViewInput?
+    weak var view: TransactionViewInput?
     var router: TransactionViewRouterInput?
     var moduleOutput: ModuleOutput?
 

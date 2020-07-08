@@ -12,7 +12,7 @@ final class TransactionRouter {
 
     //MARK: - Public properties
 
-    var view: ModuleTransitionable?
+    weak var view: ModuleTransitionable?
 
 }
 
