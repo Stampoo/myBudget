@@ -15,10 +15,12 @@ final class TempBudgetStorageService {
     private enum Constants {
         static let budgetList = "BudgetList"
     }
+
     
     //MARK: - Public properties
     
     static let shared = TempBudgetStorageService()
+    
     
     //MARK: - Private properties
     

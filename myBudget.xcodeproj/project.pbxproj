@@ -14,7 +14,6 @@
 		341C4DB124B61583006CE076 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C4DAB24B61583006CE076 /* Category.swift */; };
 		341C4DB224B61583006CE076 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C4DAC24B61583006CE076 /* Currency.swift */; };
 		341C4DB324B61583006CE076 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C4DAD24B61583006CE076 /* CurrencyRate.swift */; };
-		341C4DB424B61583006CE076 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C4DAE24B61583006CE076 /* CustomPicker.swift */; };
 		341C4DB524B61583006CE076 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C4DAF24B61583006CE076 /* Transaction.swift */; };
 		341C622124AF3B9900A509AC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C622024AF3B9900A509AC /* String.swift */; };
 		341C622524AF4D2300A509AC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C622424AF4D2300A509AC /* CustomTextField.swift */; };
@@ -22,8 +21,8 @@
 		341C623024AF570F00A509AC /* PickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C622F24AF570F00A509AC /* PickColorView.swift */; };
 		341C623424AFAF8000A509AC /* DoubleFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C623324AFAF8000A509AC /* DoubleFormatter.swift */; };
 		341D2D2724A74AD1007C5979 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341D2D2624A74AD1007C5979 /* UIColor.swift */; };
-		3427FAE324A9D4BA006AC3B7 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427FAE224A9D4BA006AC3B7 /* Transfer.swift */; };
-		3427FAE624A9DF5E006AC3B7 /* TransactionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427FAE524A9DF5E006AC3B7 /* TransactionFilter.swift */; };
+		3427FAE324A9D4BA006AC3B7 /* TransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427FAE224A9D4BA006AC3B7 /* TransferService.swift */; };
+		3427FAE624A9DF5E006AC3B7 /* TransactionSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427FAE524A9DF5E006AC3B7 /* TransactionSorter.swift */; };
 		342E486624A7E91D004B39D3 /* TransactionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342E486524A7E91D004B39D3 /* TransactionProtocols.swift */; };
 		342E486824A7E94D004B39D3 /* TransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342E486724A7E94D004B39D3 /* TransactionPresenter.swift */; };
 		342E486B24A7EB51004B39D3 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342E486924A7EB51004B39D3 /* TransactionViewController.swift */; };
@@ -66,7 +65,6 @@
 		34F2865424A527A400D7C509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F2865324A527A400D7C509 /* Assets.xcassets */; };
 		34F2865724A527A400D7C509 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34F2865524A527A400D7C509 /* LaunchScreen.storyboard */; };
 		34F2866224A52EC700D7C509 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866124A52EC700D7C509 /* Support.swift */; };
-		34F2866924A5D74100D7C509 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2866824A5D74100D7C509 /* Score.swift */; };
 		34F2867324A5E87700D7C509 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2867224A5E87700D7C509 /* ScoreViewController.swift */; };
 		34F2867624A5EA7200D7C509 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2867524A5EA7200D7C509 /* Protocols.swift */; };
 		34F2867F24A5F59A00D7C509 /* ScorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2867E24A5F59A00D7C509 /* ScorePresenter.swift */; };
@@ -85,7 +83,6 @@
 		341C4DAB24B61583006CE076 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		341C4DAC24B61583006CE076 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		341C4DAD24B61583006CE076 /* CurrencyRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
-		341C4DAE24B61583006CE076 /* CustomPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
 		341C4DAF24B61583006CE076 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		341C622024AF3B9900A509AC /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		341C622424AF4D2300A509AC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -93,8 +90,8 @@
 		341C622F24AF570F00A509AC /* PickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickColorView.swift; sourceTree = "<group>"; };
 		341C623324AFAF8000A509AC /* DoubleFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleFormatter.swift; sourceTree = "<group>"; };
 		341D2D2624A74AD1007C5979 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		3427FAE224A9D4BA006AC3B7 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
-		3427FAE524A9DF5E006AC3B7 /* TransactionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilter.swift; sourceTree = "<group>"; };
+		3427FAE224A9D4BA006AC3B7 /* TransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferService.swift; sourceTree = "<group>"; };
+		3427FAE524A9DF5E006AC3B7 /* TransactionSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSorter.swift; sourceTree = "<group>"; };
 		342E486524A7E91D004B39D3 /* TransactionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionProtocols.swift; sourceTree = "<group>"; };
 		342E486724A7E94D004B39D3 /* TransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPresenter.swift; sourceTree = "<group>"; };
 		342E486924A7EB51004B39D3 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +136,6 @@
 		34F2865624A527A400D7C509 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34F2865824A527A400D7C509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34F2866124A52EC700D7C509 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
-		34F2866824A5D74100D7C509 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		34F2867224A5E87700D7C509 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		34F2867524A5EA7200D7C509 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		34F2867E24A5F59A00D7C509 /* ScorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePresenter.swift; sourceTree = "<group>"; };
@@ -168,7 +164,6 @@
 				341C4DAB24B61583006CE076 /* Category.swift */,
 				341C4DAC24B61583006CE076 /* Currency.swift */,
 				341C4DAD24B61583006CE076 /* CurrencyRate.swift */,
-				341C4DAE24B61583006CE076 /* CustomPicker.swift */,
 				341C4DAF24B61583006CE076 /* Transaction.swift */,
 			);
 			path = Model;
@@ -197,8 +192,8 @@
 		3427FAE424A9DF44006AC3B7 /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
-				3427FAE224A9D4BA006AC3B7 /* Transfer.swift */,
-				3427FAE524A9DF5E006AC3B7 /* TransactionFilter.swift */,
+				3427FAE224A9D4BA006AC3B7 /* TransferService.swift */,
+				3427FAE524A9DF5E006AC3B7 /* TransactionSorter.swift */,
 			);
 			path = Transaction;
 			sourceTree = "<group>";
@@ -274,13 +269,6 @@
 				3438738924AC882D00010714 /* RequestBuilder.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		3467AD0D24ABB45A002A706C /* ColorService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ColorService;
 			sourceTree = "<group>";
 		};
 		34922E9E24A8BD6A00F0AE9F /* AddTransactionModule */ = {
@@ -518,24 +506,14 @@
 		34F2866024A52DFD00D7C509 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				34F2866724A5D72700D7C509 /* Count */,
 				34F2868D24A611DC00D7C509 /* StorageService */,
 				3427FAE424A9DF44006AC3B7 /* Transaction */,
 				3467AD0824AB9599002A706C /* Network */,
-				3467AD0D24ABB45A002A706C /* ColorService */,
 				3438738B24AC8E5C00010714 /* CurrencyService */,
 				3467AD0624AB94D7002A706C /* Progress.swift */,
 				341C623324AFAF8000A509AC /* DoubleFormatter.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		34F2866724A5D72700D7C509 /* Count */ = {
-			isa = PBXGroup;
-			children = (
-				34F2866824A5D74100D7C509 /* Score.swift */,
-			);
-			path = Count;
 			sourceTree = "<group>";
 		};
 		34F2867024A5E84500D7C509 /* ScoreModule */ = {
@@ -707,11 +685,10 @@
 				34C24DB924A62C00006AE65E /* ScoreTableViewCell.swift in Sources */,
 				347F60BF24A64E670012BB7D /* AddViewController.swift in Sources */,
 				34F2867324A5E87700D7C509 /* ScoreViewController.swift in Sources */,
-				3427FAE324A9D4BA006AC3B7 /* Transfer.swift in Sources */,
+				3427FAE324A9D4BA006AC3B7 /* TransferService.swift in Sources */,
 				347F60B624A64D4A0012BB7D /* AddPresenter.swift in Sources */,
 				34922EB424A8E64300F0AE9F /* ModuleTransitionable.swift in Sources */,
 				34922EAB24A8BDC200F0AE9F /* AddTransactionRouter.swift in Sources */,
-				341C4DB424B61583006CE076 /* CustomPicker.swift in Sources */,
 				341C4DB224B61583006CE076 /* Currency.swift in Sources */,
 				34922EB724A8EBF800F0AE9F /* Date.swift in Sources */,
 				34F2868F24A6120A00D7C509 /* TempBudgetStorageService.swift in Sources */,
@@ -726,7 +703,7 @@
 				342E486824A7E94D004B39D3 /* TransactionPresenter.swift in Sources */,
 				341C623024AF570F00A509AC /* PickColorView.swift in Sources */,
 				34922EAE24A8BDCF00F0AE9F /* AddTransactionViewController.swift in Sources */,
-				3427FAE624A9DF5E006AC3B7 /* TransactionFilter.swift in Sources */,
+				3427FAE624A9DF5E006AC3B7 /* TransactionSorter.swift in Sources */,
 				34922EBC24A8F3B200F0AE9F /* TransactionTableViewCell.swift in Sources */,
 				34F2867F24A5F59A00D7C509 /* ScorePresenter.swift in Sources */,
 				347F60B824A64D7D0012BB7D /* AddConfigurator.swift in Sources */,
@@ -752,7 +729,6 @@
 				349CD35724B314EE0008AAA9 /* EditBudgetProtocols.swift in Sources */,
 				3467AD0724AB94D7002A706C /* Progress.swift in Sources */,
 				349CD35B24B315CB0008AAA9 /* EditBudgetRouter.swift in Sources */,
-				34F2866924A5D74100D7C509 /* Score.swift in Sources */,
 				34922EA724A8BDAE00F0AE9F /* AddTransactionPresenter.swift in Sources */,
 				341C622524AF4D2300A509AC /* CustomTextField.swift in Sources */,
 				349CD35E24B316270008AAA9 /* EditBudgetViewController.swift in Sources */,

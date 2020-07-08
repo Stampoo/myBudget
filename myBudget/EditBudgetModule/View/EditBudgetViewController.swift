@@ -134,7 +134,7 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
         var newBudget = Budget(name: newName, amount: newAmount, currency: newCurrency)
         _ = budgetStorage.delete(budget: budget)
         if budget.currency != newBudget.currency {
-            let transferService = Transfer()
+            let transferService = TransferService()
             newAmount = transferService.convert(fromBudget: budget, toBudget: newBudget, amount: newBudget.amount)
             newBudget = Budget(name: newName, amount: newAmount, currency: newCurrency)
         }

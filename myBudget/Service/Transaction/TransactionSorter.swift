@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class TransactionFilter {
+final class TransactionSorter {
 
     //MARK: - Types
 
@@ -20,6 +20,7 @@ final class TransactionFilter {
     //MARK: - Private properties
 
     private let transactionStorage = TempHistoryStorageService.shared
+
 
     //MARK: - Public methods
 

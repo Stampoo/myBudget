@@ -91,7 +91,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         guard let budget = fromBudget else {
             return
         }
-        let sortService = TransactionFilter()
+        let sortService = TransactionSorter()
         let sortedTransaction = sortService.sortBy(type: .date, to: budget)
         transactionHistory = isDecrease ? sortedTransaction : sortedTransaction.reversed()
         tableView.reloadData()
@@ -105,7 +105,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
             let fromBudget = fromBudget else {
                 return
         }
-        let transferService = Transfer()
+        let transferService = TransferService()
         transferService.trasferMoney(from: fromBudget, to: toBudget, amount: amountDouble)
         enableTransfer()
         output?.reload()

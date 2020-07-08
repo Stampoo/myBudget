@@ -10,7 +10,7 @@ import UIKit
 
 protocol PickColorViewDelegate {
 
-    func didColorSelect(selected colors: UIColor)
+    func didSelectColor(selected color: UIColor)
 
 }
 
@@ -20,7 +20,9 @@ final class PickColorView: UIView {
 
     private enum Constants {
         static let defaultColors: [UIColor] = [.magenta, .yellow, .brown, .orange]
+        static let colorCornerRadius: CGFloat = 7.5
     }
+
 
     //MARK: - Public properties
 
@@ -32,22 +34,21 @@ final class PickColorView: UIView {
     private var colorButtons = [UIButton]()
     private let cardView = UIView()
 
+
     //MARK: - initizlizers
 
-    convenience init() {
-        self.init(frame: .zero)
+    convenience override init(frame: CGRect) {
+        self.init(frame: frame)
         update()
     }
 
+
+    //MARK: - Lifecycle
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         update()
     }
-
-
-    //MARK: Public methods
-
 
 
     //MARK: - Private methods
@@ -57,7 +58,7 @@ final class PickColorView: UIView {
         for color in Constants.defaultColors {
             let colorButton = UIButton()
             colorButton.backgroundColor = color
-            colorButton.layer.cornerRadius = 7.5
+            colorButton.layer.cornerRadius = Constants.colorCornerRadius
             colorButton.clipsToBounds = true
             colorButton.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
             colorButtons.append(colorButton)
@@ -68,7 +69,7 @@ final class PickColorView: UIView {
         guard let color = target.backgroundColor else {
             return
         }
-        delegate?.didColorSelect(selected: color)
+        delegate?.didSelectColor(selected: color)
         hideSelf()
     }
 
@@ -82,24 +83,13 @@ final class PickColorView: UIView {
         stackView.alignment = .fill
         stackView.spacing = 2
         stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stackView)
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            stackView.leftAnchor.constraint(equalTo: leftAnchor),
-            stackView.rightAnchor.constraint(equalTo: rightAnchor)
-        ])
+        stackView.setConstraints(to: self)
     }
 
     private func update() {
-        setFrame()
         createButtons()
         createStackView()
-    }
-
-    private func setFrame() {
-        self.bounds = CGRect(x: 0, y: 0, width: 150, height: 30)
     }
 
 }
