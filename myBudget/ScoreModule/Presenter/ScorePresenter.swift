@@ -57,8 +57,8 @@ extension ScorePresenter: ScoreViewOutput {
 extension ScorePresenter: ModuleOutput {
 
     func moduleOutput(with budget: Budget) {
-        let budgetList = budgetStorage.openBudgetList()
         budgetStorage.addBudgetInList(budget: budget)
+        let budgetList = budgetStorage.openBudgetList()
         view?.configure(with: budgetList)
     }
 
