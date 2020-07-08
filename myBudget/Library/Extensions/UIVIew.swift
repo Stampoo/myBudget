@@ -16,13 +16,6 @@ extension UIView {
         layer.shadowOffset = .zero
         layer.masksToBounds = false
     }
-
-    func addBloom(color: UIColor) {
-        layer.shadowColor = color.cgColor
-        layer.shadowRadius = 2.0
-        layer.shadowOpacity = 0.9
-        layer.shadowOffset = .zero
-    }
     
 }
 

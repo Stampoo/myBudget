@@ -12,7 +12,7 @@ final class ScorePresenter {
     
     //MARK: - Public properties
     
-    var view: ScoreViewInput?
+    weak var view: ScoreViewInput?
     var router: ScoreViewRouterInput?
     var moduleInput: ModuleInput?
 
@@ -22,9 +22,6 @@ final class ScorePresenter {
     private let budgetStorage = TempBudgetStorageService.shared
     private let historyStorage = TempHistoryStorageService.shared
     private var budget: Budget?
-
-
-    //MARK: - Private methods
     
 }
 
@@ -60,8 +57,8 @@ extension ScorePresenter: ScoreViewOutput {
 extension ScorePresenter: ModuleOutput {
 
     func moduleOutput(with budget: Budget) {
-        budgetStorage.addBudgetInList(budget: budget)
         let budgetList = budgetStorage.openBudgetList()
+        budgetStorage.addBudgetInList(budget: budget)
         view?.configure(with: budgetList)
     }
 
