@@ -66,8 +66,13 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
 
     private func configureAddButton() {
         navigationItem.backBarButtonItem?.tintColor = .white
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewBudget))
-        let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(popToPreviousModule))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                        target: self,
+                                        action: #selector(showAddModule))
+        let backBarButtton = UIBarButtonItem(title: "",
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(popToPreviousModule))
         navigationItem.rightBarButtonItem = addButton
         navigationItem.backBarButtonItem = backBarButtton
     }
@@ -76,7 +81,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
         popModule(animated: true)
     }
 
-    @objc private func addNewBudget() {
+    @objc private func showAddModule() {
         output?.presentModule()
     }
 

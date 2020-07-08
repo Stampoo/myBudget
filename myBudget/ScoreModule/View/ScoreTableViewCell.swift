@@ -16,6 +16,7 @@ final class ScoreTableViewCell: UITableViewCell {
         static let monthTitle = "Budget:"
         static let spentTtitle = "Spent:"
     }
+
     
     //MARK: - IBOutlets
     
@@ -26,8 +27,8 @@ final class ScoreTableViewCell: UITableViewCell {
     @IBOutlet private weak var budgetName: UILabel!
     @IBOutlet private weak var cardView: UIView!
     @IBOutlet private weak var progressView: UIView!
-    @IBOutlet private weak var progressViewConstraint: NSLayoutConstraint!
     @IBOutlet private weak var shadowView: UIView!
+    @IBOutlet private weak var progressViewConstraint: NSLayoutConstraint!
     
     
     //MARK: - Private properties
@@ -40,10 +41,8 @@ final class ScoreTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureColorView()
         configureCard()
         configureLabels()
-        configureBar()
         protectFromNightMode()
     }
     
@@ -52,33 +51,20 @@ final class ScoreTableViewCell: UITableViewCell {
     
     func configureCell(with budget: Budget) {
         let progress = Progress(budget: budget, progressView: progressView)
-        progressViewConstraint.constant = progress.calculateProgress()
         let symbol = budget.currency.rawValue.getCurrencyLiteral()
+        let spent = transactionStorage.calculateSpent(budget: budget)
+        progressViewConstraint.constant = progress.calculateProgress()
         budgetName.text = budget.name
         budgetAmount.text = DoubleFormatter.shared.convertToString(from: budget.amount) + symbol
-        let spent = transactionStorage.calculateSpent(budget: budget)
         spentAmount.text = DoubleFormatter.shared.convertToString(from: spent) + symbol
     }
     
     
     //MARK: - Private methods
     
-    private func configureColorView() {
-        colorPickView.delegate = self
-        addSubview(colorPickView)
-        colorPickView.isHidden = true
-    }
-    
-    @objc private func appearColorPick(longPress: UILongPressGestureRecognizer) {
-        colorPickView.isHidden = false
-    }
-    
     private func configureLabels() {
         budgetTitle.text = Constants.monthTitle
         spentTitle.text = Constants.spentTtitle
-    }
-    
-    private func configureBar() {
     }
     
     private func configureCard() {
@@ -96,16 +82,6 @@ final class ScoreTableViewCell: UITableViewCell {
             spentAmount,
             budgetName
             ].forEach { $0?.textColor = .black }
-    }
-    
-}
-
-
-//MARK: - Extensions
-
-extension ScoreTableViewCell: PickColorViewDelegate {
-    
-    func didColorSelect(selected colors: UIColor) {
     }
     
 }
