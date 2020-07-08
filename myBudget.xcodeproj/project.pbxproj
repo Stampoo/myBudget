@@ -40,12 +40,6 @@
 		347F60BC24A64E2B0012BB7D /* AddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60BB24A64E2B0012BB7D /* AddRouter.swift */; };
 		347F60BF24A64E670012BB7D /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60BD24A64E670012BB7D /* AddViewController.swift */; };
 		347F60C024A64E670012BB7D /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347F60BE24A64E670012BB7D /* AddViewController.xib */; };
-		34922EA524A8BD9E00F0AE9F /* AddTransactionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EA424A8BD9E00F0AE9F /* AddTransactionConfigurator.swift */; };
-		34922EA724A8BDAE00F0AE9F /* AddTransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EA624A8BDAE00F0AE9F /* AddTransactionPresenter.swift */; };
-		34922EA924A8BDB800F0AE9F /* AddTransactionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EA824A8BDB800F0AE9F /* AddTransactionProtocols.swift */; };
-		34922EAB24A8BDC200F0AE9F /* AddTransactionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EAA24A8BDC200F0AE9F /* AddTransactionRouter.swift */; };
-		34922EAE24A8BDCF00F0AE9F /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EAC24A8BDCF00F0AE9F /* AddTransactionViewController.swift */; };
-		34922EAF24A8BDCF00F0AE9F /* AddTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34922EAD24A8BDCF00F0AE9F /* AddTransactionViewController.xib */; };
 		34922EB424A8E64300F0AE9F /* ModuleTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EB324A8E64300F0AE9F /* ModuleTransitionable.swift */; };
 		34922EB724A8EBF800F0AE9F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EB624A8EBF800F0AE9F /* Date.swift */; };
 		34922EBC24A8F3B200F0AE9F /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EBA24A8F3B200F0AE9F /* TransactionTableViewCell.swift */; };
@@ -109,12 +103,6 @@
 		347F60BB24A64E2B0012BB7D /* AddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouter.swift; sourceTree = "<group>"; };
 		347F60BD24A64E670012BB7D /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		347F60BE24A64E670012BB7D /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
-		34922EA424A8BD9E00F0AE9F /* AddTransactionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionConfigurator.swift; sourceTree = "<group>"; };
-		34922EA624A8BDAE00F0AE9F /* AddTransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionPresenter.swift; sourceTree = "<group>"; };
-		34922EA824A8BDB800F0AE9F /* AddTransactionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionProtocols.swift; sourceTree = "<group>"; };
-		34922EAA24A8BDC200F0AE9F /* AddTransactionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionRouter.swift; sourceTree = "<group>"; };
-		34922EAC24A8BDCF00F0AE9F /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
-		34922EAD24A8BDCF00F0AE9F /* AddTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTransactionViewController.xib; sourceTree = "<group>"; };
 		34922EB324A8E64300F0AE9F /* ModuleTransitionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTransitionable.swift; sourceTree = "<group>"; };
 		34922EB624A8EBF800F0AE9F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		34922EBA24A8F3B200F0AE9F /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
@@ -271,59 +259,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		34922E9E24A8BD6A00F0AE9F /* AddTransactionModule */ = {
-			isa = PBXGroup;
-			children = (
-				34922EA224A8BD8100F0AE9F /* Protocols */,
-				34922EA124A8BD8100F0AE9F /* Presenter */,
-				34922EA324A8BD8200F0AE9F /* View */,
-				34922EA024A8BD8100F0AE9F /* Router */,
-				34922E9F24A8BD8100F0AE9F /* Configurator */,
-			);
-			path = AddTransactionModule;
-			sourceTree = "<group>";
-		};
-		34922E9F24A8BD8100F0AE9F /* Configurator */ = {
-			isa = PBXGroup;
-			children = (
-				34922EA424A8BD9E00F0AE9F /* AddTransactionConfigurator.swift */,
-			);
-			path = Configurator;
-			sourceTree = "<group>";
-		};
-		34922EA024A8BD8100F0AE9F /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				34922EAA24A8BDC200F0AE9F /* AddTransactionRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		34922EA124A8BD8100F0AE9F /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				34922EA624A8BDAE00F0AE9F /* AddTransactionPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		34922EA224A8BD8100F0AE9F /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				34922EA824A8BDB800F0AE9F /* AddTransactionProtocols.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		34922EA324A8BD8200F0AE9F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				34922EAC24A8BDCF00F0AE9F /* AddTransactionViewController.swift */,
-				34922EAD24A8BDCF00F0AE9F /* AddTransactionViewController.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		34922EB224A8E62500F0AE9F /* Basic */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,7 +411,6 @@
 				34C24DBB24A64C01006AE65E /* AddModule */,
 				342E485F24A7E8AE004B39D3 /* TransactionModule */,
 				349CD35024B314AC0008AAA9 /* EditBudgetModule */,
-				34922E9E24A8BD6A00F0AE9F /* AddTransactionModule */,
 				34F2865F24A528DD00D7C509 /* Resource */,
 				34F2865E24A5283000D7C509 /* Application */,
 			);
@@ -663,7 +597,6 @@
 				347F60C024A64E670012BB7D /* AddViewController.xib in Resources */,
 				341C622B24AF50E300A509AC /* add.png in Resources */,
 				34C24DBA24A62C00006AE65E /* ScoreTableViewCell.xib in Resources */,
-				34922EAF24A8BDCF00F0AE9F /* AddTransactionViewController.xib in Resources */,
 				34F2865224A527A100D7C509 /* Main.storyboard in Resources */,
 				341C4DA524B5CA43006CE076 /* transfer.png in Resources */,
 				34922EBD24A8F3B200F0AE9F /* TransactionTableViewCell.xib in Resources */,
@@ -688,7 +621,6 @@
 				3427FAE324A9D4BA006AC3B7 /* TransferService.swift in Sources */,
 				347F60B624A64D4A0012BB7D /* AddPresenter.swift in Sources */,
 				34922EB424A8E64300F0AE9F /* ModuleTransitionable.swift in Sources */,
-				34922EAB24A8BDC200F0AE9F /* AddTransactionRouter.swift in Sources */,
 				341C4DB224B61583006CE076 /* Currency.swift in Sources */,
 				34922EB724A8EBF800F0AE9F /* Date.swift in Sources */,
 				34F2868F24A6120A00D7C509 /* TempBudgetStorageService.swift in Sources */,
@@ -697,12 +629,10 @@
 				341C4DB024B61583006CE076 /* Budget.swift in Sources */,
 				3438738824AC87CA00010714 /* NetworkManager.swift in Sources */,
 				34F2868B24A602F800D7C509 /* TempHistoryStorageService.swift in Sources */,
-				34922EA924A8BDB800F0AE9F /* AddTransactionProtocols.swift in Sources */,
 				347F60BA24A64DBA0012BB7D /* AddProtocols.swift in Sources */,
 				3438738A24AC882D00010714 /* RequestBuilder.swift in Sources */,
 				342E486824A7E94D004B39D3 /* TransactionPresenter.swift in Sources */,
 				341C623024AF570F00A509AC /* PickColorView.swift in Sources */,
-				34922EAE24A8BDCF00F0AE9F /* AddTransactionViewController.swift in Sources */,
 				3427FAE624A9DF5E006AC3B7 /* TransactionSorter.swift in Sources */,
 				34922EBC24A8F3B200F0AE9F /* TransactionTableViewCell.swift in Sources */,
 				34F2867F24A5F59A00D7C509 /* ScorePresenter.swift in Sources */,
@@ -719,7 +649,6 @@
 				341C4DB324B61583006CE076 /* CurrencyRate.swift in Sources */,
 				34F2866224A52EC700D7C509 /* Support.swift in Sources */,
 				347F60BC24A64E2B0012BB7D /* AddRouter.swift in Sources */,
-				34922EA524A8BD9E00F0AE9F /* AddTransactionConfigurator.swift in Sources */,
 				34F2868324A5F74900D7C509 /* ScoreConfigurator.swift in Sources */,
 				342E486E24A7ECF1004B39D3 /* TransactionRouter.swift in Sources */,
 				342E486624A7E91D004B39D3 /* TransactionProtocols.swift in Sources */,
@@ -729,7 +658,6 @@
 				349CD35724B314EE0008AAA9 /* EditBudgetProtocols.swift in Sources */,
 				3467AD0724AB94D7002A706C /* Progress.swift in Sources */,
 				349CD35B24B315CB0008AAA9 /* EditBudgetRouter.swift in Sources */,
-				34922EA724A8BDAE00F0AE9F /* AddTransactionPresenter.swift in Sources */,
 				341C622524AF4D2300A509AC /* CustomTextField.swift in Sources */,
 				349CD35E24B316270008AAA9 /* EditBudgetViewController.swift in Sources */,
 				341C623424AFAF8000A509AC /* DoubleFormatter.swift in Sources */,
