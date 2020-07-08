@@ -12,8 +12,6 @@ protocol EditBudgetViewInput: class {
 
     func configure(with budget: Budget)
 
-    func setupInitialState()
-
 }
 
 protocol EditBudgetViewOutput: class {
@@ -25,10 +23,6 @@ protocol EditBudgetViewOutput: class {
 }
 
 protocol EditBudgetViewRouterInput: class {
-
-    func pushModule()
-
-    func presentModule()
 
     func dismiss()
 

@@ -12,7 +12,7 @@ final class EditBudgetPresenter {
 
     //MARK: - Public properties
 
-    var view: EditBudgetViewInput?
+    weak var view: EditBudgetViewInput?
     var router: EditBudgetViewRouterInput?
     var moduleOutput: ModuleOutput?
 

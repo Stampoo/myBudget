@@ -15,11 +15,14 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
     private enum Constants {
         static let identifire = "editBudgetCell"
         static let nibName = "EditBudgetTableViewCell"
-        static let cellCount = 3
-        static let cellInSection = 1
         static let titleText = "Configure current budget"
         static let saveButtonTitle = "Save changes"
+        static let cellCount = 3
+        static let cellInSection = 1
+        static let pickerHeightAtView: CGFloat = 0.3
+        static let roundingAngleMultiple: CGFloat = 4
     }
+
 
     //MARK: - IBOutlets
 
@@ -105,7 +108,7 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
         saveButton.backgroundColor = UIColor.shared.getCustom(color: .blue)
         saveButton.setTitle(Constants.saveButtonTitle, for: .normal)
         saveButton.setTitleColor(.white, for: .normal)
-        saveButton.layer.cornerRadius = saveButton.frame.height /  4
+        saveButton.layer.cornerRadius = saveButton.frame.height /  Constants.roundingAngleMultiple
         saveButton.addTarget(self, action: #selector(saveChanges), for: .touchUpInside)
     }
 
@@ -117,7 +120,7 @@ final class EditBudgetViewController: UIViewController, ModuleTransitionable {
                 self.isAppeared = !self.isAppeared
                 self.view.layoutIfNeeded()
             } else {
-                self.currencyPickerHeightAnchor.constant = self.view.frame.height * 0.3
+                self.currencyPickerHeightAnchor.constant = self.view.frame.height * Constants.pickerHeightAtView
                 self.view.layoutIfNeeded()
                 self.isAppeared = !self.isAppeared
             }
@@ -156,8 +159,6 @@ extension EditBudgetViewController: EditBudgetViewInput {
         self.budget = budget
         tableView.reloadData()
     }
-
-    func setupInitialState() {}
 
 }
 

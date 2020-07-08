@@ -19,7 +19,11 @@ final class EditBudgetTableViewCell: UITableViewCell {
         static let currency = "Currency:"
         static let namePlaceHolder = "type name"
         static let amountPlaceHolder = "type amount"
+        static let currencyCellIndex = 2
+        static let nameCellIndex = 0
+        static let amountCellIndex = 1
     }
+
 
     //MARK: - IBOutlets
 
@@ -49,19 +53,20 @@ final class EditBudgetTableViewCell: UITableViewCell {
     //MARK: - Public methods
 
     func configure(with text: String?, and index: Int, parentModule: EditBudgetViewController) {
-        output = parentModule
-        currentIndex = index
         guard let text = text else {
             return
         }
+        output = parentModule
+        currentIndex = index
         valueTextField.text = text
         currencyButton.setTitle(text, for: .normal)
-        if index == 2 {
+        if index == Constants.currencyCellIndex {
             valueTextField.isHidden = true
             currencyButton.isHidden = false
         }
         configureLabels(from: index)
     }
+
 
     //MARK: - Private methods
 
@@ -122,10 +127,10 @@ extension EditBudgetTableViewCell: UITextFieldDelegate {
             return
         }
         switch index {
-        case 0:
+        case Constants.nameCellIndex:
             newName = text
             output?.transferNewName(newName)
-        case 1:
+        case Constants.amountCellIndex:
             newAmount = Double(text)
             output?.transferNewAmount(newAmount)
         default:

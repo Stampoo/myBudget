@@ -10,6 +10,8 @@ import UIKit
 
 final class EditBudgetConfigurator {
 
+    //MARK: - Public methods
+
     func configureModule(with moduleOutput: ModuleOutput) -> UIViewController {
 
         let view = EditBudgetViewController()
