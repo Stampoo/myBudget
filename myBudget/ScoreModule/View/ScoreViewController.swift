@@ -17,6 +17,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
         static let nibName = "ScoreTableViewCell"
         static let budgetTitle = "My budget"
     }
+
     
     //MARK: - Public properties
     

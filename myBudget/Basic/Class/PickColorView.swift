@@ -37,11 +37,15 @@ final class PickColorView: UIView {
 
     //MARK: - initizlizers
 
-    convenience override init(frame: CGRect) {
-        self.init(frame: frame)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         update()
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
     //MARK: - Lifecycle
 
