@@ -28,7 +28,6 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     @IBOutlet private weak var budgetAmountLabel: UILabel!
     @IBOutlet private weak var budgetSpentLabel: UILabel!
     @IBOutlet private weak var sortButton: UIButton!
-
     @IBOutlet private weak var cancelButton: UIButton!
     @IBOutlet private weak var toButton: UIButton!
     @IBOutlet private weak var amountTextField: UITextField!
@@ -69,10 +68,6 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         addButton()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-
 
     //MARK: - Privat methods
 
@@ -83,13 +78,13 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
             amountTextField,
             sendButton
         ]
-        amountTextField.placeholder = Constants.transferAmountPlaceHolder
         buttons.forEach { $0?.layer.cornerRadius = ($0?.frame.height ?? 0) / 4 }
+        amountTextField.placeholder = Constants.transferAmountPlaceHolder
+        amountTextField.keyboardType = .numberPad
         cancelButton.addTarget(self, action: #selector(enableTransfer), for: .touchUpInside)
         toButton.addTarget(self, action: #selector(choiseRecipient), for: .touchUpInside)
         sendButton.addTarget(self, action: #selector(createTransfer), for: .touchUpInside)
         sortButton.addTarget(self, action: #selector(sortTransaction), for: .touchUpInside)
-        amountTextField.keyboardType = .numberPad
     }
 
     @objc private func sortTransaction() {
@@ -127,7 +122,6 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
 
     private func configureTable() {
         let nib = UINib(nibName: Constants.cellNib, bundle: nil)
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(nib, forCellReuseIdentifier: Constants.cellIdentifire)
     }
@@ -191,14 +185,14 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
 extension TransactionViewController: TransactionViewInput {
     
     func configure(with budget: Budget) {
-        budgetList = TempBudgetStorageService.shared.budgetListWithout(budget: budget)
-        let symbol = budget.currency.rawValue.getCurrencyLiteral()
         fromBudget = budget
         let historyStorage = TempHistoryStorageService.shared
+        let symbol = budget.currency.rawValue.getCurrencyLiteral()
+        let left = budget.amount - historyStorage.calculateSpent(budget: budget)
+        budgetList = TempBudgetStorageService.shared.budgetListWithout(budget: budget)
         transactionHistory = historyStorage.openHistory(budget: budget)
         nameBudgetLabel.text = budget.name
         budgetAmountLabel.text = "Budget: " + DoubleFormatter.shared.convertToString(from: budget.amount) + symbol
-        let left = budget.amount - historyStorage.calculateSpent(budget: budget)
         budgetSpentLabel.text = "Left: " + DoubleFormatter.shared.convertToString(from: left) + symbol
         tableView.reloadData()
     }
@@ -228,8 +222,6 @@ extension TransactionViewController: UITableViewDataSource {
     }
 
 }
-
-extension TransactionViewController: UITableViewDelegate {}
 
 extension TransactionViewController {
 
