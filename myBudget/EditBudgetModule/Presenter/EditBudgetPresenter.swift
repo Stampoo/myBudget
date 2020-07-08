@@ -19,7 +19,7 @@ final class EditBudgetPresenter {
 
     //MARK: - Private properties
 
-    private let EditBudgetStorage = TempHistoryStorageService.shared
+    private let transactionStorage = TempHistoryStorageService.shared
     private var budget: Budget?
 
 }

@@ -12,7 +12,7 @@ final class TransactionFilter {
 
     //MARK: - Types
 
-    enum FilterType {
+    enum SortType {
         case date
     }
 
@@ -23,30 +23,34 @@ final class TransactionFilter {
 
     //MARK: - Public methods
 
-    func filterBy(type: FilterType, to budget: Budget) -> [Transaction] {
+    func sortBy(type: SortType, to budget: Budget) -> [Transaction] {
         switch type {
         case .date:
-            return filterByDate(to: budget)
+            return sortByDate(to: budget)
         }
     }
 
 
     //MARK: - Private methods
 
-    private func filterByDate(to budget: Budget) -> [Transaction] {
-        var tempSlotForTransaction: Transaction
+    private func sortByDate(to budget: Budget) -> [Transaction] {
         var transactions = transactionStorage.openHistory(budget: budget)
-        for (index, transaction) in transactions.enumerated() {
-            for (ind, trans) in transactions.enumerated() {
-                if transaction.date < trans.date {
-                    tempSlotForTransaction = transaction
-                    transactions[index] = trans
-                    transactions[ind] = tempSlotForTransaction
-                    break
-                }
+        for (index, _) in transactions.enumerated() {
+            let left = transactions.count - index - 1
+            for secondIndex in 0..<left {
+                swap(left: secondIndex, right: secondIndex + 1, array: &transactions)
             }
         }
         return transactions
+    }
+
+    private func swap(left: Int, right: Int, array: inout [Transaction]) {
+        var tempSlot: Transaction
+        if array[left].date > array[right].date {
+            tempSlot = array[left]
+            array[left] = array[right]
+            array[right] = tempSlot
+        }
     }
 
 }
