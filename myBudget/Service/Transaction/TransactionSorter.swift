@@ -35,23 +35,8 @@ final class TransactionSorter {
     //MARK: - Private methods
 
     private func sortByDate(to budget: Budget) -> [Transaction] {
-        var transactions = transactionStorage.openHistory(budget: budget)
-        for (index, _) in transactions.enumerated() {
-            let left = transactions.count - index - 1
-            for secondIndex in 0..<left {
-                swap(left: secondIndex, right: secondIndex + 1, array: &transactions)
-            }
-        }
-        return transactions
-    }
-
-    private func swap(left: Int, right: Int, array: inout [Transaction]) {
-        var tempSlot: Transaction
-        if array[left].date > array[right].date {
-            tempSlot = array[left]
-            array[left] = array[right]
-            array[right] = tempSlot
-        }
+        let transactions = transactionStorage.openHistory(budget: budget)
+        return transactions.sorted { $0.date > $1.date }
     }
 
 }

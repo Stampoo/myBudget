@@ -68,7 +68,7 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         createPicker()
         transferMode(isTransfer: isTransferMode)
         output?.viewLoaded()
-        configureFilterButton()
+        configureSortButton()
         configreTransferButton()
         configureTable()
         configureLables()
@@ -91,18 +91,6 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
         cancelButton.addTarget(self, action: #selector(enableTransfer), for: .touchUpInside)
         toButton.addTarget(self, action: #selector(choiseRecipient), for: .touchUpInside)
         sendButton.addTarget(self, action: #selector(createTransfer), for: .touchUpInside)
-        sortButton.addTarget(self, action: #selector(sortTransaction), for: .touchUpInside)
-    }
-
-    @objc private func sortTransaction() {
-        guard let budget = fromBudget else {
-            return
-        }
-        let sortService = TransactionSorter()
-        let sortedTransaction = sortService.sortBy(type: .date, to: budget)
-        transactionHistory = isDecrease ? sortedTransaction : sortedTransaction.reversed()
-        tableView.reloadData()
-        isDecrease = !isDecrease
     }
 
     @objc private func createTransfer() {
@@ -179,13 +167,30 @@ final class TransactionViewController: UIViewController, ModuleTransitionable {
     }
 
 
-    private func configureFilterButton() {
+    private func configureSortButton() {
         sortButton.tintColor = .white
         sortButton.backgroundColor = UIColor.shared.getCustom(color: .blue)
         sortButton.addLightShadow()
         sortButton.layer.cornerRadius = sortButton.frame.height / 2
+        sortButton.addTarget(self, action: #selector(sortTransaction), for: .touchUpInside)
     }
-    
+
+    @objc private func sortTransaction() {
+        let queue = DispatchQueue.global(qos: .utility)
+        guard let budget = fromBudget else {
+            return
+        }
+        let sortService = TransactionSorter()
+        queue.async {
+            let sortedTransaction = sortService.sortBy(type: .date, to: budget)
+            self.transactionHistory = self.isDecrease ? sortedTransaction : sortedTransaction.reversed()
+            self.isDecrease = !self.isDecrease
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+
 }
 
 
