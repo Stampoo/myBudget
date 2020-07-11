@@ -39,7 +39,10 @@ extension TransactionPresenter: TransactionViewOutput {
     }
 
     func viewLoaded() {
-        moduleOutput?.transitionBudget(completion: { (budget) in
+        moduleOutput?.transitionBudget(completion: { [weak self] (budget) in
+            guard let self = self else {
+                return
+            }
             self.budget = budget
             self.view?.configure(with: budget)
             self.view?.setupInitialState(with: transactionStorage.openHistory(budget: budget))
