@@ -92,14 +92,7 @@ final class TempHistoryStorageService {
     }
 
     private func transactionRecognizing(transaction: Transaction) -> Double {
-        switch transaction.transfer.isTransfer {
-        case true where transaction.transfer.isOutput:
-            return -transaction.amount
-        case true where !transaction.transfer.isOutput:
-            return -transaction.amount
-        default:
-            return -transaction.amount
-        }
+        -transaction.amount
     }
 
     private func deleteHistory(at budget: Budget) {
