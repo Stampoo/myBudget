@@ -33,6 +33,8 @@
 		3438738A24AC882D00010714 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3438738924AC882D00010714 /* RequestBuilder.swift */; };
 		3438738D24AC8E8100010714 /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3438738C24AC8E8100010714 /* CurrencyConverter.swift */; };
 		3438739124ACAF0300010714 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3438739024ACAF0300010714 /* Double.swift */; };
+		345BB2FC24BCE60B0099833C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BB2FB24BCE60B0099833C /* CoreDataStack.swift */; };
+		345BB2FF24BCE8820099833C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 345BB2FD24BCE8820099833C /* Model.xcdatamodeld */; };
 		3467AD0724AB94D7002A706C /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467AD0624AB94D7002A706C /* Progress.swift */; };
 		347F60B624A64D4A0012BB7D /* AddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60B524A64D4A0012BB7D /* AddPresenter.swift */; };
 		347F60B824A64D7D0012BB7D /* AddConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60B724A64D7D0012BB7D /* AddConfigurator.swift */; };
@@ -96,6 +98,8 @@
 		3438738924AC882D00010714 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		3438738C24AC8E8100010714 /* CurrencyConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
 		3438739024ACAF0300010714 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		345BB2FB24BCE60B0099833C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		345BB2FE24BCE8820099833C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3467AD0624AB94D7002A706C /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		347F60B524A64D4A0012BB7D /* AddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPresenter.swift; sourceTree = "<group>"; };
 		347F60B724A64D7D0012BB7D /* AddConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConfigurator.swift; sourceTree = "<group>"; };
@@ -247,6 +251,15 @@
 				3438738C24AC8E8100010714 /* CurrencyConverter.swift */,
 			);
 			path = CurrencyService;
+			sourceTree = "<group>";
+		};
+		345BB2FA24BCE5DF0099833C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				345BB2FB24BCE60B0099833C /* CoreDataStack.swift */,
+				345BB2FD24BCE8820099833C /* Model.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		3467AD0824AB9599002A706C /* Network */ = {
@@ -403,6 +416,7 @@
 		34F2864924A527A100D7C509 /* myBudget */ = {
 			isa = PBXGroup;
 			children = (
+				345BB2FA24BCE5DF0099833C /* CoreData */,
 				34F2868624A6021100D7C509 /* Library */,
 				34922EB224A8E62500F0AE9F /* Basic */,
 				341C4DA924B61576006CE076 /* Model */,
@@ -638,6 +652,7 @@
 				34F2867F24A5F59A00D7C509 /* ScorePresenter.swift in Sources */,
 				347F60B824A64D7D0012BB7D /* AddConfigurator.swift in Sources */,
 				34F2867624A5EA7200D7C509 /* Protocols.swift in Sources */,
+				345BB2FF24BCE8820099833C /* Model.xcdatamodeld in Sources */,
 				342E487024A7ED2C004B39D3 /* TransactionConfigurator.swift in Sources */,
 				342E486B24A7EB51004B39D3 /* TransactionViewController.swift in Sources */,
 				34F2864B24A527A100D7C509 /* AppDelegate.swift in Sources */,
@@ -653,6 +668,7 @@
 				342E486E24A7ECF1004B39D3 /* TransactionRouter.swift in Sources */,
 				342E486624A7E91D004B39D3 /* TransactionProtocols.swift in Sources */,
 				341C4DB524B61583006CE076 /* Transaction.swift in Sources */,
+				345BB2FC24BCE60B0099833C /* CoreDataStack.swift in Sources */,
 				349CD36124B316AE0008AAA9 /* EditBudgetConfigurator.swift in Sources */,
 				349CD36424B3179F0008AAA9 /* EditBudgetTableViewCell.swift in Sources */,
 				349CD35724B314EE0008AAA9 /* EditBudgetProtocols.swift in Sources */,
@@ -860,6 +876,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		345BB2FD24BCE8820099833C /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				345BB2FE24BCE8820099833C /* Model.xcdatamodel */,
+			);
+			currentVersion = 345BB2FE24BCE8820099833C /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 34F2863F24A527A100D7C509 /* Project object */;
 }

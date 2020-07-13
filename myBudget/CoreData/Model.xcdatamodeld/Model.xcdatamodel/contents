@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BudgetEntity" representedClassName="BudgetEntity" syncable="YES" codeGenerationType="class"/>
+    <entity name="TransactionEntity" representedClassName="TransactionEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES"/>
+        <attribute name="date" optional="YES"/>
+        <attribute name="name" optional="YES"/>
+        <attribute name="transferOption" optional="YES"/>
+    </entity>
+    <elements>
+        <element name="BudgetEntity" positionX="-63" positionY="-18" width="128" height="43"/>
+        <element name="TransactionEntity" positionX="-54" positionY="-9" width="128" height="103"/>
+    </elements>
+</model>
