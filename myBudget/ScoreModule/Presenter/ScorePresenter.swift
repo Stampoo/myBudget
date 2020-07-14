@@ -22,6 +22,7 @@ final class ScorePresenter {
     private let budgetStorage = TempBudgetStorageService.shared
     private let historyStorage = TempHistoryStorageService.shared
     private var budget: Budget?
+    private let storageService = StorageService()
     
 }
 

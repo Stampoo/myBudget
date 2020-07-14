@@ -34,7 +34,6 @@
 		3438738D24AC8E8100010714 /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3438738C24AC8E8100010714 /* CurrencyConverter.swift */; };
 		3438739124ACAF0300010714 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3438739024ACAF0300010714 /* Double.swift */; };
 		345BB2FC24BCE60B0099833C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BB2FB24BCE60B0099833C /* CoreDataStack.swift */; };
-		345BB2FF24BCE8820099833C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 345BB2FD24BCE8820099833C /* Model.xcdatamodeld */; };
 		3467AD0724AB94D7002A706C /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467AD0624AB94D7002A706C /* Progress.swift */; };
 		347F60B624A64D4A0012BB7D /* AddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60B524A64D4A0012BB7D /* AddPresenter.swift */; };
 		347F60B824A64D7D0012BB7D /* AddConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60B724A64D7D0012BB7D /* AddConfigurator.swift */; };
@@ -42,6 +41,10 @@
 		347F60BC24A64E2B0012BB7D /* AddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60BB24A64E2B0012BB7D /* AddRouter.swift */; };
 		347F60BF24A64E670012BB7D /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F60BD24A64E670012BB7D /* AddViewController.swift */; };
 		347F60C024A64E670012BB7D /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347F60BE24A64E670012BB7D /* AddViewController.xib */; };
+		348866E224BDC3EA00816B15 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 348866E024BDC3EA00816B15 /* Model.xcdatamodeld */; };
+		348866E424BDCF9A00816B15 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348866E324BDCF9A00816B15 /* StorageService.swift */; };
+		348866E724BDD82400816B15 /* BudgetEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348866E524BDD82400816B15 /* BudgetEntity+CoreDataClass.swift */; };
+		348866E824BDD82400816B15 /* BudgetEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348866E624BDD82400816B15 /* BudgetEntity+CoreDataProperties.swift */; };
 		34922EB424A8E64300F0AE9F /* ModuleTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EB324A8E64300F0AE9F /* ModuleTransitionable.swift */; };
 		34922EB724A8EBF800F0AE9F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EB624A8EBF800F0AE9F /* Date.swift */; };
 		34922EBC24A8F3B200F0AE9F /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34922EBA24A8F3B200F0AE9F /* TransactionTableViewCell.swift */; };
@@ -99,7 +102,6 @@
 		3438738C24AC8E8100010714 /* CurrencyConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
 		3438739024ACAF0300010714 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		345BB2FB24BCE60B0099833C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		345BB2FE24BCE8820099833C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3467AD0624AB94D7002A706C /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		347F60B524A64D4A0012BB7D /* AddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPresenter.swift; sourceTree = "<group>"; };
 		347F60B724A64D7D0012BB7D /* AddConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConfigurator.swift; sourceTree = "<group>"; };
@@ -107,6 +109,10 @@
 		347F60BB24A64E2B0012BB7D /* AddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouter.swift; sourceTree = "<group>"; };
 		347F60BD24A64E670012BB7D /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		347F60BE24A64E670012BB7D /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
+		348866E124BDC3EA00816B15 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		348866E324BDCF9A00816B15 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		348866E524BDD82400816B15 /* BudgetEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		348866E624BDD82400816B15 /* BudgetEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		34922EB324A8E64300F0AE9F /* ModuleTransitionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTransitionable.swift; sourceTree = "<group>"; };
 		34922EB624A8EBF800F0AE9F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		34922EBA24A8F3B200F0AE9F /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
@@ -256,8 +262,10 @@
 		345BB2FA24BCE5DF0099833C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				348866E524BDD82400816B15 /* BudgetEntity+CoreDataClass.swift */,
+				348866E624BDD82400816B15 /* BudgetEntity+CoreDataProperties.swift */,
 				345BB2FB24BCE60B0099833C /* CoreDataStack.swift */,
-				345BB2FD24BCE8820099833C /* Model.xcdatamodeld */,
+				348866E024BDC3EA00816B15 /* Model.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -543,6 +551,7 @@
 			children = (
 				34F2868A24A602F800D7C509 /* TempHistoryStorageService.swift */,
 				34F2868E24A6120A00D7C509 /* TempBudgetStorageService.swift */,
+				348866E324BDCF9A00816B15 /* StorageService.swift */,
 			);
 			path = StorageService;
 			sourceTree = "<group>";
@@ -652,9 +661,10 @@
 				34F2867F24A5F59A00D7C509 /* ScorePresenter.swift in Sources */,
 				347F60B824A64D7D0012BB7D /* AddConfigurator.swift in Sources */,
 				34F2867624A5EA7200D7C509 /* Protocols.swift in Sources */,
-				345BB2FF24BCE8820099833C /* Model.xcdatamodeld in Sources */,
+				348866E224BDC3EA00816B15 /* Model.xcdatamodeld in Sources */,
 				342E487024A7ED2C004B39D3 /* TransactionConfigurator.swift in Sources */,
 				342E486B24A7EB51004B39D3 /* TransactionViewController.swift in Sources */,
+				348866E724BDD82400816B15 /* BudgetEntity+CoreDataClass.swift in Sources */,
 				34F2864B24A527A100D7C509 /* AppDelegate.swift in Sources */,
 				3438739124ACAF0300010714 /* Double.swift in Sources */,
 				341D2D2724A74AD1007C5979 /* UIColor.swift in Sources */,
@@ -663,6 +673,7 @@
 				341C622124AF3B9900A509AC /* String.swift in Sources */,
 				341C4DB324B61583006CE076 /* CurrencyRate.swift in Sources */,
 				34F2866224A52EC700D7C509 /* Support.swift in Sources */,
+				348866E424BDCF9A00816B15 /* StorageService.swift in Sources */,
 				347F60BC24A64E2B0012BB7D /* AddRouter.swift in Sources */,
 				34F2868324A5F74900D7C509 /* ScoreConfigurator.swift in Sources */,
 				342E486E24A7ECF1004B39D3 /* TransactionRouter.swift in Sources */,
@@ -673,6 +684,7 @@
 				349CD36424B3179F0008AAA9 /* EditBudgetTableViewCell.swift in Sources */,
 				349CD35724B314EE0008AAA9 /* EditBudgetProtocols.swift in Sources */,
 				3467AD0724AB94D7002A706C /* Progress.swift in Sources */,
+				348866E824BDD82400816B15 /* BudgetEntity+CoreDataProperties.swift in Sources */,
 				349CD35B24B315CB0008AAA9 /* EditBudgetRouter.swift in Sources */,
 				341C622524AF4D2300A509AC /* CustomTextField.swift in Sources */,
 				349CD35E24B316270008AAA9 /* EditBudgetViewController.swift in Sources */,
@@ -878,12 +890,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		345BB2FD24BCE8820099833C /* Model.xcdatamodeld */ = {
+		348866E024BDC3EA00816B15 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				345BB2FE24BCE8820099833C /* Model.xcdatamodel */,
+				348866E124BDC3EA00816B15 /* Model.xcdatamodel */,
 			);
-			currentVersion = 345BB2FE24BCE8820099833C /* Model.xcdatamodel */;
+			currentVersion = 348866E124BDC3EA00816B15 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
