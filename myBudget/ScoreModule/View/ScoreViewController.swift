@@ -26,7 +26,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     
     //MARK: - Private properties
     
-    private let tableView = UITableView()
+    private let budgetsTable = UITableView()
     private var budgetList = [Budget]()
     
     
@@ -34,30 +34,29 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingActualRateForCurrency()
         output?.viewLoaded()
-        configureTableView()
+        configureBudgetsTable()
         configurateNavbar()
-        configureAddButton()
+        configureAddBudgetButton()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         output?.reload()
-        tableView.reloadData()
+        budgetsTable.reloadData()
     }
     
     
     //MARK: - Private methods
     
-    private func configureTableView() {
+    private func configureBudgetsTable() {
         let nib = UINib(nibName: Constants.nibName, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: Constants.cellIdentifire)
-        view.addSubview(tableView)
-        tableView.setConstraints(to: view)
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.separatorStyle = .none
+        budgetsTable.register(nib, forCellReuseIdentifier: Constants.cellIdentifire)
+        view.addSubview(budgetsTable)
+        budgetsTable.setConstraints(to: view)
+        budgetsTable.dataSource = self
+        budgetsTable.delegate = self
+        budgetsTable.separatorStyle = .none
     }
 
     private func configurateNavbar() {
@@ -65,7 +64,7 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
         navigationItem.title = Constants.budgetTitle
     }
 
-    private func configureAddButton() {
+    private func configureAddBudgetButton() {
         navigationItem.backBarButtonItem?.tintColor = .white
         let addButton = UIBarButtonItem(barButtonSystemItem: .add,
                                         target: self,
@@ -84,11 +83,6 @@ final class ScoreViewController: UIViewController, ModuleTransitionable {
 
     @objc private func showAddModule() {
         output?.presentModule()
-    }
-
-    private func loadingActualRateForCurrency() {
-        let converter = CurrencyConverter()
-        converter.updateRates()
     }
     
 }
@@ -134,12 +128,12 @@ extension ScoreViewController: ScoreViewInput {
     
     func configure(with budgetList: [Budget]) {
         self.budgetList = budgetList
-        tableView.reloadData()
+        budgetsTable.reloadData()
     }
     
     func setupInitialState() {
         budgetList = TempBudgetStorageService.shared.openBudgetList()
-        tableView.reloadData()
+        budgetsTable.reloadData()
     }
     
 }

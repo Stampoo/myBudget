@@ -23,6 +23,14 @@ final class ScorePresenter {
     private let historyStorage = TempHistoryStorageService.shared
     private var budget: Budget?
     private let storageService = StorageService()
+
+
+    //MARK: - Private methods
+
+    private func loadingActualRateForCurrency() {
+        let converter = CurrencyConverter()
+        converter.updateRates()
+    }
     
 }
 
@@ -43,6 +51,7 @@ extension ScorePresenter: ScoreViewOutput {
     
     func viewLoaded() {
         view?.setupInitialState()
+        loadingActualRateForCurrency()
     }
 
     func presentModule() {
