@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -117,14 +115,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="budgetAmount" destination="ry0-Mk-hdK" id="8py-cz-fa0"/>
-                <outlet property="budgetName" destination="oti-Pv-ncg" id="Rc1-VB-egT"/>
+                <outlet property="budgetAmountView" destination="ry0-Mk-hdK" id="8py-cz-fa0"/>
                 <outlet property="budgetTitle" destination="FTO-Do-68z" id="IW0-Tm-Lkz"/>
+                <outlet property="budgetTitleView" destination="oti-Pv-ncg" id="Rc1-VB-egT"/>
                 <outlet property="cardView" destination="zxk-zk-Ik0" id="jat-2o-W24"/>
                 <outlet property="progressView" destination="5PS-oS-VOT" id="c9r-bg-tSq"/>
                 <outlet property="progressViewConstraint" destination="dJU-4W-rTe" id="xOl-ej-hqp"/>
                 <outlet property="shadowView" destination="K61-tx-8yf" id="5Cw-Wc-nlF"/>
-                <outlet property="spentAmount" destination="FIf-JI-Ryn" id="YpE-SJ-TRB"/>
+                <outlet property="spentAmountView" destination="FIf-JI-Ryn" id="YpE-SJ-TRB"/>
                 <outlet property="spentTitle" destination="VO6-fX-rKY" id="cyu-cg-2eH"/>
             </connections>
             <point key="canvasLocation" x="115.94202898550725" y="113.16964285714285"/>

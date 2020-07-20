@@ -22,9 +22,9 @@ final class ScoreTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var spentTitle: UILabel!
     @IBOutlet private weak var budgetTitle: UILabel!
-    @IBOutlet private weak var budgetAmount: UILabel!
-    @IBOutlet private weak var spentAmount: UILabel!
-    @IBOutlet private weak var budgetName: UILabel!
+    @IBOutlet private weak var budgetAmountView: UILabel!
+    @IBOutlet private weak var spentAmountView: UILabel!
+    @IBOutlet private weak var budgetTitleView: UILabel!
     @IBOutlet private weak var cardView: UIView!
     @IBOutlet private weak var progressView: UIView!
     @IBOutlet private weak var shadowView: UIView!
@@ -54,9 +54,9 @@ final class ScoreTableViewCell: UITableViewCell {
         let symbol = budget.currency.rawValue.getCurrencyLiteral()
         let spent = transactionStorage.calculateSpent(budget: budget)
         progressViewConstraint.constant = progress.calculateProgress()
-        budgetName.text = budget.name
-        budgetAmount.text = DoubleFormatter.shared.convertToString(from: budget.amount) + symbol
-        spentAmount.text = DoubleFormatter.shared.convertToString(from: spent) + symbol
+        budgetTitleView.text = budget.name
+        budgetAmountView.text = DoubleFormatter.shared.convertToString(from: budget.amount) + symbol
+        spentAmountView.text = DoubleFormatter.shared.convertToString(from: spent) + symbol
     }
     
     
@@ -78,9 +78,9 @@ final class ScoreTableViewCell: UITableViewCell {
         [
             spentTitle,
             budgetTitle,
-            budgetAmount,
-            spentAmount,
-            budgetName
+            budgetAmountView,
+            spentAmountView,
+            budgetTitleView
             ].forEach { $0?.textColor = .black }
     }
     
